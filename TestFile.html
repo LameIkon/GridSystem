@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <!--- <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <h1>Grid Container</h1>
+        
+        <p>A Grid Container consists of grid items arranged in columns and rows</p>
+        
+        <div class="grid-container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <p>Direct child elements(s) of the grid container automatically becomes grid items.</p>
+        
+        <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
+        <script src="script.js"></script>
+    </body> 
+    --->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid-Based Turn-Based Game</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Grid-Based Turn-Based Game</h1>
+        <div id="game-container">
+            <div id="grid"></div>
+        </div>
+        <div id="controls">
+            <p>Turn: <span id="turn-counter">1</span></p>
+            <button onclick="move('left', 1)">Move Left 1</button>
+            <button onclick="move('right', 1)">Move Right 1</button>
+            <button onclick="move('up', 1)">Move Up 1</button>
+            <button onclick="move('down', 1)">Move Down 1</button>
+            <br>
+            <button onclick="move('left', 2)">Move Left 2</button>
+            <button onclick="move('right', 2)">Move Right 2</button>
+            <button onclick="move('up', 2)">Move Up 2</button>
+            <button onclick="move('down', 2)">Move Down 2</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
