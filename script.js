@@ -1,33 +1,49 @@
-const gridElement = document.getElementById('grid');
-const gridSize = 10; // 10x10 grid
+const GRID_ELEMENT = document.getElementById('grid');
+let grid_x = 20; // columns
+let grid_y = 12; // rows
 let playerPosition = { x: 0, y: 0 }; // Starting at top-left corner
 let turn = 1;
 
-// Initialize the grid
-function createGrid() {
-    for (let i = 0; i < gridSize * gridSize; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        cell.id = `cell-${i}`;
-        gridElement.appendChild(cell);
+
+function init_grid()
+{
+
+
+}
+
+
+// creating the grid
+function create_grid() {
+
+    // Setting the Grid variables dynamicliy in the CSS
+    document.documentElement.style.setProperty('--y',grid_x); 
+    document.documentElement.style.setProperty('--x',grid_y);
+
+    for (let row = 0; row < grid_y; row++) {
+        for(let col = 0; col < grid_x; col++){
+            const CELL = document.createElement('div');
+            CELL.classList.add('cell');
+            CELL.id = `cell-${row * grid_x + col}`; // Multiply the rows with the amount of colums then add the columns to each row
+            GRID_ELEMENT.appendChild(CELL);
+        }
     }
-    renderPlayer();
+    render_player();
 }
 
 // Render the player on the grid
-function renderPlayer() {
+function render_player() {
     // Clear previous player positions
     document.querySelectorAll('.player').forEach(player => player.classList.remove('player'));
 
-    const index = playerPosition.y * gridSize + playerPosition.x;
-    const playerCell = document.getElementById(`cell-${index}`);
-    if (playerCell) {
-        playerCell.classList.add('player');
+    const INDEX = playerPosition.y * grid_x + playerPosition.x;
+    const PLAYER_CELL = document.getElementById(`cell-${INDEX}`);
+    if (PLAYER_CELL) {
+        PLAYER_CELL.classList.add('player');
     }
 }
 
 // Render the turn counter
-function renderTurn() {
+function render_turn() {
     document.getElementById('turn-counter').innerText = turn;
 }
 
@@ -38,18 +54,18 @@ function move(direction, steps) {
             playerPosition.x = Math.max(0, playerPosition.x - steps);
             break;
         case 'right':
-            playerPosition.x = Math.min(gridSize - 1, playerPosition.x + steps);
+            playerPosition.x = Math.min(grid_x - 1, playerPosition.x + steps);
             break;
         case 'up':
             playerPosition.y = Math.max(0, playerPosition.y - steps);
             break;
         case 'down':
-            playerPosition.y = Math.min(gridSize - 1, playerPosition.y + steps);
+            playerPosition.y = Math.min(grid_y - 1, playerPosition.y + steps);
             break;
     }
-    renderPlayer();
+    render_player();
     turn++;
-    renderTurn();
+    render_turn();
 }
 
 // Keyboard controls
@@ -72,5 +88,5 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Initialize the game
-createGrid();
-renderTurn();
+create_grid();
+render_turn();

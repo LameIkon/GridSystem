@@ -29,8 +29,8 @@ body {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(10, 50px); 
-    grid-template-rows: repeat(10, 50px);    
+    grid-template-columns: repeat(var(--y), 50px); 
+    grid-template-rows: repeat(var(--x), 50px);    
     gap: 1px;
     background-color: #444;
 }
