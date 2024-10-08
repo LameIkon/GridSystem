@@ -1,24 +1,23 @@
 const GRID_ELEMENT = document.getElementById('grid');
-let grid_x = 20; // columns
-let grid_y = 12; // rows
+var grid_x; // columns
+var grid_y; // rows
 let playerPosition = { x: 0, y: 0 }; // Starting at top-left corner
 let turn = 1;
 
 
-function init_grid()
+function init_grid(x, y)
 {
-
-
+    grid_x = x;
+    grid_y = y;
+        // Setting the Grid variables dynamicliy in the CSS
+        document.documentElement.style.setProperty('--y',grid_x); 
+        document.documentElement.style.setProperty('--x',grid_y);
+        create_grid();
 }
 
 
 // creating the grid
 function create_grid() {
-
-    // Setting the Grid variables dynamicliy in the CSS
-    document.documentElement.style.setProperty('--y',grid_x); 
-    document.documentElement.style.setProperty('--x',grid_y);
-
     for (let row = 0; row < grid_y; row++) {
         for(let col = 0; col < grid_x; col++){
             const CELL = document.createElement('div');
@@ -88,5 +87,5 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Initialize the game
-create_grid();
+init_grid(10, 5);
 render_turn();
