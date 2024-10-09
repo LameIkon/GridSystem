@@ -12,8 +12,8 @@ body {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(var(--y), 50px); 
-    grid-template-rows: repeat(var(--x), 50px);    
+    grid-template-columns: repeat(var(--x), 50px); 
+    grid-template-rows: repeat(var(--y), 50px);    
     gap: 1px;
     background-color: #444;
 }
@@ -21,12 +21,34 @@ body {
 .cell {
     width: 50px;
     height: 50px;
-    background-color: #000;
+    background-color: #eee;
     position: relative;
+    border: 1px solid #ccc;
+}
+
+.wall{
+    background-color: red;
 }
 
 .player {
-    width: 100%;
-    height: 100%;
+    border-radius: 5px;
     background-color: blue;
 } 
+
+#controls {
+    margin-top: 20px;
+}
+
+#controls input {
+    padding: 5px;
+    font-size: 16px;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+}

@@ -13,20 +13,22 @@
     <body>
         <h1>Grid-Based Turn-Based Game</h1>
         <div id="game-container">
-            <div id="grid"></div>
+            <div id="grid" class="grid-container"></div>
         </div>
+        
         <div id="controls">
             <p>Turn: <span id="turn-counter">1</span></p>
-            <button onclick="move('left', 1)">Move Left 1</button>
-            <button onclick="move('right', 1)">Move Right 1</button>
-            <button onclick="move('up', 1)">Move Up 1</button>
-            <button onclick="move('down', 1)">Move Down 1</button>
-            <br>
-            <button onclick="move('left', 2)">Move Left 2</button>
-            <button onclick="move('right', 2)">Move Right 2</button>
-            <button onclick="move('up', 2)">Move Up 2</button>
-            <button onclick="move('down', 2)">Move Down 2</button>
+            <div>
+                <input type="number" id="moveAmount" placeholder="Enter steps" min="1" />
+            </div>
+            <div>
+                <button onclick="move('left')">Move Left</button>
+                <button onclick="move('right')">Move Right</button>
+                <button onclick="move('up')">Move Up</button>
+                <button onclick="move('down')">Move Down</button>
+            </div>
         </div>
+        
         <script src="script.js"></script>
     </body>
 
