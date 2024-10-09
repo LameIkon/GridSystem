@@ -5,7 +5,7 @@ var grid_y; // rows
 let playerPosition = { x: 0, y: 0 }; // Starting at top-left corner
 let turn = 1;
 
-const walls = [
+const WALLS = [
     {x: 3, y: 0},
     {x: 3, y: 1},
     {x: 3, y: 2},
@@ -40,7 +40,7 @@ function create_grid() {
             CELL.dataset.y = row;
 
             // Check if the cell is a wall
-            if (isWall(col, row)) {
+            if (is_wall(col, row)) {
                 CELL.classList.add('wall');
             }
 
@@ -57,8 +57,8 @@ function create_grid() {
 }
     
 
-function isWall(col, row){
-    return walls.some(wall => wall.x === col && wall.y === row);
+function is_wall(col, row){
+    return WALLS.some(wall => wall.x === col && wall.y === row);
 }
 
 
@@ -68,10 +68,10 @@ function render_player() {
    document.querySelectorAll('.player').forEach(player => player.classList.remove('player'));
 
    // Add player to the new position
-   const selector = `.cell[data-x="${playerPosition.x}"][data-y="${playerPosition.y}"]`;
-   const playerCell = document.querySelector(selector);
-   if (playerCell && !playerCell.classList.contains('wall')) { // Ensure player isn't on a wall
-       playerCell.classList.add('player');
+   const SELECTOR = `.cell[data-x="${playerPosition.x}"][data-y="${playerPosition.y}"]`;
+   const PLAYERCELL = document.querySelector(SELECTOR);
+   if (PLAYERCELL && !PLAYERCELL.classList.contains('wall')) { // Ensure player isn't on a wall
+       PLAYERCELL.classList.add('player');
     } 
    else {
        console.error('Player is trying to occupy a wall cell!');
@@ -86,28 +86,28 @@ function render_turn() {
 
  // Handle movement
  window.move = function(direction) { // Make the function globally accessible
-    const moveAmountInput = document.getElementById('moveAmount');
-    let moveAmount = parseInt(moveAmountInput.value);
-    if (isNaN(moveAmount) || moveAmount < 1) {
+    const MOVE_AMOUNT_INPUT = document.getElementById('moveAmount');
+    let move_amount = parseInt(MOVE_AMOUNT_INPUT.value);
+    if (isNaN(move_amount) || move_amount < 1) {
         alert('Please enter a valid number of steps (minimum 1).');
         return;
     }
 
-    let newX = playerPosition.x;
-    let newY = playerPosition.y;
+    let new_x = playerPosition.x;
+    let new_y = playerPosition.y;
 
     switch(direction) {
         case 'left':
-            newX -= moveAmount;
+            new_x -= move_amount;
             break;
         case 'right':
-            newX += moveAmount;
+            new_x += move_amount;
             break;
         case 'up':
-            newY -= moveAmount;
+            new_y -= move_amount;
             break;
         case 'down':
-            newY += moveAmount;
+            new_y += move_amount;
             break;
         default:
             console.error('Unknown direction:', direction);
@@ -115,21 +115,21 @@ function render_turn() {
     }
 
     // Check boundaries
-    if (newX < 0 || newX >= grid_x || newY < 0 || newY >= grid_y) {
+    if (new_x < 0 || new_x >= grid_x || new_y < 0 || new_y >= grid_y) {
         alert('Move out of bounds!');
         return;
     }
 
     // Check for walls in the path
-    const pathClear = checkPath(playerPosition.x, playerPosition.y, newX, newY, direction);
-    if (!pathClear) {
+    const PATH_CLEAR = check_path(playerPosition.x, playerPosition.y, new_x, new_y, direction);
+    if (!PATH_CLEAR) {
         alert('Cannot move through walls!');
         return;
     }
 
     // Update player position
-    playerPosition.x = newX;
-    playerPosition.y = newY;
+    playerPosition.x = new_x;
+    playerPosition.y = new_y;
 
     // Render changes
     render_player();
@@ -138,19 +138,19 @@ function render_turn() {
 }
 
  // Check if the path is clear (no walls between current and new position)
- function checkPath(currentX, currentY, targetX, targetY, direction) {
+ function check_path(current_x, current_y, target_x, target_y, direction) {
     const step = 1; // Move one step at a time to check each cell
     if (direction === 'left' || direction === 'right') {
-        const stepX = direction === 'left' ? -1 : 1;
-        for (let x = currentX + stepX; x !== targetX + stepX; x += stepX) {
-            if (isWall(x, currentY)) {
+        const STEP_X = direction === 'left' ? -1 : 1;
+        for (let x = current_x + STEP_X; x !== target_x + STEP_X; x += STEP_X) {
+            if (is_wall(x, current_y)) {
                 return false;
             }
         }
     } else if (direction === 'up' || direction === 'down') {
-        const stepY = direction === 'up' ? -1 : 1;
-        for (let y = currentY + stepY; y !== targetY + stepY; y += stepY) {
-            if (isWall(currentX, y)) {
+        const STEP_Y = direction === 'up' ? -1 : 1;
+        for (let y = current_y + STEP_Y; y !== target_y + STEP_Y; y += STEP_Y) {
+            if (is_wall(current_x, y)) {
                 return false;
             }
         }
