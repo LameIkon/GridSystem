@@ -138,7 +138,6 @@ function save()
     localStorage.setItem(SAVE_PLACE, save_data); // Saving the .json on the local drive
 
     console.log('saved game');
-
 }
 
 /**
@@ -151,11 +150,10 @@ function save_tiles(tile_name, save_place_array)
     if(tile != null)
     {
         for(let i = 0; i < tile.length; i++)
-            {
-                save_place_array[i] = tile[i].id.split('-')[1];
-            }
+        {
+            save_place_array[i] = tile[i].id.split('-')[1];
+        }
     }
-
 }
 
 /**
