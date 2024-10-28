@@ -81,24 +81,81 @@ function render_turn() {
 
 // Handle movement
 function move(direction, steps) {
-    switch(direction) {
-        case 'left':
-            player_position.x = Math.max(0, player_position.x - steps);
+
+    let new_x = player_position.x;
+    let new_y = player_position.y;
+    let step = 1;
+
+    //This for loop makes sure that we only take one step at a time, to prevent 'jumping' over walls
+    for(let i = 0; i < steps; i++)
+    {   
+        switch(direction) {
+            case 'left':
+            //player_position.x = Math.max(0, player_position.x - steps); // this just looks nice!! maybe it can be used again for floats
+            new_x -= step;
             break;
-        case 'right':
-            player_position.x = Math.min(grid_x - 1, player_position.x + steps);
+
+            case 'right':
+            //player_position.x = Math.min(grid_x - 1, player_position.x + steps); // even better, good consice would do again
+            new_x += step;
             break;
-        case 'up':
-            player_position.y = Math.max(0, player_position.y - steps);
+
+            case 'up':
+            //player_position.y = Math.max(0, player_position.y - steps); // OMG can it get any better!
+            new_y -= step;
             break;
-        case 'down':
-            player_position.y = Math.min(grid_y - 1, player_position.y + steps);
+
+            case 'down':
+            //player_position.y = Math.min(grid_y - 1, player_position.y + steps); // Horrid please remove in the furture, who even made this!!
+            new_y += step;
             break;
+            
+            default:
+            console.error('Unknown direction:', direction);
+            return;
+            }
+                  
+           
+        // Collision detection to not go out of bounds    
+        if (new_x < 0 || new_x >= grid_x || new_y < 0 || new_y >= grid_y) 
+        {
+            return;
+        }
+        
+
+        // Collision detection for the obsticals
+        if (!can_walk(new_y*grid_x + new_x))
+        {
+            return;
+        }
     }
+                            
+    player_position.x = new_x;
+    player_position.y = new_y;
+
+
     render_player();
     turn++;
     render_turn();
 }
+
+
+ // Check if the path is clear this will be extended in the future for other obsticals
+function can_walk(path_id) {
+    if(is_wall(path_id))
+    {
+        return false;
+    }       
+    return true;
+}
+
+
+function is_wall(id)
+{
+    const cell_check = document.getElementById(`${CELL_NAME}-${id}`); // Get the cell that we need to check
+    return cell_check.classList.contains(`${WALL_NAME}`); // returns true if it contains the class 'wall'  
+}
+
 
 // Keyboard controls
 document.addEventListener('keydown', function(event) {
