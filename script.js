@@ -133,6 +133,7 @@ function save()
     save_tiles(WALL_NAME, game_data.walls);
     save_tiles(DOOR_NAME, game_data.doors);
     save_tiles(KEY_NAME, game_data.keys);
+    //save_tiles(GOAL_NAME, game_data.goal);
 
     let save_data = JSON.stringify(game_data); // Turnig the game_data into a .json
     localStorage.setItem(SAVE_PLACE, save_data); // Saving the .json on the local drive
