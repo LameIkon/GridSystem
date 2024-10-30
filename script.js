@@ -362,8 +362,8 @@ function add_tile(tile_name, array)
     }
 }
 
-function reset_game() {
-    localStorage.removeItem(SAVE_PLACE);
+function reset_all_saved_maps() {
+    localStorage.removeItem(MAP_INDEX);
     player_position = { x: 0, y: 0 };
     key_pickup = false;
     game_data = { player: [], walls: [], keys: [], doors: [], goal: [] };
