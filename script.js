@@ -15,6 +15,7 @@ const DOOR_NAME = 'door';
 const GOAL_NAME = 'goal';
 const KEY_NAME = 'key';
 
+var key_pickup = false;
 //#endregion
 
 //#region Game Data
@@ -71,7 +72,6 @@ function render_player() {
     if (player_cell) {
         player_cell.classList.add(PLAYER_NAME);
     }
-
 }
 
 // Render the turn counter
@@ -128,6 +128,11 @@ function move(direction, steps) {
         {
             return;
         }
+
+        if (picked_up_key(new_y*grid_x + new_x))
+        {
+            key_pickup = true;
+        }
     }
                             
     player_position.x = new_x;
@@ -142,11 +147,21 @@ function move(direction, steps) {
 
  // Check if the path is clear this will be extended in the future for other obsticals
 function can_walk(path_id) {
-    if(is_wall(path_id))
+    if(is_wall(path_id) || is_door(path_id) && !key_pickup)
     {
         return false;
-    }       
+    }
+    
     return true;
+}
+
+function picked_up_key(path_id){
+    if(is_key(path_id))
+    {
+       return true;
+    }
+
+    return false;
 }
 
 
@@ -156,6 +171,16 @@ function is_wall(id)
     return cell_check.classList.contains(`${WALL_NAME}`); // returns true if it contains the class 'wall'  
 }
 
+function is_door(id)
+{
+    const door_check = document.getElementById(`${CELL_NAME}-${id}`);
+    return door_check.classList.contains(`${DOOR_NAME}`);
+}
+
+function is_key(id){
+    const key_check = document.getElementById(`${CELL_NAME}-${id}`);
+    return key_check.classList.contains(`${KEY_NAME}`);
+}
 
 // Keyboard controls
 document.addEventListener('keydown', function(event) {
