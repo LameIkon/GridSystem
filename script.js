@@ -2,13 +2,13 @@ const GRID_ELEMENT = document.getElementById('grid');
 const PLAYER = document.getElementsByClassName('player');
 
 
-const MAP_INDEX = 'map_index'; // the place where it will save the current map.
+const MAP_INDEX = 'map_index'; // the place where it will save maps.
 
 var key_pickup = false;
 
 //#region Names for objects in the scene
 
-// Error profing the strings
+// Error profing the tiles
 const TILES = {
     CELL: 'cell',
     PLAYER: 'player',
