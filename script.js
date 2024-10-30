@@ -2,7 +2,7 @@ const GRID_ELEMENT = document.getElementById('grid');
 const PLAYER = document.getElementsByClassName('player');
 
 
-const SAVE_PLACE = 'the_save_place'; // the place where it will save the current map.
+const MAP_INDEX = 'map_index'; // the place where it will save the current map.
 
 var key_pickup = false;
 
@@ -230,21 +230,32 @@ document.addEventListener('keydown', function(event) {
  * Right now it is quite hard coded, some refactoring is needed. 
  * It also needs to be into a 
 */
-function save()
+function save(mapID)
 {
-    game_data.player[0] = (PLAYER.item(0).id.split('-')[1]); // It is the cell number that is saved, here it's only getting the number
-    game_data.player[1] = (player_position); 
+    if (!mapID) {
+        console.error("Map name is required to save.");
+        return;
+    }
 
+    // Update the game_data object with the current state
+    game_data.player = [PLAYER.item(0).id.split('-')[1], player_position];
     save_tiles(TILES.WALL, game_data.walls);
     save_tiles(TILES.DOOR, game_data.doors);
     save_tiles(TILES.KEY, game_data.keys);
     save_tiles(TILES.GOAL, game_data.goal);
-    //save_tiles(GOAL_NAME, game_data.goal);
 
-    let save_data = JSON.stringify(game_data); // Turnig the game_data into a .json
-    localStorage.setItem(SAVE_PLACE, save_data); // Saving the .json on the local drive
+    // Save game data as JSON under a specific key
+    const saveData = JSON.stringify(game_data);
+    localStorage.setItem(`${MAP_INDEX}_${mapID}`, saveData);
 
-    console.log('saved game');
+    // Update the map index list
+    let mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
+    if (!mapIndex.includes(mapID)) {
+        mapIndex.push(mapID);
+        localStorage.setItem(MAP_INDEX, JSON.stringify(mapIndex));
+    }
+
+    console.log(`Map "${mapID}" saved.`);
 }
 
 /**
@@ -266,23 +277,53 @@ function save_tiles(tile_name, save_place_array)
 /**
  * As the save function does most of the heavy lifting the load is much more simple
  */
-function load()
+function load(mapID)
 {
-    const load_data = localStorage.getItem(SAVE_PLACE);
-    if (!load_data) {
-        console.error("No saved game data found.");
+    if (!mapID) {
+        console.error("Map name is required to load.");
         return;
     }
-    game_data = JSON.parse(load_data);
-    if (game_data.player && game_data.player[1]) {
-        player_position = game_data.player[1];
-        render_game();
-        render_player();
-        console.log('Loaded game');
-    } else {
-        console.error("Loaded data is incomplete or corrupted.");
+
+    const loadData = localStorage.getItem(`${MAP_INDEX}_${mapID}`);
+    if (!loadData) {
+        console.error(`No saved data found for map: "${mapID}"`);
+        return;
     }
 
+    // Parse and load the game data
+    game_data = JSON.parse(loadData);
+    player_position = game_data.player[1];
+
+    render_game();
+    render_player();
+    console.log(`Map "${mapID}" loaded.`);
+
+}
+
+function getSavedMaps() {
+    const mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
+    return mapIndex;
+}
+
+function displaySavedMaps() {
+    const savedMaps = getSavedMaps();
+    savedMaps.forEach(mapName => {
+        console.log(`Saved Map: ${mapName}`);
+    });
+}
+
+function deleteMap(mapID) {
+    if (!mapID) {
+        console.error("Map name is required to delete.");
+        return;
+    }
+
+    localStorage.removeItem(`${MAP_INDEX}_${mapID}`);
+    let mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
+    mapIndex = mapIndex.filter(name => name !== mapID);
+    localStorage.setItem(MAP_INDEX, JSON.stringify(mapIndex));
+
+    console.log(`Map "${mapName}" deleted.`);
 }
 
 function render_game()
