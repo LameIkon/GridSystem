@@ -136,6 +136,11 @@ function move(direction, steps) {
         {
             key_pickup = true;
         }
+
+        if(reached_goal(new_y*grid_x + new_x))
+        {
+            console.log('Level Completed');
+        }
     }
                             
     player_position.x = new_x;
@@ -165,6 +170,14 @@ function picked_up_key(path_id){
     {
        return true;
     }
+    return false;
+}
+
+function reached_goal(path_id){
+    if(is_goal(path_id)){
+        return true;
+    }
+
     return false;
 }
 
