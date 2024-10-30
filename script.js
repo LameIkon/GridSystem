@@ -4,18 +4,21 @@ const PLAYER = document.getElementsByClassName('player');
 
 const SAVE_PLACE = 'the_save_place'; // the place where it will save the current map.
 
+var key_pickup = false;
+
 //#region Names for objects in the scene
 
 // Error profing the strings
-const CELL_NAME = 'cell'; 
+const TILES = {
+    CELL: 'cell',
+    PLAYER: 'player',
+    WALL: 'wall',
+    DOOR: 'door',
+    GOAL: 'goal',
+    KEY: 'key'
+};
 
-const PLAYER_NAME = 'player';
-const WALL_NAME = 'wall';
-const DOOR_NAME = 'door';
-const GOAL_NAME = 'goal';
-const KEY_NAME = 'key';
 
-var key_pickup = false;
 //#endregion
 
 //#region Game Data
@@ -27,7 +30,7 @@ var game_data = {
             walls: [], 
             keys: [],
             doors: [], 
-            goal: null
+            goal: [],
         };
 
 //#endregion
@@ -54,8 +57,8 @@ function create_grid() {
     for (let row = 0; row < grid_y; row++) {
         for(let col = 0; col < grid_x; col++){
             const CELL = document.createElement('div');
-            CELL.classList.add(CELL_NAME);
-            CELL.id = `${CELL_NAME}-${row * grid_x + col}`; // Multiply the rows with the amount of colums then add the columns to each row
+            CELL.classList.add(TILES.CELL);
+            CELL.id = `${TILES.CELL}-${row * grid_x + col}`; // Multiply the rows with the amount of colums then add the columns to each row
             GRID_ELEMENT.appendChild(CELL);
         }
     }
@@ -65,12 +68,12 @@ function create_grid() {
 // Render the player on the grid
 function render_player() {
     // Clear previous player positions
-    document.querySelectorAll(`.${PLAYER_NAME}`).forEach(player => player.classList.remove(PLAYER_NAME));
+    document.querySelectorAll(`.${TILES.PLAYER}`).forEach(player => player.classList.remove(TILES.PLAYER));
 
     let index = player_position.y * grid_x + player_position.x;
-    let player_cell = document.getElementById(`${CELL_NAME}-${index}`);
+    let player_cell = document.getElementById(`${TILES.CELL}-${index}`);
     if (player_cell) {
-        player_cell.classList.add(PLAYER_NAME);
+        player_cell.classList.add(TILES.PLAYER);
     }
 }
 
@@ -145,6 +148,8 @@ function move(direction, steps) {
 }
 
 
+
+
  // Check if the path is clear this will be extended in the future for other obsticals
 function can_walk(path_id) {
     if(is_wall(path_id) || is_door(path_id) && !key_pickup)
@@ -160,26 +165,31 @@ function picked_up_key(path_id){
     {
        return true;
     }
-
     return false;
 }
 
 
 function is_wall(id)
 {
-    const cell_check = document.getElementById(`${CELL_NAME}-${id}`); // Get the cell that we need to check
-    return cell_check.classList.contains(`${WALL_NAME}`); // returns true if it contains the class 'wall'  
+    return has_tile_class(id, TILES.WALL)
 }
 
 function is_door(id)
 {
-    const door_check = document.getElementById(`${CELL_NAME}-${id}`);
-    return door_check.classList.contains(`${DOOR_NAME}`);
+    return has_tile_class(id, TILES.DOOR)
 }
 
 function is_key(id){
-    const key_check = document.getElementById(`${CELL_NAME}-${id}`);
-    return key_check.classList.contains(`${KEY_NAME}`);
+    return has_tile_class(id, TILES.KEY)
+}
+
+function is_goal(id){
+    return has_tile_class(id, TILES.GOAL)
+}
+
+function has_tile_class(id, tileClass){
+    const cell = document.getElementById(`${TILES.CELL}-${id}`); //find cell by id
+    return cell ? cell.classList.contains(tileClass) : false; //checks if cell id contains (placeholder) class.
 }
 
 // Keyboard controls
@@ -212,9 +222,10 @@ function save()
     game_data.player[0] = (PLAYER.item(0).id.split('-')[1]); // It is the cell number that is saved, here it's only getting the number
     game_data.player[1] = (player_position); 
 
-    save_tiles(WALL_NAME, game_data.walls);
-    save_tiles(DOOR_NAME, game_data.doors);
-    save_tiles(KEY_NAME, game_data.keys);
+    save_tiles(TILES.WALL, game_data.walls);
+    save_tiles(TILES.DOOR, game_data.doors);
+    save_tiles(TILES.KEY, game_data.keys);
+    save_tiles(TILES.GOAL, game_data.goal);
     //save_tiles(GOAL_NAME, game_data.goal);
 
     let save_data = JSON.stringify(game_data); // Turnig the game_data into a .json
@@ -234,7 +245,7 @@ function save_tiles(tile_name, save_place_array)
     {
         for(let i = 0; i < tile.length; i++)
         {
-            save_place_array[i] = tile[i].id.split('-')[1];
+            save_place_array.push(tile[i].id.split('-')[1]);
         }
     }
 }
@@ -244,33 +255,35 @@ function save_tiles(tile_name, save_place_array)
  */
 function load()
 {
-    let load_data = localStorage.getItem(SAVE_PLACE); // We get the data 
-
-    if(load_data != null)
-    {
-        game_data = JSON.parse(load_data); // parsing the saved data into the game_data
-
+    const load_data = localStorage.getItem(SAVE_PLACE);
+    if (!load_data) {
+        console.error("No saved game data found.");
+        return;
+    }
+    game_data = JSON.parse(load_data);
+    if (game_data.player && game_data.player[1]) {
         player_position = game_data.player[1];
-
         render_game();
         render_player();
-        console.log('loaded game');
+        console.log('Loaded game');
+    } else {
+        console.error("Loaded data is incomplete or corrupted.");
     }
 
 }
 
 function render_game()
 {
-    remove_tile(PLAYER_NAME);
-    remove_tile(WALL_NAME);
-    remove_tile(KEY_NAME);
-    remove_tile(DOOR_NAME);
-    remove_tile(GOAL_NAME);
+    remove_tile(TILES.PLAYER);
+    remove_tile(TILES.WALL);
+    remove_tile(TILES.KEY);
+    remove_tile(TILES.DOOR);
+    remove_tile(TILES.GOAL);
 
-    add_tile(WALL_NAME, game_data.walls);
-    add_tile(KEY_NAME, game_data.keys);
-    add_tile(DOOR_NAME, game_data.doors);
-    
+    add_tile(TILES.WALL, game_data.walls);
+    add_tile(TILES.KEY, game_data.keys);
+    add_tile(TILES.DOOR, game_data.doors);
+    add_tile(TILES.GOAL, game_data.goal);   
 }
 
 
@@ -288,11 +301,22 @@ function add_tile(tile_name, array)
 {
     for(let i = 0; i < array.length; i++)
     {
-        let cell = document.getElementById(`${CELL_NAME}-${array[i]}`);
+        let cell = document.getElementById(`${TILES.CELL}-${array[i]}`);
         if (cell) {
             cell.classList.add(tile_name);
         }
     }
+}
+
+function reset_game() {
+    localStorage.removeItem(SAVE_PLACE);
+    player_position = { x: 0, y: 0 };
+    key_pickup = false;
+    game_data = { player: [], walls: [], keys: [], doors: [], goal: [] };
+    render_game();
+    render_player();
+    turn = 1;
+    render_turn();
 }
 
 // Initialize the game
