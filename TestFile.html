@@ -15,6 +15,32 @@
         <div id="game-container">
             <div id="grid"></div>
         </div>
+        <div class="controlpanel">
+            <div class="controlpanel-card" id="controlpanel-card1">
+                <div class="controlpanel-item" id="moveLeft">
+                    MoveLeft <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run" id="run-left"><div class="run-symbol" id="run-symbol-left"></div></button>
+                </div>
+            </div>
+            <div class="controlpanel-card" id="controlpanel-card2">
+                <div class="controlpanel-item" id="moveRight">
+                    MoveRight <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run" id="run-right"><div class="run-symbol" id="run-symbol-right"></div></button>
+                </div>
+            </div>
+            <div class="controlpanel-card" id="controlpanel-card3">
+                <div class="controlpanel-item" id="moveUp">
+                    MoveUp <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run" id="run-up"><div class="run-symbol" id="run-symbol-up"></div></button>
+                </div>
+            </div>
+            <div class="controlpanel-card" id="controlpanel-card4">
+                <div class="controlpanel-item" id="moveDown">
+                    MoveDown <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run" id="run-down"><div class="run-symbol" id="run-symbol-down"></div></button>
+                </div>
+            </div>
+        </div>
         <div id="controls">
             <p>Turn: <span id="turn-counter">1</span></p>
             <button onclick="move('left', 1)">Move Left 1</button>
@@ -27,26 +53,6 @@
             <button onclick="move('up', 2)">Move Up 2</button>
             <button onclick="move('down', 2)">Move Down 2</button>
         </div>
-        <br><br>
-        <div class="controlsWrite-container">
-            <div class="controlsWrite-item" id="moveLeft">
-                MoveLeft <span><input type="text" class="varInput" placeholder="var"></input></span>
-                <button class="controlsWrite-run" id="controlsWrite-run-left"><div class="runButton-symbol" id="runButton-symbol-left"></div></button>
-            </div>
-            <div class="controlsWrite-item" id="moveRight">
-                MoveRight <span><input type="text" class="varInput" placeholder="var"></input></span>
-                <button class="controlsWrite-run" id="controlsWrite-run-right"><div class="runButton-symbol" id="runButton-symbol-right"></div></button>
-            </div>
-            <div class="controlsWrite-item" id="moveUp">
-                MoveUp <span><input type="text" class="varInput" placeholder="var"></input></span>
-                <button class="controlsWrite-run" id="controlsWrite-run-up"><div class="runButton-symbol" id="runButton-symbol-up"></div></button>
-            </div>
-            <div class="controlsWrite-item" id="moveDown">
-                Movedown <span><input type="text" class="varInput" placeholder="var"></input></span>
-                <button class="controlsWrite-run" id="controlsWrite-run-down"><div class="runButton-symbol" id="runButton-symbol-down"></div></button>
-            </div>
-        </div>
-        <div>hi</div>
         <script src="script.js"></script>
     </body>
 

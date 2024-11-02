@@ -373,6 +373,22 @@ function reset_all_saved_maps() {
     render_turn();
 }
 
+function create_shadows() {
+    const shadow_colors = [ // list for creating box shadows
+        "0.3px 0.5px 0.7px hsl(0 0% 51% / 0.34), 0.4px 0.8px 1px -1.2px hsl(0 0% 51% / 0.34), 1px 2px 2.5px -2.5px hsl(0 0% 51% / 0.34)",
+        "0.3px 0.5px 0.7px hsl(0 0% 63% / 0.36), 0.8px 1.6px 2px -0.8px hsl(0 0% 63% / 0.36), 2.1px 4.1px 5.2px -1.7px hsl(0 0% 63% / 0.36), 5px 10px 12.6px -2.5px hsl(0 0% 63% / 0.36)"
+    ];
+
+    let controlpanel_style = document.querySelector(".controlpanel").style;
+    controlpanel_style.boxShadow = shadow_colors[0];
+
+    let controlpanel_card = document.querySelectorAll(".controlpanel-card");
+    for(let i = 0; i < controlpanel_card.length; i++){
+        controlpanel_card[i].style.boxShadow = shadow_colors[1];
+    } 
+}
+
 // Initialize the game
 init_grid(10, 5);
 render_turn();
+create_shadows();
