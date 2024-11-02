@@ -45,3 +45,86 @@ body {
 .goal{
     background-color: green;
 }
+
+.controlsWrite-container{
+    position: relative;
+    height: 320px;
+    width: 480px;
+    background-color: white;
+    border-radius: 24px;
+} 
+
+.controlsWrite-item{
+    position: absolute; 
+    width: 150px;
+    height: 50px;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 12px;
+    border: 3px solid black;
+    background-color: white;
+}
+
+#moveLeft{
+    left: 25%;
+}
+
+#moveRight{
+    left: 75%;
+}
+
+#moveUp{
+    left: 25%;
+    top: 65%;
+}
+
+#moveDown{
+    left: 75%;
+    top: 65%;
+}
+
+.varInput{
+    width: 24px;
+    text-align: center;
+    border-radius: 8px;
+    border-style: none;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-color: black;
+    
+}
+
+.controlsWrite-run{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, 12px);
+    background-color: hsl(158 95% 40%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+.runButton-symbol{
+    position: absolute;
+    left: 54%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+    border-left: 22px solid white;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
