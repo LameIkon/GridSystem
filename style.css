@@ -58,7 +58,7 @@ body {
     background-color: green;
 }
 
-.controlpanel{
+.controlpanel {
     position: relative;
     display: flex;
     margin-top: 30px;
@@ -70,7 +70,7 @@ body {
     background-color: white;
 } 
 
-.controlpanel-card{
+.controlpanel-card {
     position: absolute; 
     width: var(--controlpanel-card-width);
     height: var(--controlpanel-card-height);
@@ -80,33 +80,33 @@ body {
     background-color: aliceblue;
 }
 
-#controlpanel-card1{
+#controlpanel-card1 {
     
 }
 
-#controlpanel-card2{
+#controlpanel-card2 {
     left: calc( var(--controlpanel-card-left) + var(--controlpanel-card-width) + var(--controlpanel-card-gapX) );
 }
 
-#controlpanel-card3{
+#controlpanel-card3 {
     top: calc( var(--controlpanel-card-top) + var(--controlpanel-card-height) + var(--controlpanel-card-gapY) );
 }
 
-#controlpanel-card4{
+#controlpanel-card4 {
     left: calc( var(--controlpanel-card-left) + var(--controlpanel-card-width) + var(--controlpanel-card-gapX) );
     top: calc( var(--controlpanel-card-top) + var(--controlpanel-card-height) + var(--controlpanel-card-gapY) );
 }
 
-#controlpanel-card5{
+#controlpanel-card5 {
     left: calc( var(--controlpanel-card-left) + 2*var(--controlpanel-card-width) + 2*var(--controlpanel-card-gapX) );
 }
 
-#controlpanel-card6{
+#controlpanel-card6 {
     left: calc( var(--controlpanel-card-left) + 2*var(--controlpanel-card-width) + 2*var(--controlpanel-card-gapX) );
     top: calc( var(--controlpanel-card-top) + var(--controlpanel-card-height) + var(--controlpanel-card-gapY) );
 }
 
-.controlpanel-item{
+.controlpanel-item {
     position: absolute;
     width: 150px;
     height: 50px;
@@ -122,7 +122,7 @@ body {
     background-color: white;
 }
 
-.item-input{
+.item-input {
     width: 24px;
     text-align: center;
     border-radius: 8px;
@@ -133,7 +133,7 @@ body {
     
 }
 
-.run{
+.run-button {
     position: absolute;
     left: 50%;
     top: 100%;
@@ -146,12 +146,10 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     cursor: pointer;
-    
 }
 
-.run-symbol{
+.run-symbol {
     position: absolute;
     left: 54%;
     top: 50%;
@@ -161,4 +159,6 @@ body {
     border-left: 22px solid white;
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
+    pointer-events: none;
 }
+
