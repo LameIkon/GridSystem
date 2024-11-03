@@ -17,15 +17,26 @@
         </div>
         <div id="controls">
             <p>Turn: <span id="turn-counter">1</span></p>
-            <button onclick="move('left', 1)">Move Left 1</button>
-            <button onclick="move('right', 1)">Move Right 1</button>
-            <button onclick="move('up', 1)">Move Up 1</button>
-            <button onclick="move('down', 1)">Move Down 1</button>
-            <br>
-            <button onclick="move('left', 2)">Move Left 2</button>
-            <button onclick="move('right', 2)">Move Right 2</button>
-            <button onclick="move('up', 2)">Move Up 2</button>
-            <button onclick="move('down', 2)">Move Down 2</button>
+             <!-- Directional buttons with input fields for steps -->
+        <div>
+            <button onclick="handleMove('left')">Move Left</button>
+            <input type="number" id="left-steps" placeholder="Steps" min="1" value="1">
+        </div>
+        
+        <div>
+            <button onclick="handleMove('right')">Move Right</button>
+            <input type="number" id="right-steps" placeholder="Steps" min="1" value="1">
+        </div>
+        
+        <div>
+            <button onclick="handleMove('up')">Move Up</button>
+            <input type="number" id="up-steps" placeholder="Steps" min="1" value="1">
+        </div>
+        
+        <div>
+            <button onclick="handleMove('down')">Move Down</button>
+            <input type="number" id="down-steps" placeholder="Steps" min="1" value="1">
+        </div>
         </div>
         <script src="script.js"></script>
     </body>
