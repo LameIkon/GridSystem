@@ -376,3 +376,5 @@ function reset_all_saved_maps() {
 // Initialize the game
 init_grid(10, 5);
 render_turn();
+
+
