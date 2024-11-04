@@ -6,7 +6,8 @@ let keyPickup = false;
 
 // #region Names for objects in the scene
 // Error proofing the tiles
-const TILES = {
+const TILES = 
+{
     CELL: 'cell',
     PLAYER: 'player',
     WALL: 'wall',
@@ -19,7 +20,8 @@ const TILES = {
 
 // #region Game Data
 // Collection of the data to save for each map, this will most likely be expanded in the future
-let gameData = {
+let gameData = 
+{
     player: [],
     walls: [],
     keys: [],
@@ -89,13 +91,11 @@ function move(direction, steps) {
     for (let i = 0; i < steps; i++) {
         switch (direction) {
             case 'left':
-                // playerPosition.x = Math.max(0, playerPosition.x - steps);
-                // This just looks nice!! maybe it can be used again for floats
+                // playerPosition.x = Math.max(0, playerPosition.x - steps); // This just looks nice!! maybe it can be used again for floats
                 newX -= step;
                 break;
             case 'right':
-                // playerPosition.x = Math.min(gridX - 1, playerPosition.x + steps);
-                // Even better, good concise would do again
+                // playerPosition.x = Math.min(gridX - 1, playerPosition.x + steps); // Even better, good concise would do again
                 newX += step;
                 break;
             case 'up':
@@ -103,8 +103,7 @@ function move(direction, steps) {
                 newY -= step;
                 break;
             case 'down':
-                // playerPosition.y = Math.min(gridY - 1, playerPosition.y + steps);
-                // Horrid please remove in the future, who even made this!!
+                // playerPosition.y = Math.min(gridY - 1, playerPosition.y + steps); // Horrid please remove in the future, who even made this!!
                 newY += step;
                 break;
             default:
@@ -302,8 +301,7 @@ function renderGame() {
 
 
 function removeTile(tileName) {
-    // Takes all the tiles and removes the name from the class
-    document.querySelectorAll(`.${tileName}`).forEach(tile => tile.classList.remove(tileName));
+    document.querySelectorAll(`.${tileName}`).forEach(tile => tile.classList.remove(tileName)); // Takes all the tiles and removes the name from the class
 }
 
 
@@ -328,26 +326,26 @@ function resetAllSavedMaps() {
     renderTurnCounter();
 }
 
-function shadow_palette(elevation = "medium", color = "0 0% 63%") { 
+function shadowPalette(elevation = "medium", color = "0 0% 63%") { 
     if( elevation === "low" ) { 
         return `0.3px 0.5px 0.7px hsl(${color} / 0.34), 0.4px 0.8px 1px -1.2px hsl(${color} / 0.34), 1px 2px 2.5px -2.5px hsl(${color} / 0.34)` 
-    }
+    } 
     else if( elevation === "medium") { 
         return `0.3px 0.5px 0.7px hsl(${color} / 0.36), 0.8px 1.6px 2px -0.8px hsl(${color} / 0.36), 2.1px 4.1px 5.2px -1.7px hsl(${color} / 0.36), 5px 10px 12.6px -2.5px hsl(${color} / 0.36)` 
     }
 }
 
-function create_shadows() {
-    let controlpanel_style = document.querySelector(".controlpanel").style;
-    controlpanel_style.boxShadow = shadow_palette("low", "0 0% 51%");
+function createShadows() {
+    let controlpanelStyle = document.querySelector(".controlpanel").style;
+    controlpanelStyle.boxShadow = shadowPalette("low", "0 0% 51%");
     
-    let controlpanel_card = document.querySelectorAll(".controlpanel-card");
-    for( let i = 0; i < controlpanel_card.length; i++ ) { 
-        controlpanel_card[i].style.boxShadow = shadow_palette("medium", "0 0% 63%"); 
+    let controlpanelCard = document.querySelectorAll(".controlpanel-card");
+    for( let i = 0; i < controlpanelCard.length; i++ ) { 
+        controlpanelCard[i].style.boxShadow = shadowPalette("medium", "0 0% 63%"); 
     } 
 }
 
-function button_effects() {
+function buttonEffects() {
     let buttons = document.querySelectorAll(".run-button");
     for( let i = 0; i < buttons.length; i++ ) {
         buttons[i].addEventListener("mouseover", function(e) {
@@ -373,15 +371,14 @@ function buttonMove() {
 
 function buttonMovement(event)
 {
-    let dir = event.srcElement.id.split('-')[1];
-    let steps = event.srcElement.parentNode.childNodes[1].childNodes[0].value;
-    //console.log(steps);
+    let dir = event.srcElement.id.split('-')[1]; // Take the id of the button element splitting it at take the second elemet, which is either 'left', 'right', 'up' or 'down'
+    let steps = event.srcElement.parentNode.childNodes[1].childNodes[0].value; // Get the source elements parent then the span child object then the child input and the value of it. Quite hard coded but it works.
     move(dir, steps);
 }
 
 // Initialize the game
-create_shadows();
-button_effects();
+createShadows();
+buttonEffects();
 // initializeGrid(10, 5);
 renderTurnCounter();
 
