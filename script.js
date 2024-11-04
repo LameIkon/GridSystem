@@ -362,6 +362,23 @@ function button_effects() {
     }
 }
 
+buttonMove();
+
+function buttonMove() {
+    let buttons = document.querySelectorAll(".run-button");
+    for( let i = 0; i < buttons.length; i++ ) {
+        buttons[i].addEventListener("click", buttonMovement);
+    }
+}
+
+function buttonMovement(event)
+{
+    let dir = event.srcElement.id.split('-')[1];
+    let steps = event.srcElement.parentNode.childNodes[1].childNodes[0].value;
+    //console.log(steps);
+    move(dir, steps);
+}
+
 // Initialize the game
 create_shadows();
 button_effects();
@@ -372,5 +389,5 @@ renderTurnCounter();
 function levelSelecting(mapID) {
     document.getElementById('controls').style.display = 'block';
     load(mapID)
-    // initializeGrid(10, 5);
+    initializeGrid(10, 5);
 }
