@@ -82,6 +82,12 @@ function render_turn() {
     document.getElementById('turn-counter').innerText = turn;
 }
 
+function handleMove(direction) {
+    const stepsInput = document.getElementById(`${direction}-steps`);
+    const steps = parseInt(stepsInput.value) || 1;  // Get the steps or default to 1
+    move(direction, steps);  // Call move with the direction and custom steps
+}
+
 // Handle movement
 function move(direction, steps) {
 
