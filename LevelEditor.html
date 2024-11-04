@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Grid-Based Turn-Based Game Editor</h1>
+    <div id="editor-container">
+        <form>
+            <label for="ysize">y:</label>
+            <input type="number" id="ysize" name="ysize" max="15" min="1" step="1" value="10">
+            <label for="xsize">x:</label>
+            <input type="number" name="xsize" id="xsize" max="20" min="1" step="1" value="10">
+        </form>
+
+        <div id="editor-tiles"></div>
+    </div>
+    <br>
+    <div id="game-container">
+        <div id="grid"></div>
+    </div>
+    <!--
+        <div id="controls">
+            <p>Turn: <span id="turn-counter">1</span></p>
+            <button onclick="move('left', 1)">Move Left 1</button>
+            <button onclick="move('right', 1)">Move Right 1</button>
+            <button onclick="move('up', 1)">Move Up 1</button>
+            <button onclick="move('down', 1)">Move Down 1</button>
+            <br>
+            <button onclick="move('left', 2)">Move Left 2</button>
+            <button onclick="move('right', 2)">Move Right 2</button>
+            <button onclick="move('up', 2)">Move Up 2</button>
+            <button onclick="move('down', 2)">Move Down 2</button>
+        </div>
+    -->
+
+
+
+    <script src="LevelMaker.js"></script>
+</body>
+</html>
