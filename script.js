@@ -1,7 +1,7 @@
 const GRID_ELEMENT = document.getElementById('grid');
 const PLAYER = document.getElementsByClassName('player');
 const MAP_INDEX = 'map_index'; // the place where it will save maps.
-var keyPickup = false;
+let keyPickup = false;
 
 
 // #region Names for objects in the scene
@@ -18,19 +18,19 @@ const TILES = {
 
 
 // #region Game Data
-// Collection of the data to save for each map, this will most likly be expanded in the future
-var gameData = {
+// Collection of the data to save for each map, this will most likely be expanded in the future
+let gameData = {
     player: [],
     walls: [],
     keys: [],
     doors: [],
     goal: [],
 };
-//#endregion
+// #endregion
 
 
-var gridX; // columns
-var gridY; // rows
+let gridX; // columns
+let gridY; // rows
 let playerPosition = {x: 0, y: 0}; // Starting at top-left corner
 let turn = 1;
 
@@ -44,13 +44,12 @@ function initializeGrid(x, y) {
     createGrid();
 }
 
-
 function createGrid() {
     for (let row = 0; row < gridY; row++) {
         for (let col = 0; col < gridX; col++) {
             const CELL = document.createElement('div');
             CELL.classList.add(TILES.CELL);
-            CELL.id = `${TILES.CELL}-${row * gridX + col}`; // Multiply the rows with the amount of colums then add the columns to each row
+            CELL.id = `${TILES.CELL}-${row * gridX + col}`; // Multiply the rows with the amount of columns then add the columns to each row
             GRID_ELEMENT.appendChild(CELL);
         }
     }
@@ -69,8 +68,7 @@ function renderPlayer() {
     }
 }
 
-// Render the turn counter
-function renderTurn() {
+function renderTurnCounter() {
     document.getElementById('turn-counter').innerText = turn;
 }
 
@@ -130,24 +128,22 @@ function move(direction, steps) {
     playerPosition.x = newX;
     playerPosition.y = newY;
 
-
     renderPlayer();
     turn++;
-    renderTurn();
+    renderTurnCounter();
 }
-
 
 // Check if the path is clear this will be extended in the future for other obstacles
-function canWalk(path_id) {
-    return !(isWall(path_id) || isDoor(path_id) && !keyPickup);
+function canWalk(pathID) {
+    return !(isWall(pathID) || isDoor(pathID) && !keyPickup);
 }
 
-function pickedUpKey(path_id) {
-    return isKey(path_id);
+function pickedUpKey(pathID) {
+    return isKey(pathID);
 }
 
-function reachedGoal(path_id) {
-    return isGoal(path_id);
+function reachedGoal(pathID) {
+    return isGoal(pathID);
 }
 
 function isWall(id) {
@@ -168,7 +164,7 @@ function isGoal(id) {
 
 function hasTileClass(id, tileClass) {
     const cell = document.getElementById(`${TILES.CELL}-${id}`); //find cell by id
-    return cell ? cell.classList.contains(tileClass) : false; //checks if cell id contains (placeholder) class.
+    return cell ? cell.classList.contains(tileClass) : false; // Checks if cell id contains (placeholder) class.
 }
 
 // Keyboard controls
@@ -190,13 +186,11 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-
 /*
- *  The save function saves all the different tiles into the gameData object.
+ *  save() saves all the different tiles into the gameData object.
  *  Right now it is quite hard coded, some refactoring is needed.
  *  It also needs to be into a
  */
-
 
 function save(mapID) {
     if (!mapID) {
@@ -229,19 +223,17 @@ function save(mapID) {
  *  Right now it can only save into arrays.
  */
 
-function saveTiles(tile_name, save_place_array) {
-    let tile = document.querySelectorAll(`.${tile_name}`); // Getting all the tiles with the class {tile_name}, 
+function saveTiles(tileName, savePlaceArray) {
+    let tile = document.querySelectorAll(`.${tileName}`); // Getting all the tiles with the class {tileName},
     if (tile != null) {
         for (let i = 0; i < tile.length; i++) {
-            save_place_array.push(tile[i].id.split('-')[1]);
+            savePlaceArray.push(tile[i].id.split('-')[1]);
         }
     }
 }
 
-/*
- *  As the save function does most of the heavy lifting the load is much more simple
- */
 
+// As save() does most of the heavy lifting, load() is much more simple
 function load(mapID) {
     if (!mapID) {
         console.error("Map name is required to load.");
@@ -265,8 +257,7 @@ function load(mapID) {
 }
 
 function getSavedMaps() {
-    const mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
-    return mapIndex;
+    return JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
 }
 
 function displaySavedMaps() {
@@ -304,20 +295,18 @@ function renderGame() {
 }
 
 
-function removeTile(tile_name) {
+function removeTile(tileName) {
     // Takes all the tiles and removes the name from the class
-    document.querySelectorAll(`.${tile_name}`).forEach(tile => tile.classList.remove(tile_name));
+    document.querySelectorAll(`.${tileName}`).forEach(tile => tile.classList.remove(tileName));
 }
 
-/*
- *  This needs an array to iterate over
- */
 
-function addTile(tile_name, array) {
+// This needs an array to iterate over
+function addTile(tileName, array) {
     for (let i = 0; i < array.length; i++) {
         let cell = document.getElementById(`${TILES.CELL}-${array[i]}`);
         if (cell) {
-            cell.classList.add(tile_name);
+            cell.classList.add(tileName);
         }
     }
 }
@@ -330,9 +319,16 @@ function resetAllSavedMaps() {
     renderGame();
     renderPlayer();
     turn = 1;
-    renderTurn();
+    renderTurnCounter();
 }
 
 // Initialize the game
-initializeGrid(10, 5);
-renderTurn();
+// initializeGrid(10, 5);
+renderTurnCounter();
+
+
+function levelSelecting(mapID) {
+    document.getElementById('controls').style.display = 'block';
+    load(mapID)
+    // initializeGrid(10, 5);
+}
