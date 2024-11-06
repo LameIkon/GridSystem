@@ -192,6 +192,7 @@ body {
 .missionDescription{
     text-align: left;
     padding-left: 18px; /* Default padding */
+    padding-bottom: 10px;
 }
 
 .missionDescription h2{ /* Ensures that start text has distance from the top */

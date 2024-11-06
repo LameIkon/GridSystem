@@ -22,4 +22,4 @@ function displayLevelInfo(specifiedId)
 }
 
 // Initialize
-displayLevelInfo(1); // Insert id for specified level info to be loaded
+displayLevelInfo(2); // Insert id for specified level info to be loaded
