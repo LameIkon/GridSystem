@@ -8,6 +8,9 @@ let gridY; // rows
 let playerPosition = {x: 0, y: 0}; // Starting at top-left corner
 let turn = 1;
 
+let maxTurn = 10;
+let noMoreTurns = false;
+
 // #region Names for objects in the scene
 // Error proofing the tiles
 const TILES =
@@ -81,6 +84,20 @@ function renderTurnCounter()
     document.getElementById('turn-counter').innerText = turn;
 }
 
+function checkTurnLimit(){
+    if(maxTurn <= turn){
+        noMoreTurns = true;
+    }
+}
+
+function checkGameOver(){
+    checkTurnLimit();
+    if(noMoreTurns){
+        console.log('Game over'); //make acutal endgame message or something.
+    }
+}
+
+
 // #region Handle Movement
 function handleMove(direction)
 {
@@ -91,6 +108,7 @@ function handleMove(direction)
 
 function move(direction, steps)
 {
+    if(!noMoreTurns){
     let newX = playerPosition.x;
     let newY = playerPosition.y;
     let step = 1;
@@ -150,6 +168,8 @@ function move(direction, steps)
     renderPlayer();
     turn++;
     renderTurnCounter();
+    checkGameOver();
+    }
 }
 // #endregion
 
@@ -448,3 +468,5 @@ createShadows();
 buttonEffects();
 renderTurnCounter();
 buttonMove();
+
+
