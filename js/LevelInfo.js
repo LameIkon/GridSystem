@@ -1,8 +1,8 @@
 function displayLevelInfo(specifiedId)
 {
-    let infoList = document.querySelector('.missionDescription'); // The location the json file will print its text
+    let infoList = document.querySelector('.mission-description'); // The location the json file will print its text
 
-    fetch('./LevelInfo.json') // Find the location of the json file
+    fetch('../json/LevelInfo.json') // Find the location of the json file
         .then(response => response.json())
         .then(info =>
             {            
