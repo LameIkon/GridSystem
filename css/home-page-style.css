@@ -1,5 +1,8 @@
 #text-and-game-preview {
-
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 120px 0 0 0;
 }
 
 
@@ -51,4 +54,13 @@
 
 #play-now-button:hover {
     opacity: 75%;
+}
+
+#game-preview {
+
+}
+
+#game-preview-image {
+    width: 800px;
+    height: auto;
 }
