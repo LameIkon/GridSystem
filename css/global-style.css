@@ -12,14 +12,14 @@ h1 {
     background-color: #58ba6b;
     display: flex;
     align-items: center;
-    height: 100px;
+    height: 130px;
     margin: -8px;
 }
 
 #header p {
     font-family: "d Dicapslock", sans-serif;
     font-weight: 450;
-    font-size: 30px;
+    font-size: 40px;
     color: rgb(255, 255, 255);
     margin: 0 30px;
 }
