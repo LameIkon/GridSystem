@@ -13,4 +13,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     loadHTML('header-container', '../header.html');
+    loadHTML('header-container', 'header.html');
 });
