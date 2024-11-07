@@ -386,8 +386,11 @@ function shadowPalette(elevation = "medium", color = "0 0% 63%")
 
 function createShadows()
 {
-    let controlpanelStyle = document.querySelector(".controlpanel").style;
-    controlpanelStyle.boxShadow = shadowPalette("low", "0 0% 51%");
+    let controlpanelStyle = document.querySelectorAll(".controlpanel");
+    for (let i = 0; i < controlpanelStyle.length; i++)
+    {
+        controlpanelStyle[i].style.boxShadow = shadowPalette("low", "0 0% 51%");
+    }
 
     let controlpanelCard = document.querySelectorAll(".controlpanel-card");
     for (let i = 0; i < controlpanelCard.length; i++)
