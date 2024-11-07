@@ -1,0 +1,29 @@
+#return-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#mission-border {
+    display: block;
+    outline: 3px solid black;
+    background-color: rgb(224, 224, 224);
+    width: 550px;
+    min-height: 100px;
+    min-width: 500px;
+    margin: auto;
+}
+
+#mission-description {
+    text-align: left;
+    padding-left: 10px; /* Default padding */
+}
+
+#mission-description h2 { /* Ensures that start text has distance from the top */
+    padding-top: 10px;
+}
+
+#mission-description p {
+    padding-left: 8px;
+    color: rgb(46, 46, 46);
+}
+
