@@ -1,0 +1,52 @@
+#text-and-game-preview {
+
+}
+
+
+#introduction-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-heading {
+    font-size: 120px;
+}
+
+#game-description {
+    display: flex;
+    justify-content: center;
+}
+
+#game-description-text {
+    color: #1b1b1b;
+    font-size: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 35px;
+}
+
+.curly-brackets {
+    font-family: Corbel, sans-serif;
+    color: #b8b8b8;
+    font-size: 110px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#play-now-button {
+    font-family: Klavika, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: #f5f5f5;
+    background-color: #70bd7d;
+    border: transparent;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+}
+
+#play-now-button:hover {
+    opacity: 75%;
+}
