@@ -1,67 +1,74 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Grid-Based Turn-Based Game</title>
-        <link rel="stylesheet" href="../css/global-style.css">
-        <link rel="stylesheet" href="../css/style.css">
-        <script src="../../js/load-content.js" defer></script>
-    </head>
-    <body>
-        <div id="header-container"></div>
-        <h1>Grid-Based Turn-Based Game</h1>
-        <div id="level-selector">
-            <p>Level Selector</p>
-            <button class="levelButton" onclick="levelSelecting('1')">Level 1</button>
-            <button class="levelButton" onclick="levelSelecting(2)">Level 2</button>
-            <button class="levelButton" onclick="levelSelecting(3)">Level 3</button>
-            <button class="levelButton" onclick="levelSelecting(4)">Level 4</button>
-        </div>
-        <div class=" controlpanel mission-border">
-            <div class="mission-description">
-                <!-- Script will insert mission description here in the form of h2 and p. Look to level-info.js and levelInfo.json-->
-            </div>
-        </div>
-        <div id="game-container">
-            <div id="grid"></div>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-Based Turn-Based Game</title>
+    <link rel="stylesheet" href="../css/global-style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../../js/load-content.js" defer></script>
+</head>
+<body>
+<div id="header-container"></div>
+<h1>Grid-Based Turn-Based Game</h1>
+<div id="level-selector">
+    <p>Level Selector</p>
+    <button class="levelButton" onclick="levelSelecting('1')">Level 1</button>
+    <button class="levelButton" onclick="levelSelecting(2)">Level 2</button>
+    <button class="levelButton" onclick="levelSelecting(3)">Level 3</button>
+    <button class="levelButton" onclick="levelSelecting(4)">Level 4</button>
+</div>
+<div class=" controlpanel mission-border">
+    <div class="mission-description">
+        <!-- Script will insert mission description here in the form of h2 and p. Look to level-info.js and levelInfo.json-->
+    </div>
+</div>
+<div id="game-container">
+    <div id="grid"></div>
+</div>
 
-        <div class="controlpanel">
-            <div class="controlpanel-card" id="controlpanel-card1">
-                <div class="controlpanel-item" id="moveLeft">
-                    MoveLeft <span><input type="text" class="item-input" placeholder="var"></input></span>
-                    <button class="run-button" id="run-left"><div class="run-symbol" id="run-symbol-left"></div></button>
-                </div>
-            </div>  
-            <div class="controlpanel-card" id="controlpanel-card2">
-                <div class="controlpanel-item" id="moveRight">
-                    MoveRight <span><input type="text" class="item-input" placeholder="var"></input></span>
-                    <button class="run-button" id="run-right"><div class="run-symbol" id="run-symbol-right"></div></button>
-                </div>
-            </div>
-            <div class="controlpanel-card" id="controlpanel-card3">
-                <div class="controlpanel-item" id="moveUp">
-                    MoveUp <span><input type="text" class="item-input" placeholder="var"></input></span>
-                    <button class="run-button" id="run-up"><div class="run-symbol" id="run-symbol-up"></div></button>
-                </div>
-            </div>
-            <div class="controlpanel-card" id="controlpanel-card4">
-                <div class="controlpanel-item" id="moveDown">
-                    MoveDown <span><input type="text" class="item-input" placeholder="var"></input></span>
-                    <button class="run-button" id="run-down"><div class="run-symbol" id="run-symbol-down"></div></button>
-                </div>
-            </div>
+<div class="controlpanel">
+    <div class="controlpanel-card" id="controlpanel-card1">
+        <div class="controlpanel-item" id="moveLeft">
+            MoveLeft <span><input type="text" class="item-input" placeholder="var"></input></span>
+            <button class="run-button" id="run-left">
+                <div class="run-symbol" id="run-symbol-left"></div>
+            </button>
         </div>
+    </div>
+    <div class="controlpanel-card" id="controlpanel-card2">
+        <div class="controlpanel-item" id="moveRight">
+            MoveRight <span><input type="text" class="item-input" placeholder="var"></input></span>
+            <button class="run-button" id="run-right">
+                <div class="run-symbol" id="run-symbol-right"></div>
+            </button>
+        </div>
+    </div>
+    <div class="controlpanel-card" id="controlpanel-card3">
+        <div class="controlpanel-item" id="moveUp">
+            MoveUp <span><input type="text" class="item-input" placeholder="var"></input></span>
+            <button class="run-button" id="run-up">
+                <div class="run-symbol" id="run-symbol-up"></div>
+            </button>
+        </div>
+    </div>
+    <div class="controlpanel-card" id="controlpanel-card4">
+        <div class="controlpanel-item" id="moveDown">
+            MoveDown <span><input type="text" class="item-input" placeholder="var"></input></span>
+            <button class="run-button" id="run-down">
+                <div class="run-symbol" id="run-symbol-down"></div>
+            </button>
+        </div>
+    </div>
+</div>
 
-        <div id="controls">
-            <p>Turn: <span id="turn-counter">1</span></p>
-             <!-- Directional buttons with input fields for steps -->
-        </div>
-        <script src="../js/script.js"></script>
-        <script src="../js/level-info.js"></script>
-        <script src="../js/navigate.js"></script>
-    </body>
+<div id="controls">
+    <p>Turn: <span id="turn-counter">1</span></p>
+    <!-- Directional buttons with input fields for steps -->
+</div>
+<script src="../js/script.js"></script>
+<script src="../js/level-info.js"></script>
+<script src="../js/navigate.js"></script>
+</body>
 </html>
