@@ -1,9 +1,22 @@
-.level-selector {
-    justify-content: center;
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 110px 0 0 0;
+}
+
+#main-heading h1 {
+    font-size: 60px;
+    margin: 0 900px 0 0;
+}
+
+#level-buttons {
+    display: flex;
+    justify-content: cemter;
 }
 
 .level-button {
-    font-size: 15px;
-    font-weight: lighter;
+    transform: scale(200%);
+    margin: 50px 50px;
 }
 
