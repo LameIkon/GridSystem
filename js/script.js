@@ -463,12 +463,36 @@ function levelSelecting(mapID)
     document.getElementById('controls').style.display = 'block';
     load(mapID)
     deleteGrid()
-    initializeGrid(10, 5);
+    LoadLevel(mapID);
+    //initializeGrid(10, 5);
 }
 
 function deleteGrid()
 {
     GRID_ELEMENT.innerHTML = '';
+}
+
+function LoadLevel(specifiedId)
+{
+    fetch('../json/level-layout.json') // Find the location of the json file
+    .then(response => response.json())
+    .then(info =>
+        {            
+        const FILTEREDITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
+        
+        if(FILTEREDITEM) // Take the json and read/use the data
+        {
+            gridX = FILTEREDITEM.x; 
+            gridY = FILTEREDITEM.y; 
+
+            // Setting the Grid variables dynamically in CSS
+            document.documentElement.style.setProperty('--y', gridX);
+            document.documentElement.style.setProperty('--x', gridY);
+
+            GRID_ELEMENT.insertAdjacentHTML('beforeend', FILTEREDITEM.layout); // Print title text as a 'h2'
+            renderPlayer();
+        }
+        });       
 }
 
 

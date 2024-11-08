@@ -25,18 +25,9 @@ const INFOLIST = document.querySelector('.mission-description'); // The location
             });       
     }
     // Initialize
-    displayLevelInfo(2); // Insert id for specified level info to be loaded
+    displayLevelInfo(0); // Insert id for specified level info to be loaded
 
 
 
 
-// Ajax call
-/*
-let levelInfoRequest = new XMLHttpRequest();
-levelInfoRequest.open('GET', '../json/level-info.json');
-levelInfoRequest.onload = function()
-    {
-        console.log(levelInfoRequest.responseText);
-    };  
-levelInfoRequest.send();
-*/
+    
