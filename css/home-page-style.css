@@ -26,7 +26,7 @@
     margin: -180px 0;
 }
 
-#game-description-text {
+#description-text {
     color: #1b1b1b;
     font-size: 32px;
     text-align: center;
@@ -66,7 +66,6 @@
 #game-preview {
     animation: launch 550ms ease-out;
 }
-
 
 #game-preview-image {
     width: 800px;
