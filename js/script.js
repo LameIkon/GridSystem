@@ -49,6 +49,9 @@ function initializeGrid(x, y)
     createGrid();
 }
 
+
+
+
 function createGrid()
 {
     for (let row = 0; row < gridY; row++)
@@ -459,7 +462,13 @@ function levelSelecting(mapID)
 {
     document.getElementById('controls').style.display = 'block';
     load(mapID)
+    deleteGrid()
     initializeGrid(10, 5);
+}
+
+function deleteGrid()
+{
+    GRID_ELEMENT.innerHTML = '';
 }
 
 

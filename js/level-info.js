@@ -1,6 +1,10 @@
-function displayLevelInfo(specifiedId)
-{
-    let infoList = document.querySelector('.mission-description'); // The location the json file will print its text
+const INFOLIST = document.querySelector('.mission-description'); // The location the json file will print its text
+
+
+    function displayLevelInfo(specifiedId)
+    {
+    // Clear the content before adding new content
+    INFOLIST.innerHTML = '';
 
     fetch('../json/level-info.json') // Find the location of the json file
         .then(response => response.json())
@@ -10,16 +14,29 @@ function displayLevelInfo(specifiedId)
             
             if(FILTEREDITEM) // Take the json and read/use the data
             {
-                infoList.insertAdjacentHTML('beforeend', `<h2>${FILTEREDITEM.title}</h2>`); // Print title text as a 'h2'
-                infoList.insertAdjacentHTML('beforeend', `<p>${FILTEREDITEM.body}</p>`); // Print body text as a 'p'
+                INFOLIST.insertAdjacentHTML('beforeend', `<h2>${FILTEREDITEM.title}</h2>`); // Print title text as a 'h2'
+                INFOLIST.insertAdjacentHTML('beforeend', `<p>${FILTEREDITEM.body}</p>`); // Print body text as a 'p'
             }
             else // Error message
             {
-                infoList.insertAdjacentHTML('beforeend', `<h2>Error</h2>`); // Print title text as a 'h2'
-                infoList.insertAdjacentHTML('beforeend', `<p>Unknown id</p>`); // Print body text as a 'p'
+                INFOLIST.insertAdjacentHTML('beforeend', `<h2>Error</h2>`); // Print title text as a 'h2'
+                INFOLIST.insertAdjacentHTML('beforeend', `<p>Unknown id</p>`); // Print body text as a 'p'
             }
             });       
-}
+    }
+    // Initialize
+    displayLevelInfo(2); // Insert id for specified level info to be loaded
 
-// Initialize
-displayLevelInfo(2); // Insert id for specified level info to be loaded
+
+
+
+// Ajax call
+/*
+let levelInfoRequest = new XMLHttpRequest();
+levelInfoRequest.open('GET', '../json/level-info.json');
+levelInfoRequest.onload = function()
+    {
+        console.log(levelInfoRequest.responseText);
+    };  
+levelInfoRequest.send();
+*/
