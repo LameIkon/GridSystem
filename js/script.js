@@ -474,7 +474,8 @@ function deleteGrid()
 
 function LoadLevel(specifiedId)
 {
-    fetch('../json/level-layout.json') // Find the location of the json file
+    //fetch('../json/level-layout.json') // Find the location of the json file
+    fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
     .then(response => response.json())
     .then(info =>
         {            
