@@ -15,12 +15,12 @@
 <!-- Main -->
 <main>
     <div id="main">
-        <div id="introduction-text" class="element hidden">
-            <h1 id="main-heading">
+        <div id="introduction-text">
+            <h1 id="main-heading" class="element hidden">
                 Thee Robot.
             </h1>
             <!-- Description -->
-            <div id="description">
+            <div id="description" class="element hidden">
                 <p class="curly-brackets">
                     {
                 </p>
@@ -34,12 +34,17 @@
                 </p>
             </div>
             <!-- Button -->
-            <button id="play-now-button" onclick="navigateToPage('level-selector')">
-                Spil nu
-            </button>
+            <div class="element hidden">
+                <button id="play-now-button" onclick="navigateToPage('level-selector')">
+                    Spil nu
+                </button>
+            </div>
         </div>
         <!-- Game Preview -->
         <div id="game-preview" class="element hidden">
+            <div>
+
+            </div>
             <img src="../../assets/images/game-preview.PNG" id="game-preview-image" alt="game-preview">
         </div>
     </div>
