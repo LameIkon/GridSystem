@@ -1,3 +1,10 @@
+:root {
+    font-family: klavika, sans-serif;
+    background-color: #ffffff;
+    overflow: hidden;
+    --transition-time: 300ms;
+}
+
 @font-face {
     font-family: corbel;
     src: url('../assets/fonts/corbel.ttf') format('woff');
@@ -21,12 +28,6 @@
 @font-face {
     font-family: klavika-bold;
     src: url('../assets/fonts/klavika-bold.otf') format('woff');
-}
-
-:root {
-    font-family: klavika, sans-serif;
-    background-color: #ffffff;
-    overflow: hidden;
 }
 
 h1 {
@@ -62,9 +63,9 @@ h1 {
     background-color: transparent;
     border: 3px solid transparent;
     border-radius: 40px;
-    transition: border 300ms ease;
+    transition: border var(--transition-time) ease;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 15px;
     margin: 0 15px;
 }
 
@@ -75,11 +76,13 @@ h1 {
 .buttons p {
     font-family: klavika-medium, sans-serif;
     font-size: 25px;
-    color: #737373;
+    color: #000000;
+    opacity: 0.6;
+    transition: opacity var(--transition-time) ease-in-out;
     margin: 7px;
 }
 
 .buttons:hover p {
-    color: #000000;
+    opacity: 1;
 }
 

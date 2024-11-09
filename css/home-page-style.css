@@ -9,11 +9,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: launch 550ms ease;
-}
-
-#introduction-text:hover {
-    opacity: 1;
 }
 
 #main-heading {
@@ -52,9 +47,9 @@
     border: transparent;
     padding: 10px 35px;
     border-radius: 25px;
-    margin: 100px 0;
+    margin: 120px 0;
     transform: scale(110%);
-    transition: transform 300ms ease-in-out;
+    transition: transform 200ms ease-in-out;
 }
 
 #play-now-button:hover {
@@ -64,14 +59,14 @@
 }
 
 #game-preview {
-    animation: launch 550ms ease-out;
+
 }
 
 #game-preview-image {
     width: 800px;
     height: auto;
 }
-
+/*
 @keyframes launch {
     from {
         opacity: 0;
@@ -85,4 +80,22 @@
         opacity: 1;
         transform: translateX(0);
     }
+}*/
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-27%);
+    transition: all 500ms ease-in-out;
+    /*animation: launch 550ms ease;*/
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.element:nth-child(2) {
+    transition-delay: 100ms;
 }
