@@ -2,12 +2,17 @@
     font-family: klavika, sans-serif;
     background-color: #ffffff;
     overflow: hidden;
-    --transition-time: 300ms;
+    --transition-time-header-buttons: 300ms;
 }
 
 @font-face {
     font-family: corbel;
     src: url('../assets/fonts/corbel.ttf') format('woff');
+}
+
+@font-face {
+    font-family: corbel-bold;
+    src: url('../assets/fonts/corbel-bold.ttf') format('woff');
 }
 
 @font-face {
@@ -62,7 +67,7 @@ h1 {
     background-color: transparent;
     border: 3px solid transparent;
     border-radius: 40px;
-    transition: border var(--transition-time) ease;
+    transition: border var(--transition-time-header-buttons) ease;
     box-sizing: border-box;
     padding: 0 15px;
     margin: 0 15px;
@@ -73,15 +78,15 @@ h1 {
 }
 
 .buttons p {
-    font-family: klavika-medium, sans-serif;
+    font-family: corbel-bold, sans-serif;
     font-size: 25px;
     color: #000000;
-    opacity: 0.6;
-    transition: opacity var(--transition-time) ease-in-out;
+    opacity: 70%;
+    transition: opacity var(--transition-time-header-buttons) ease-in-out;
     margin: 7px;
 }
 
 .buttons:hover p {
-    opacity: 1;
+    opacity: 100%;
 }
 
