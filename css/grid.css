@@ -1,31 +1,37 @@
+:root{
+    --cell-size: 75px;
+    --gap: 2px;
+}
+
 #levels {
     font-size: 25px;
     font-weight: bold;
 }
 
 #game-container {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(var(--y), 50px); 
-    grid-template-rows: repeat(var(--x), 50px);    
-    gap: 1px;
+    grid-template-columns: repeat(var(--y), var(--cell-size)); 
+    grid-template-rows: repeat(var(--x), var(--cell-size));    
+    gap: var(--gap);
     background-color: #444;
 }
 
 #editor-container{
     display: grid;
-    grid-template-columns: repeat(var(--g), 50px);   
-    gap: 1px;
+    grid-template-columns: repeat(var(--g), var(--cell-size));   
+    gap: var(--gap);
     background-color: #444;
 }
 
 .cell {
-    width: 50px;
-    height: 50px;
+    width: var(--cell-size);
+    height: var(--cell-size);
     background-color: #000;
     position: relative;
 }

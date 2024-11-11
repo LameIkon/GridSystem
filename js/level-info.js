@@ -1,4 +1,4 @@
-const INFOLIST = document.getElementById('mission-description'); // The location the json file will print its text
+const INFOLIST = document.getElementById('mission-box'); // The location the json file will print its text
 
 
 function displayLevelInfo(specifiedId)
@@ -15,8 +15,8 @@ fetch('https://johanpedersen11.github.io/jsonData/level-info.json') // Find the 
         
         if(FILTEREDITEM) // Take the json and read/use the data
         {
-            INFOLIST.insertAdjacentHTML('beforeend', `<p>${FILTEREDITEM.title}</p>`); // Print title text as a 'h2'
-            INFOLIST.insertAdjacentHTML('beforeend', `<p>${FILTEREDITEM.body}</p>`); // Print body text as a 'p'
+            INFOLIST.insertAdjacentHTML('beforeend', `<p id="mission">${FILTEREDITEM.title}</p>`); // Print title text as a 'h2'
+            INFOLIST.insertAdjacentHTML('beforeend', `<p id="mission-description">${FILTEREDITEM.body}</p>`); // Print body text as a 'p'
         }
         else // Error message
         {

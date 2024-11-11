@@ -408,7 +408,7 @@ function deleteGrid()
     GRID_ELEMENT.innerHTML = '';
 }
 
-function LoadLevel(specifiedId)
+function loadLevel(specifiedId)
 {
     //fetch('../json/level-layout.json') // Find the location of the json file
     fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
