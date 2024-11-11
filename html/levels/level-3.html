@@ -6,9 +6,11 @@
     <title>Thee Robot</title>
     <link rel="stylesheet" href="../../css/global-style.css">
     <link rel="stylesheet" href="../../css/level-style.css">
+    <link rel="stylesheet" href="../../css/control-panel.css">
+    <link rel="stylesheet" href="../../css/grid.css">
     <script src="../../js/load-content.js" defer></script>
 </head>
-<body>
+<body onload="displayLevelInfo(3)">
 <!-- Header -->
 <div id="header-container"></div>
 
@@ -29,23 +31,57 @@
                 Mission
             </p>
             <p id="mission-description">
-                er
+                Nå målet ved at indsætte værdier i metode kaldet.
             </p>
         </div>
     </div>
 
     <!-- Grid -->
-    <!--
-        Grid is missing
-    -->
+    <div id="game-container">
+        <div id="grid"></div>
+    </div>
 
 
-    <!-- Controls -->
-    <!--
-        Controls is missing
-    -->
+    <!--Control panel-->
+    <div class="controlpanel">
+        <div class="controlpanel-part" id="controlpanel-part1">
+            <div class="controlpanel-card" id="controlpanel-card1">
+                <div class="controlpanel-item" id="moveLeft">
+                    MoveLeft <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run-button" id="run-left"><div class="run-symbol" id="run-symbol-left"></div></button>
+                </div>
+            </div>  
+            <div class="controlpanel-card" id="controlpanel-card2">
+                <div class="controlpanel-item" id="moveRight">
+                    MoveRight <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run-button" id="run-right"><div class="run-symbol" id="run-symbol-right"></div></button>
+                </div>
+            </div>
+            <div class="controlpanel-card" id="controlpanel-card3">
+                <div class="controlpanel-item" id="moveUp">
+                    MoveUp <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run-button" id="run-up"><div class="run-symbol" id="run-symbol-up"></div></button>
+                </div>
+            </div>
+            <div class="controlpanel-card" id="controlpanel-card4">
+                <div class="controlpanel-item" id="moveDown">
+                    MoveDown <span><input type="text" class="item-input" placeholder="var"></input></span>
+                    <button class="run-button" id="run-down"><div class="run-symbol" id="run-symbol-down"></div></button>
+                </div>
+            </div>
+        </div>
+        <div class="controlpanel-part" id="controlpanel-part2">
+    
+        </div>
+    
+    <div id="controls">
+        <p>Turn: <span id="turn-counter">1</span></p>
+        <!-- Directional buttons with input fields for steps -->
+    </div>
     </div>
 </main>
 <script src="../../js/navigate.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/level-info.js"></script>
 </body>
 </html>
