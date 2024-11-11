@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bane 3</title>
+    <title>Thee Robot</title>
     <link rel="stylesheet" href="../../css/global-style.css">
     <link rel="stylesheet" href="../../css/level-style.css">
     <script src="../../js/load-content.js" defer></script>
@@ -14,17 +14,23 @@
 
 <!-- Main -->
 <main>
-    <!-- Heading & Return Button -->
-    <h1>Bane 3</h1>
-    <button id="return-button" onclick="navigateToPage('level-selector')">
-        Gå tilbage
-    </button>
+    <div id="main" class="element hidden">
+        <!-- Heading & Return Button -->
+        <div id="main-heading">
+            <h1>Bane 3</h1>
+            <button id="return-button" onclick="navigateToPage('level-selector')">
+                Gå tilbage
+            </button>
+        </div>
 
-    <!-- Mission Border -->
-    <div id="mission-border">
-        <div id="mission-description">
-            <h2>Mission</h2>
-            <p>er</p>
+        <!-- Mission Border -->
+        <div id="mission-box">
+            <p id="mission">
+                Mission
+            </p>
+            <p id="mission-description">
+                er
+            </p>
         </div>
     </div>
 
@@ -38,6 +44,7 @@
     <!--
         Controls is missing
     -->
+    </div>
 </main>
 <script src="../../js/navigate.js"></script>
 </body>

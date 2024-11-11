@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level Selector</title>
+    <title>Thee Robot</title>
     <link rel="stylesheet" href="../../css/global-style.css">
     <link rel="stylesheet" href="../../css/level-selector-style.css">
     <script src="../../js/load-content.js" defer></script>
@@ -14,22 +14,35 @@
 
 <!-- Main -->
 <main>
-    <!-- Level Selector -->
-    <h1>Level Selector</h1>
-    <p id="">Vælg en bane</p>
-    <div id="level-selector">
-        <button class="levelButton" onclick="navigateToLevel(1)">
-            Bane 1
-        </button>
-        <button class="levelButton" onclick="navigateToLevel(2)">
-            Bane 2
-        </button>
-        <button class="levelButton" onclick="navigateToLevel(3)">
-            Bane 3
-        </button>
-        <button class="levelButton" onclick="navigateToLevel(4)">
-            Bane 4
-        </button>
+    <div id="main">
+        <div id="main-heading">
+            <h1 class="element hidden">
+                Vælg en bane.
+            </h1>
+        </div>
+        <!-- Levels -->
+        <div id="levels">
+            <div class="element hidden">
+                <button class="level-button" onclick="navigateToLevel(1)">
+                    <p>Bane 1</p>
+                </button>
+            </div>
+            <div class="element hidden">
+                <button class="level-button" onclick="navigateToLevel(2)">
+                    <p>Bane 2</p>
+                </button>
+            </div>
+            <div class="element hidden">
+                <button class="level-button" onclick="navigateToLevel(3)">
+                    <p>Bane 3</p>
+                </button>
+            </div>
+            <div class="element hidden">
+                <button class="level-button" onclick="navigateToLevel(4)">
+                    <p>Bane 4</p>
+                </button>
+            </div>
+        </div>
     </div>
 </main>
 <script src="../../js/navigate.js"></script>

@@ -1,9 +1,93 @@
-.level-selector {
+:root {
+    --transition-time-level-button: 230ms;
+    --transition-time-launch: 500ms;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 200px 0 0 0;
+}
+
+#main-heading h1 {
+    font-size: 70px;
+    margin: 0 1000px 0 0;
+}
+
+#levels {
+    display: flex;
     justify-content: center;
+    margin: 0 0 0 0;
 }
 
-.levelButton {
-    font-size: 15px;
-    font-weight: lighter;
+.level-button p {
+    font-family: klavika-medium, sans-serif;
+    font-size: 32px;
+    color: #000000;
+    opacity: 55%;
 }
 
+.level-button {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: #f2f2f3;
+    border: 6px solid #d9d9d9;
+    border-radius: 30px;
+    box-shadow:
+            0 0 35px rgba(0, 0, 0, 0.1),
+            inset 0 0 20px rgba(175, 175, 175, 15%);
+    margin: 100px 30px;
+    width: 300px;
+    height: 200px;
+    transform: scale(1);
+    transition:
+            transform var(--transition-time-level-button) ease,
+            box-shadow var(--transition-time-level-button) ease;
+}
+
+.level-button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow:
+            0 0 35px rgba(0, 0, 0, 20%),
+            inset 0 0 20px rgba(175, 175, 175, 15%);
+}
+
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-200px);
+    transition:
+            opacity var(--transition-time-launch) ease,
+            filter var(--transition-time-launch) ease,
+            transform var(--transition-time-launch) ease;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+#main-heading .element:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+.element:nth-child(1) {
+    transition-delay: 50ms;
+}
+
+.element:nth-child(2) {
+    transition-delay: 100ms;
+}
+
+.element:nth-child(3) {
+    transition-delay: 150ms;
+}
+
+.element:nth-child(4) {
+    transition-delay: 200ms;
+}
