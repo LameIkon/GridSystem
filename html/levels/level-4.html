@@ -14,17 +14,23 @@
 
 <!-- Main -->
 <main>
-    <!-- Heading & Return Button -->
-    <h1>Bane 4</h1>
-    <button id="return-button" onclick="navigateToPage('level-selector')">
-        Gå tilbage
-    </button>
+    <div id="main" class="element hidden">
+        <!-- Heading & Return Button -->
+        <div id="main-heading">
+            <h1>Bane 4</h1>
+            <button id="return-button" onclick="navigateToPage('level-selector')">
+                Gå tilbage
+            </button>
+        </div>
 
-    <!-- Mission Border -->
-    <div id="mission-border">
-        <div id="mission-description">
-            <h2>Mission</h2>
-            <p>dårligt!!!</p>
+        <!-- Mission Border -->
+        <div id="mission-box">
+            <p id="mission">
+                Mission
+            </p>
+            <p id="mission-description">
+                dårligt!!!
+            </p>
         </div>
     </div>
 
@@ -38,6 +44,7 @@
     <!--
         Controls is missing
     -->
+    </div>
 </main>
 <script src="../../js/navigate.js"></script>
 </body>

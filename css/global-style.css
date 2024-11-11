@@ -1,8 +1,8 @@
 :root {
     font-family: klavika, sans-serif;
     background-color: #ffffff;
-    overflow: hidden;
     --transition-time-header-buttons: 300ms;
+    --signature-color: #1f70f2;
 }
 
 @font-face {
@@ -37,6 +37,7 @@
 
 h1 {
     font-family: klavika-bold, sans-serif;
+    color: var(--signature-color);
     font-size: 42px;
 }
 
@@ -67,10 +68,10 @@ h1 {
     background-color: transparent;
     border: 3px solid transparent;
     border-radius: 40px;
-    transition: border var(--transition-time-header-buttons) ease;
     box-sizing: border-box;
     padding: 0 15px;
     margin: 0 15px;
+    transition: border var(--transition-time-header-buttons) ease;
 }
 
 .buttons:hover {
@@ -81,8 +82,8 @@ h1 {
     font-family: corbel-bold, sans-serif;
     font-size: 25px;
     color: #000000;
-    opacity: 70%;
-    transition: opacity var(--transition-time-header-buttons) ease-in-out;
+    opacity: 60%;
+    transition: opacity var(--transition-time-header-buttons) ease;
     margin: 7px;
 }
 
