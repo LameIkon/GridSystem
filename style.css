@@ -1,15 +1,9 @@
 :root{
-    /* controlpanel */
-    --controlpanel-card-width: 220px;
-    --controlpanel-card-height: 144px;
-    --controlpanel-card-left: 26px;
-    --controlpanel-card-top: 22px;
-    --controlpanel-card-gapX: 26px;
-    --controlpanel-card-gapY: 30px;
-    --controlpanel-card-maxAmountX: 2;
-    --controlpanel-card-maxAmountY: 2;
-    --controlpanel-width: calc( 2 * var(--controlpanel-card-left) + var(--controlpanel-card-maxAmountX) * var(--controlpanel-card-width) + ( var(--controlpanel-card-maxAmountX) - 1 ) * var(--controlpanel-card-gapX) );
-    --controlpanel-height: calc( 2 * var(--controlpanel-card-top) + var(--controlpanel-card-maxAmountY) * var(--controlpanel-card-height) + (var(--controlpanel-card-maxAmountY) - 1) * var(--controlpanel-card-gapY) );
+    /*controlpanel*/
+    --card-width: 220px;
+    --card-height: 144px;
+    --part1-width: calc(3 * var(--card-width) + 40px);
+    --part1-height: calc(2 * var(--card-height) + 20px);
 }
 
 body {
@@ -71,53 +65,72 @@ body {
     background-color: green;
 }
 
+/*controlpanel*/
+
 .controlpanel {
     position: relative;
     display: flex;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    width: var(--controlpanel-width);
-    height: var(--controlpanel-height);
+    width: 1200px;
+    height: calc(var(--part1-height) + 44px);
     border-radius: 24px;
     background-color: white;
 } 
 
 .controlpanel-card {
     position: absolute; 
-    width: var(--controlpanel-card-width);
-    height: var(--controlpanel-card-height);
-    left: var(--controlpanel-card-left);
-    top: var(--controlpanel-card-top);
+    width: var(--card-width);
+    height: var(--card-height);
     border-radius: 12px;
     background-color: aliceblue;
 }
 
+/*controlpanel part*/
+
+.controlpanel-part {
+    position: absolute; 
+    border-radius: 12px;
+}
+
+#controlpanel-part1 {
+    left: 26px;
+    top: 22px;
+    width: var(--part1-width);
+    height: var(--part1-height);
+}
+
+#controlpanel-part2 {
+    right: 26px;
+    top: 22px;
+    width: 320px;
+    height: var(--part1-height);
+    background-color: lightgray
+}
+
+/*controlpanel card*/
+
 #controlpanel-card1 {
-    
+    top: calc(var(--card-height) / 2 + 10px);
 }
 
 #controlpanel-card2 {
-    left: calc( var(--controlpanel-card-left) + var(--controlpanel-card-width) + var(--controlpanel-card-gapX) );
+    left: calc(2 * var(--card-width) + 40px);
+    top: calc(var(--card-height) / 2 + 10px);
 }
 
 #controlpanel-card3 {
-    top: calc( var(--controlpanel-card-top) + var(--controlpanel-card-height) + var(--controlpanel-card-gapY) );
+    left: calc(var(--card-width) + 20px);
+
 }
 
 #controlpanel-card4 {
-    left: calc( var(--controlpanel-card-left) + var(--controlpanel-card-width) + var(--controlpanel-card-gapX) );
-    top: calc( var(--controlpanel-card-top) + var(--controlpanel-card-height) + var(--controlpanel-card-gapY) );
+    left: calc(var(--card-width) + 20px);
+    top: calc(var(--card-height) + 20px);
 }
 
-#controlpanel-card5 {
-    left: calc( var(--controlpanel-card-left) + 2*var(--controlpanel-card-width) + 2*var(--controlpanel-card-gapX) );
-}
-
-#controlpanel-card6 {
-    left: calc( var(--controlpanel-card-left) + 2*var(--controlpanel-card-width) + 2*var(--controlpanel-card-gapX) );
-    top: calc( var(--controlpanel-card-top) + var(--controlpanel-card-height) + var(--controlpanel-card-gapY) );
-}
+/*controlpanel item*/
 
 .controlpanel-item {
     position: absolute;
