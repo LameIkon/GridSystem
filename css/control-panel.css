@@ -9,6 +9,7 @@
 /*controlpanel*/
 
 #controlpanel {
+    font-family: corbel, sans-serif;
     position: relative;
     display: flex;
     margin-top: 30px;
@@ -91,6 +92,7 @@
 
 
 .item-input {
+    font-family: corbel, sans-serif;
     width: 24px;
     text-align: center;
     border-radius: 8px;

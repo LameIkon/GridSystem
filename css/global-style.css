@@ -45,8 +45,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 130px;
-    margin: -8px;
+    height: 100px;
 }
 
 #header button {
