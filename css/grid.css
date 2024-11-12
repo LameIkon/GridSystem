@@ -20,6 +20,7 @@
     grid-template-rows: repeat(var(--x), var(--cell-size));    
     gap: var(--gap);
     background-color: #444;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 #editor-container{

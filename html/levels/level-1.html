@@ -15,30 +15,31 @@
 <div id="header-container"></div>
 
 <!-- Main -->
-<main>
-    <div id="main" class="element hidden">
-        <!-- Heading & Return Button -->
+<main class="element hidden">
+    <div id="main">
         <div id="main-heading">
             <h1>Bane 1</h1>
+            <div id="skip-buttons">
+                <button>
+                    Næste bane
+                </button>
+                <button>
+                    Forrige bane
+                </button>
+            </div>
             <button id="return-button" onclick="navigateToPage('level-selector')">
                 Gå tilbage
             </button>
         </div>
-
-        <!-- Mission Border -->
-        <div id="mission-box">
+        <div id="container">
+            <div id="mission-box">
+            </div>
+            <div id="game-container">
+                <div id="grid"></div>
+            </div>
+            <div id="controlpanel"> </div>
         </div>
     </div>
-
-    <!-- Grid -->
-    <div id="game-container">
-        <div id="grid"></div>
-    </div>
-
-
-    <!--Control panel-->
-    <div id="controlpanel"> </div>
-
 </main>
 <script src="../../js/navigate.js"></script>
 <script src="../../js/level-info.js"></script>
