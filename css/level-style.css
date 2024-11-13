@@ -8,10 +8,24 @@
     justify-content: center;
 }
 
+.column {
+    float: left;
+    padding: 10px;
+}
+
+.left {
+    width: 25%;
+}
+
+.right {
+    width: 75%;
+}
+
 #main-heading {
     display: flex;
     flex-direction: column;
-    margin: 0 0 30px 0;
+    justify-content: space-around;
+    margin: 0 -300px 0 0;
 }
 
 #main-heading h1 {
@@ -22,8 +36,8 @@
 #container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     margin-top: 0;
 }
 

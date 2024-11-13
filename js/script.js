@@ -14,27 +14,27 @@ let noMoreTurns = false;
 // #region Names for objects in the scene
 // Error proofing the tiles
 const TILES =
-{
-    CELL: 'cell',
-    PLAYER: 'player',
-    WALL: 'wall',
-    DOOR: 'door',
-    GOAL: 'goal',
-    KEY: 'key'
-};
+    {
+        CELL: 'cell',
+        PLAYER: 'player',
+        WALL: 'wall',
+        DOOR: 'door',
+        GOAL: 'goal',
+        KEY: 'key'
+    };
 // #endregion
 
 
 // #region Game Data
 // Collection of the data to save for each map, this will most likely be expanded in the future
 let gameData =
-{
-    player: [],
-    walls: [],
-    keys: [],
-    doors: [],
-    goal: [],
-};
+    {
+        player: [],
+        walls: [],
+        keys: [],
+        doors: [],
+        goal: [],
+    };
 // #endregion
 
 // #region Grid
@@ -52,10 +52,8 @@ function initializeGrid(x, y)
 
 function createGrid()
 {
-    for (let row = 0; row < gridY; row++)
-    {
-        for (let col = 0; col < gridX; col++)
-        {
+    for (let row = 0; row < gridY; row++) {
+        for (let col = 0; col < gridX; col++) {
             const CELL = document.createElement('div');
             CELL.classList.add(TILES.CELL);
             CELL.id = `${TILES.CELL}-${row * gridX + col}`; // Multiply the rows with the amount of columns then add the columns to each row
@@ -64,6 +62,7 @@ function createGrid()
     }
     renderPlayer();
 }
+
 // #endregion
 
 // Render the player on the grid
@@ -74,8 +73,7 @@ function renderPlayer()
 
     let index = playerPosition.y * gridX + playerPosition.x;
     let player_cell = document.getElementById(`${TILES.CELL}-${index}`);
-    if (player_cell)
-    {
+    if (player_cell) {
         player_cell.classList.add(TILES.PLAYER);
     }
 }
@@ -85,15 +83,17 @@ function renderTurnCounter()
     document.getElementById('turn-counter').innerText = turn;
 }
 
-function checkTurnLimit(){
-    if(maxTurn <= turn){
+function checkTurnLimit()
+{
+    if (maxTurn <= turn) {
         noMoreTurns = true;
     }
 }
 
-function checkGameOver(){
+function checkGameOver()
+{
     checkTurnLimit();
-    if(noMoreTurns){
+    if (noMoreTurns) {
         console.log('Game over'); //make acutal endgame message or something.
     }
 }
@@ -109,69 +109,63 @@ function handleMove(direction)
 
 function move(direction, steps)
 {
-    if(!noMoreTurns){
-    let newX = playerPosition.x;
-    let newY = playerPosition.y;
-    let step = 1;
+    if (!noMoreTurns) {
+        let newX = playerPosition.x;
+        let newY = playerPosition.y;
+        let step = 1;
 
-    // This for loop makes sure that we only take one step at a time, to prevent 'jumping' over walls
-    for (let i = 0; i < steps; i++)
-    {
-        switch (direction)
-        {
-            case 'left':
-                // playerPosition.x = Math.max(0, playerPosition.x - steps); // This just looks nice!! maybe it can be used again for floats
-                newX -= step;
-                break;
-            case 'right':
-                // playerPosition.x = Math.min(gridX - 1, playerPosition.x + steps); // Even better, good concise would do again
-                newX += step;
-                break;
-            case 'up':
-                // playerPosition.y = Math.max(0, playerPosition.y - steps); // OMG can it get any better!
-                newY -= step;
-                break;
-            case 'down':
-                // playerPosition.y = Math.min(gridY - 1, playerPosition.y + steps); // Horrid please remove in the future, who even made this!!
-                newY += step;
-                break;
-            default:
-                console.error('Unknown direction:', direction);
+        // This for loop makes sure that we only take one step at a time, to prevent 'jumping' over walls
+        for (let i = 0; i < steps; i++) {
+            switch (direction) {
+                case 'left':
+                    // playerPosition.x = Math.max(0, playerPosition.x - steps); // This just looks nice!! maybe it can be used again for floats
+                    newX -= step;
+                    break;
+                case 'right':
+                    // playerPosition.x = Math.min(gridX - 1, playerPosition.x + steps); // Even better, good concise would do again
+                    newX += step;
+                    break;
+                case 'up':
+                    // playerPosition.y = Math.max(0, playerPosition.y - steps); // OMG can it get any better!
+                    newY -= step;
+                    break;
+                case 'down':
+                    // playerPosition.y = Math.min(gridY - 1, playerPosition.y + steps); // Horrid please remove in the future, who even made this!!
+                    newY += step;
+                    break;
+                default:
+                    console.error('Unknown direction:', direction);
+                    return;
+            }
+
+            // Collision detection to not go out of bounds
+            if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY) {
                 return;
+            }
+
+            // Collision detection for the obstacles
+            if (!canWalk(newY * gridX + newX)) {
+                return;
+            }
+
+            if (pickedUpKey(newY * gridX + newX)) {
+                keyPickup = true;
+            }
+
+            if (reachedGoal(newY * gridX + newX)) {
+                console.log('Level Completed');
+            }
         }
+        playerPosition.x = newX;
+        playerPosition.y = newY;
 
-        // Collision detection to not go out of bounds
-        if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY)
-        {
-            return;
-        }
-
-        // Collision detection for the obstacles
-        if (!canWalk(newY * gridX + newX))
-        {
-            return;
-        }
-
-        if (pickedUpKey(newY * gridX + newX))
-        {
-            keyPickup = true;
-        }
-
-        if (reachedGoal(newY * gridX + newX))
-        {
-            console.log('Level Completed');
-        }
-    }
-
-    playerPosition.x = newX;
-    playerPosition.y = newY;
-
-    renderPlayer();
-    turn++;
-    renderTurnCounter();
-    checkGameOver();
+        renderPlayer();
+        turn++;
+        renderTurnCounter();
+        checkGameOver();
     }
 }
+
 // #endregion
 
 
@@ -221,8 +215,7 @@ function hasTileClass(id, tileClass)
 document.addEventListener('keydown', function (event)
 {
     const step = 1; // Define step size or determine based on key
-    switch (event.key)
-    {
+    switch (event.key) {
         case 'ArrowLeft':
             move('left', step);
             break;
@@ -247,8 +240,7 @@ document.addEventListener('keydown', function (event)
 // #region Save/Load
 function save(mapID)
 {
-    if (!mapID)
-    {
+    if (!mapID) {
         console.error("Map name is required to save.");
         return;
     }
@@ -266,8 +258,7 @@ function save(mapID)
 
     // Update the map index list
     let mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
-    if (!mapIndex.includes(mapID))
-    {
+    if (!mapIndex.includes(mapID)) {
         mapIndex.push(mapID);
         localStorage.setItem(MAP_INDEX, JSON.stringify(mapIndex));
     }
@@ -279,10 +270,10 @@ function save(mapID)
  *  Right now it can only save into arrays.
  */
 
-function saveTiles(tileName, savePlaceArray) {
+function saveTiles(tileName, savePlaceArray)
+{
     let tile = document.querySelectorAll(`.${tileName}`); // Getting all the tiles with the class {tileName},
-    if (tile != null)
-    {
+    if (tile != null) {
         for (let i = 0; i < tile.length; i++) {
             savePlaceArray.push(tile[i].id.split('-')[1]);
         }
@@ -293,15 +284,13 @@ function saveTiles(tileName, savePlaceArray) {
 // As save() does most of the heavy lifting, load() is much more simple
 function load(mapID)
 {
-    if (!mapID)
-    {
+    if (!mapID) {
         console.error("Map name is required to load.");
         return;
     }
 
     const loadData = localStorage.getItem(`${MAP_INDEX}_${mapID}`);
-    if (!loadData)
-    {
+    if (!loadData) {
         console.error(`No saved data found for map: "${mapID}"`);
         return;
     }
@@ -332,8 +321,7 @@ function displaySavedMaps()
 
 function deleteMap(mapID)
 {
-    if (!mapID)
-    {
+    if (!mapID) {
         console.error("Map name is required to delete.");
         return;
     }
@@ -345,6 +333,7 @@ function deleteMap(mapID)
 
     console.log(`Map "${mapName}" deleted.`);
 }
+
 // #endregion
 
 function renderGame()
@@ -371,11 +360,9 @@ function removeTile(tileName)
 // This needs an array to iterate over
 function addTile(tileName, array)
 {
-    for (let i = 0; i < array.length; i++)
-    {
+    for (let i = 0; i < array.length; i++) {
         let cell = document.getElementById(`${TILES.CELL}-${array[i]}`);
-        if (cell)
-        {
+        if (cell) {
             cell.classList.add(tileName);
         }
     }
@@ -384,9 +371,9 @@ function addTile(tileName, array)
 function resetAllSavedMaps()
 {
     localStorage.removeItem(MAP_INDEX);
-    playerPosition = { x: 0, y: 0 };
+    playerPosition = {x: 0, y: 0};
     keyPickup = false;
-    gameData = { player: [], walls: [], keys: [], doors: [], goal: [] };
+    gameData = {player: [], walls: [], keys: [], doors: [], goal: []};
     renderGame();
     renderPlayer();
     turn = 1;
@@ -412,24 +399,24 @@ function loadLevel(specifiedId)
 {
     //fetch('../json/level-layout.json') // Find the location of the json file
     fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
-    .then(response => response.json())
-    .then(info =>
-        {            
-        const FILTEREDITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
-        
-        if(FILTEREDITEM) // Take the json and read/use the data
+        .then(response => response.json())
+        .then(info =>
         {
-            gridX = FILTEREDITEM.x; 
-            gridY = FILTEREDITEM.y; 
+            const FILTEREDITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
 
-            // Setting the Grid variables dynamically in CSS
-            document.documentElement.style.setProperty('--y', gridX);
-            document.documentElement.style.setProperty('--x', gridY);
+            if (FILTEREDITEM) // Take the json and read/use the data
+            {
+                gridX = FILTEREDITEM.x;
+                gridY = FILTEREDITEM.y;
 
-            GRID_ELEMENT.insertAdjacentHTML('beforeend', FILTEREDITEM.layout); // Print title text as a 'h2'
-            renderPlayer();
-        }
-        });       
+                // Setting the Grid variables dynamically in CSS
+                document.documentElement.style.setProperty('--y', gridX);
+                document.documentElement.style.setProperty('--x', gridY);
+
+                GRID_ELEMENT.insertAdjacentHTML('beforeend', FILTEREDITEM.layout); // Print title text as a 'h2'
+                renderPlayer();
+            }
+        });
 }
 
 
