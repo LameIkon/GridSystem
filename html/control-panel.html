@@ -1,37 +1,55 @@
-<div class="controlpanel-part" id="controlpanel-part1">
-    <div class="controlpanel-card" id="controlpanel-card1">
-        <div class="controlpanel-item" id="moveLeft">
-            MoveLeft <span><input type="text" class="item-input" placeholder="var"></input></span>
-            <button class="run-button" id="run-left"><div class="run-symbol" id="run-symbol-left"></div></button>
-        </div>
-    </div>  
-    <div class="controlpanel-card" id="controlpanel-card2">
-        <div class="controlpanel-item" id="moveRight">
-            MoveRight <span><input type="text" class="item-input" placeholder="var"></input></span>
-            <button class="run-button" id="run-right"><div class="run-symbol" id="run-symbol-right"></div></button>
+<div class="control-panel" id="control-buttons">
+    <div class="cards">
+        <div class="functions">
+            MoveLeft
+            <span><input type="text" class="function-input-field" placeholder="var"></span>
+            <button class="run-button" id="run-left">
+                <div class="run-symbol"></div>
+            </button>
         </div>
     </div>
-    <div class="controlpanel-card" id="controlpanel-card3">
-        <div class="controlpanel-item" id="moveUp">
-            MoveUp <span><input type="text" class="item-input" placeholder="var"></input></span>
-            <button class="run-button" id="run-up"><div class="run-symbol" id="run-symbol-up"></div></button>
+    <div class="cards">
+        <div class="functions">
+            MoveRight
+            <span><input type="text" class="function-input-field" placeholder="var"></span>
+            <button class="run-button" id="run-right">
+                <div class="run-symbol"></div>
+            </button>
         </div>
     </div>
-    <div class="controlpanel-card" id="controlpanel-card4">
-        <div class="controlpanel-item" id="moveDown">
-            MoveDown <span><input type="text" class="item-input" placeholder="var"></input></span>
-            <button class="run-button" id="run-down"><div class="run-symbol" id="run-symbol-down"></div></button>
+    <div class="cards">
+        <div class="functions">
+            MoveUp
+            <span><input type="text" class="function-input-field" placeholder="var"></span>
+            <button class="run-button" id="run-up">
+                <div class="run-symbol"></div>
+            </button>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="functions">
+            MoveDown
+            <span><input type="text" class="function-input-field" placeholder="var"></span>
+            <button class="run-button" id="run-down">
+                <div class="run-symbol"></div>
+            </button>
         </div>
     </div>
 </div>
 
-<div class="controlpanel-part" id="controlpanel-part2">
-    <label for="distance-input">Distance:</label>
+<div class="control-panel" id="variable-container">
+    <label for="distance-input">
+        Distance:
+    </label>
     <input type="number" id="distance-input" placeholder="Enter a number">
-    <button id="submit-distance">Set Distance</button>
+    <button id="submit-distance">
+        Set Distance
+    </button>
 </div>
-
-<div id="controls">
-<p>Turn: <span id="turn-counter">1</span></p>
-<!-- Directional buttons with input fields for steps -->
+<div class="control-panel" id="turn-counter-container">
+    <p>
+        Turn:
+        <span id="turn-counter">1</span>
+    </p>
+    <!-- Directional buttons with input fields for steps -->
 </div>

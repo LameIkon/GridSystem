@@ -1,14 +1,11 @@
-:root{
-    /*controlpanel*/
+:root {
     --card-width: 220px;
     --card-height: 144px;
     --part1-width: calc(3 * var(--card-width) + 40px);
     --part1-height: calc(2 * var(--card-height) + 20px);
 }
 
-/*controlpanel*/
-
-#controlpanel {
+#control-panel-container {
     font-family: corbel, sans-serif;
     position: relative;
     display: flex;
@@ -19,62 +16,48 @@
     height: calc(var(--part1-height) + 44px);
     border-radius: 24px;
     background-color: lightgoldenrodyellow;
-} 
-
-.controlpanel-card {
-    position: absolute; 
-    width: var(--card-width);
-    height: var(--card-height);
-    border-radius: 12px;
-    background-color: aliceblue;
 }
 
-/*controlpanel part*/
-
-.controlpanel-part {
-    position: absolute; 
-    border-radius: 12px;
+.control-panel {
+    position: absolute;
 }
 
-#controlpanel-part1 {
+#control-buttons {
     left: 26px;
     top: 22px;
     width: var(--part1-width);
     height: var(--part1-height);
 }
 
-#controlpanel-part2 {
-    right: 26px;
-    top: 22px;
-    width: 320px;
-    height: var(--part1-height);
-    background-color: lightgray
+.cards {
+    position: absolute;
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: 12px;
+    background-color: aliceblue;
 }
 
-/*controlpanel card*/
 
-#controlpanel-card1 {
+.cards:nth-child(1) {
     top: calc(var(--card-height) / 2 + 10px);
 }
 
-#controlpanel-card2 {
+.cards:nth-child(2) {
     left: calc(2 * var(--card-width) + 40px);
     top: calc(var(--card-height) / 2 + 10px);
 }
 
-#controlpanel-card3 {
+.cards:nth-child(3) {
     left: calc(var(--card-width) + 20px);
-
 }
 
-#controlpanel-card4 {
+.cards:nth-child(4) {
     left: calc(var(--card-width) + 20px);
     top: calc(var(--card-height) + 20px);
 }
 
-/*controlpanel item*/
 
-.controlpanel-item {
+.functions {
     position: absolute;
     width: 150px;
     height: 50px;
@@ -90,8 +73,7 @@
     background-color: white;
 }
 
-
-.item-input {
+.function-input-field {
     font-family: corbel, sans-serif;
     width: 24px;
     text-align: center;
@@ -123,10 +105,19 @@
     left: 54%;
     top: 50%;
     transform: translate(-50%, -50%);
-	width: 0;
-	height: 0;
+    width: 0;
+    height: 0;
     border-left: 22px solid white;
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     pointer-events: none;
+}
+
+#variable-container {
+    right: 26px;
+    top: 22px;
+    width: 320px;
+    height: var(--part1-height);
+    background-color: lightgray;
+    border-radius: 12px;
 }

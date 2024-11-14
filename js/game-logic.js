@@ -410,7 +410,7 @@ function levelSelecting(mapID)
     document.getElementById('controls').style.display = 'block';
     load(mapID)
     deleteGrid()
-    LoadLevel(mapID);
+    loadLevel(mapID);
     //initializeGrid(10, 5);
 }
 

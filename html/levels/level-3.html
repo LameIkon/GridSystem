@@ -15,39 +15,33 @@
 <div id="header-container"></div>
 
 <!-- Main -->
-<main>
-    <div id="main" class="element hidden">
-        <!-- Heading & Return Button -->
-        <div id="main-heading">
-            <h1>Bane 3</h1>
-            <button id="return-button" onclick="navigateToPage('level-selector')">
-                Gå tilbage
+<main id="main" class="element hidden">
+    <div class="column left" id="main-heading">
+        <h1>Bane 3</h1>
+        <div id="skip-buttons">
+            <button>
+                Næste bane
+            </button>
+            <button>
+                Forrige bane
             </button>
         </div>
-
-        <!-- Mission Border -->
+        <button id="return-button" onclick="navigateToPage('level-selector')">
+            Gå tilbage
+        </button>
+    </div>
+    <div class="column right" id="container">
         <div id="mission-box">
-            <p id="mission">
-                Mission
-            </p>
-            <p id="mission-description">
-                Nå målet ved at indsætte værdier i metode kaldet.
-            </p>
         </div>
+        <div id="game-container">
+            <div id="grid"></div>
+        </div>
+        <div id="control-panel-container"></div>
     </div>
-
-    <!-- Grid -->
-    <div id="game-container">
-        <div id="grid"></div>
-    </div>
-
-
-    <!--Control panel-->
-    <div id="controlpanel"> </div>
 </main>
 <script src="../../js/navigate.js"></script>
-<script src="../../js/game-logic.js"></script>
 <script src="../../js/level-info.js"></script>
+<script src="../../js/game-logic.js"></script>
 <script src="../../js/control-buttons.js"></script>
 </body>
 </html>

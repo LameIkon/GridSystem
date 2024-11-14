@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function ()
     loadHTML('header-container', '../header.html');
     loadHTML('header-container', 'header.html');
     loadHTML('header-container', '../html/header.html');
-    loadHTML('controlpanel', '../control-panel.html')
+    loadHTML('control-panel-container', '../control-panel.html')
 });
 
 
