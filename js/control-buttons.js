@@ -44,7 +44,8 @@ function buttonEffects()
             e.target.style.background = "hsl(44 95% 70%)";
         });
     }
- }
+}
+
 
 
 function buttonMove() {
@@ -54,6 +55,7 @@ function buttonMove() {
         buttons[i].addEventListener("click", buttonMovement);
     }
 }
+
 
 function buttonMovement(event)
 {
