@@ -25,15 +25,15 @@ body {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(var(--y), 50px); 
-    grid-template-rows: repeat(var(--x), 50px);    
+    grid-template-columns: repeat(var(--y), 50px);
+    grid-template-rows: repeat(var(--x), 50px);
     gap: 1px;
     background-color: #444;
 }
 
 #editor-container{
     display: grid;
-    grid-template-columns: repeat(var(--g), 50px);   
+    grid-template-columns: repeat(var(--g), 50px);
     gap: 1px;
     background-color: #444;
 }
@@ -47,14 +47,14 @@ body {
 
 .player {
     background-color: blue;
-} 
+}
 
 .wall{
     background-color: grey;
 }
 
 .door{
-    background-color: purple; 
+    background-color: purple;
 }
 
 .key{
@@ -77,10 +77,10 @@ body {
     height: calc(var(--part1-height) + 44px);
     border-radius: 24px;
     background-color: white;
-} 
+}
 
 .controlpanel-card {
-    position: absolute; 
+    position: absolute;
     width: var(--card-width);
     height: var(--card-height);
     border-radius: 12px;
@@ -90,7 +90,7 @@ body {
 /*controlpanel part*/
 
 .controlpanel-part {
-    position: absolute; 
+    position: absolute;
     border-radius: 12px;
 }
 

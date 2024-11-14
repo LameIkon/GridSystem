@@ -9,11 +9,12 @@
 /*controlpanel*/
 
 #controlpanel {
+    font-family: corbel, sans-serif;
     position: relative;
     display: flex;
     margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     width: 1200px;
     height: calc(var(--part1-height) + 44px);
     border-radius: 24px;
@@ -91,6 +92,7 @@
 
 
 .item-input {
+    font-family: corbel, sans-serif;
     width: 24px;
     text-align: center;
     border-radius: 8px;
