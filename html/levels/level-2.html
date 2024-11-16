@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../css/grid.css">
     <script src="../../js/load-content.js" defer></script>
 </head>
-<body onload="displayLevelInfo(2), loadLevel(2)">
+<body onload="displayLevelInfo(1), loadLevel(1)">
 <!-- Header -->
 <div id="header-container"></div>
 
@@ -18,12 +18,12 @@
 <main id="main" class="element hidden">
     <div class="column left" id="main-heading">
         <h1>Bane 2</h1>
-        <div id="skip-buttons">
-            <button>
-                Næste bane
-            </button>
-            <button>
+        <div id="skip-button-container">
+            <button class="skip-buttons back" onclick="navigateToLevel(1)">
                 Forrige bane
+            </button>
+            <button class="skip-buttons forward" onclick="navigateToLevel(3)">
+                Næste bane
             </button>
         </div>
         <button id="return-button" onclick="navigateToPage('level-selector')">

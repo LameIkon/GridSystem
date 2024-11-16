@@ -1,5 +1,5 @@
-:root{
-    --cell-size: 75px;
+:root {
+    --cell-size: 65px;
     --gap: 2px;
 }
 
@@ -16,16 +16,16 @@
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(var(--y), var(--cell-size)); 
-    grid-template-rows: repeat(var(--x), var(--cell-size));    
+    grid-template-columns: repeat(var(--y), var(--cell-size));
+    grid-template-rows: repeat(var(--x), var(--cell-size));
     gap: var(--gap);
     background-color: #444;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-#editor-container{
+#editor-container {
     display: grid;
-    grid-template-columns: repeat(var(--g), var(--cell-size));   
+    grid-template-columns: repeat(var(--g), var(--cell-size));
     gap: var(--gap);
     background-color: #444;
 }
@@ -39,21 +39,21 @@
 
 .player {
     background-color: blue;
-} 
+}
 
-.wall{
+.wall {
     background-color: grey;
 }
 
-.door{
-    background-color: purple; 
+.door {
+    background-color: purple;
 }
 
-.key{
+.key {
     background-color: yellow;
 }
 
-.goal{
+.goal {
     background-color: green;
 }
 

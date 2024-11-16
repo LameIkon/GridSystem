@@ -1,4 +1,4 @@
-
+/*
 function shadowPalette(elevation = "medium", color = "0 0% 63%")
 {
     if (elevation === "low")
@@ -13,16 +13,16 @@ function shadowPalette(elevation = "medium", color = "0 0% 63%")
 
 function createShadows()
 {
-    let controlpanelStyle = document.getElementById("control-panel-container");
-    for (let i = 0; i < controlpanelStyle.length; i++)
+    let controlPanelStyle = document.getElementById("control-panel-container");
+    for (let i = 0; i < controlPanelStyle.length; i++)
     {
-        controlpanelStyle[i].style.boxShadow = shadowPalette("low", "0 0% 51%");
+        controlPanelStyle[i].style.boxShadow = shadowPalette("low", "0 0% 51%");
     }
 
-    let controlpanelCard = document.querySelectorAll(".cards");
-    for (let i = 0; i < controlpanelCard.length; i++)
+    let controlPanelCard = document.querySelectorAll(".cards");
+    for (let i = 0; i < controlPanelCard.length; i++)
     {
-        controlpanelCard[i].style.boxShadow = shadowPalette("medium", "0 0% 63%");
+        controlPanelCard[i].style.boxShadow = shadowPalette("medium", "0 0% 63%");
     }
 }
 
@@ -45,8 +45,7 @@ function buttonEffects()
         });
     }
 }
-
-
+*/
 
 function buttonMove() {
     let buttons = document.querySelectorAll(".run-button");
@@ -56,21 +55,17 @@ function buttonMove() {
     }
 }
 
-
-function buttonMovement(event)
-{
+function buttonMovement(event) {
     let dir = event.srcElement.id.split('-')[1]; // Take the id of the button element splitting it at take the second elemet, which is either 'left', 'right', 'up' or 'down'
     let steps = event.srcElement.parentNode.childNodes[1].childNodes[0].value; // Get the source elements parent then the span child object then the child input and the value of it. Quite hard coded but it works.
     move(dir, steps);
 }
 
-
 setTimeout(buttonsLoad, 50);
 
-function buttonsLoad()
-{
-    createShadows();
-    buttonEffects();
+function buttonsLoad() {
+    /* createShadows();
+    buttonEffects(); */
     renderTurnCounter();
     buttonMove();
 }

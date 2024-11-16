@@ -8,7 +8,7 @@ let gridY; // rows
 let playerPosition = {x: 0, y: 0}; // Starting at top-left corner
 let turn = 1;
 
-let maxTurn = 10;
+let maxTurn = 25;
 let noMoreTurns = false;
 
 // #region Names for objects in the scene
@@ -81,6 +81,7 @@ function renderPlayer()
 function renderTurnCounter()
 {
     document.getElementById('turn-counter').innerText = turn;
+    document.getElementById('max-turn').innerText = maxTurn.toString();
 }
 
 function checkTurnLimit()
@@ -421,7 +422,7 @@ function deleteGrid()
 
 function loadLevel(specifiedId)
 {
-    //fetch('../json/level-layout.json') // Find the location of the json file
+    //fetch('../../json/level-layout.json') // Find the location of the json file
     fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
         .then(response => response.json())
         .then(info =>

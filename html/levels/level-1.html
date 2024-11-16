@@ -18,12 +18,12 @@
 <main id="main" class="element hidden">
     <div class="column left" id="main-heading">
         <h1>Bane 1</h1>
-        <div id="skip-buttons">
-            <button>
-                Næste bane
+        <div id="skip-button-container">
+            <button class="skip-buttons back" onclick="navigateToLevel(4)">
+                Forrige
             </button>
-            <button>
-                Forrige bane
+            <button class="skip-buttons forward" onclick="navigateToLevel(2)">
+                Næste
             </button>
         </div>
         <button id="return-button" onclick="navigateToPage('level-selector')">

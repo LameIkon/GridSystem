@@ -6,7 +6,7 @@ function displayLevelInfo(specifiedId)
 // Clear the content before adding new content
 INFOLIST.innerHTML = '';
 
-//fetch('../json/level-info.json') // Find the location of the json file - Needs a live Server
+//fetch('../../json/level-info.json') // Find the location of the json file - Needs a live Server
 fetch('https://johanpedersen11.github.io/jsonData/level-info.json') // Find the location of the json file
     .then(response => response.json())
     .then(info =>

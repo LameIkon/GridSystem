@@ -1,6 +1,6 @@
 :root {
-    --card-width: 220px;
-    --card-height: 144px;
+    --card-width: 180px;
+    --card-height: 100px;
     --part1-width: calc(3 * var(--card-width) + 40px);
     --part1-height: calc(2 * var(--card-height) + 20px);
 }
@@ -9,13 +9,15 @@
     font-family: corbel, sans-serif;
     position: relative;
     display: flex;
-    margin-top: 30px;
-    /* margin-left: auto;
-    margin-right: auto; */
-    width: 1200px;
+    background-color: #f2f2f3;
+    border: 8px solid #d9d9d9;
+    border-radius: 42px;
+    box-shadow:
+            0 0 35px rgba(175, 175, 175, 20%),
+            inset 0 0 15px rgba(175, 175, 175, 15%);
+    margin-top: 35px;
+    width: 1000px;
     height: calc(var(--part1-height) + 44px);
-    border-radius: 24px;
-    background-color: lightgoldenrodyellow;
 }
 
 .control-panel {
@@ -23,7 +25,6 @@
 }
 
 #control-buttons {
-    left: 26px;
     top: 22px;
     width: var(--part1-width);
     height: var(--part1-height);
@@ -34,7 +35,7 @@
     width: var(--card-width);
     height: var(--card-height);
     border-radius: 12px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
 }
 
 
@@ -84,6 +85,24 @@
     border-color: black;
 }
 
+
+.run-button {
+    font-family: corbel-bold, sans-serif;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, 16px);
+    background-color: #58be6a;
+    width: 46px;
+    height: 32px;
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/*
 .run-button {
     position: absolute;
     left: 50%;
@@ -112,6 +131,7 @@
     border-bottom: 11px solid transparent;
     pointer-events: none;
 }
+*/
 
 #variable-container {
     right: 26px;

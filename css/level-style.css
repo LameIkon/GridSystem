@@ -1,11 +1,15 @@
 :root {
     --transition-time-launch: 500ms;
+    --transition-time-skip-buttons: 350ms;
 }
 
 #main {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: center;
+    background-color: #f2f2f3;
+    border: 10px solid #d9d9d9;
+    border-radius: 50px;
 }
 
 .column {
@@ -33,13 +37,33 @@
     margin: 0 0 0 0;
 }
 
-#container {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    margin-top: 0;
+#skip-button-container {
+
 }
+
+.skip-buttons {
+    font-family: corbel-bold, sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    width: 90px;
+    height: 50px;
+    transition: all var(--transition-time-skip-buttons) ease;
+}
+
+.skip-buttons:hover {
+    transform: scale(1.1);
+}
+
+.back {
+    background-color: #be5858;
+}
+
+.forward {
+    background-color: #58be6a;
+}
+
 
 #return-button {
     font-family: klavika-bold, sans-serif;
@@ -60,6 +84,14 @@
     box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    margin-top: 0;
+}
+
 #mission-box {
     background-color: #f2f2f3;
     border: 6px solid #d9d9d9;
@@ -72,22 +104,23 @@
     font-family: klavika-bold, sans-serif;
     font-size: 32px;
     color: #000000;
+    margin-top: 20px;
 }
 
 #mission-description {
     font-family: corbel, sans-serif;
     font-size: 20px;
     color: rgb(0, 0, 0);
+    margin-top: -10px;
 }
 
 .hidden {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-200px);
-    transition:
-            opacity var(--transition-time-launch) ease,
-            filter var(--transition-time-launch) ease,
-            transform var(--transition-time-launch) ease;
+    transition: opacity var(--transition-time-launch) ease,
+    filter var(--transition-time-launch) ease,
+    transform var(--transition-time-launch) ease;
 }
 
 .show {
