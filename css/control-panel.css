@@ -9,8 +9,10 @@
     font-family: corbel, sans-serif;
     position: relative;
     display: flex;
-    background-color: #f2f2f3;
-    border: 8px solid #d9d9d9;
+    /*
+    background-color: #eeeeee;
+    border: 6px solid #d9d9d9;
+     */
     border-radius: 42px;
     box-shadow:
             0 0 35px rgba(175, 175, 175, 20%),

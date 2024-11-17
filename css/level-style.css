@@ -7,35 +7,49 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    background-color: #f2f2f3;
-    border: 10px solid #d9d9d9;
-    border-radius: 50px;
 }
 
-.column {
-    float: left;
-    padding: 10px;
-}
-
-.left {
-    width: 25%;
-}
-
-.right {
-    width: 75%;
-}
-
-#main-heading {
+#container-1 {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    margin: 0 -300px 0 0;
+    align-items: center;
+    margin-top: 0;
 }
 
-#main-heading h1 {
-    font-size: 70px;
-    margin: 0 0 0 0;
+#container-2 {
+    display: flex;
+    /* flex-direction: column;
+    align-items: center; */
+    margin-top: 40px;
 }
+
+#top {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#mission-box {
+    background-color: transparent;
+    border: 4px solid #d9d9d9;
+    border-radius: 20px;
+    width: 550px;
+    padding: 0 0 0 20px;
+}
+
+#mission {
+    font-family: klavika-bold, sans-serif;
+    color: var(--signature-color);
+    font-size: 48px;
+    margin-top: 10px;
+}
+
+#mission-description {
+    font-family: corbel, sans-serif;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-top: -30px;
+}
+
 
 #skip-button-container {
 
@@ -46,9 +60,9 @@
     font-size: 20px;
     color: #ffffff;
     border: none;
-    border-radius: 10px;
-    width: 90px;
-    height: 50px;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
     transition: all var(--transition-time-skip-buttons) ease;
 }
 
@@ -56,14 +70,13 @@
     transform: scale(1.1);
 }
 
-.back {
-    background-color: #be5858;
+.previous {
+    background-color: #c0c0c0;
 }
 
-.forward {
-    background-color: #58be6a;
+.next {
+    background-color: #c0c0c0;
 }
-
 
 #return-button {
     font-family: klavika-bold, sans-serif;
@@ -84,34 +97,19 @@
     box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
 }
 
-#container {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    margin-top: 0;
-}
-
-#mission-box {
+#game {
     background-color: #f2f2f3;
-    border: 6px solid #d9d9d9;
-    border-radius: 20px;
-    width: 550px;
-    padding: 0 0 0 20px;
+    padding: 20px;
+    border: 10px solid #d9d9d9;
+    border-radius: 50px;
 }
 
-#mission {
-    font-family: klavika-bold, sans-serif;
-    font-size: 32px;
-    color: #000000;
-    margin-top: 20px;
+#turn-counter-container {
+
 }
 
-#mission-description {
-    font-family: corbel, sans-serif;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    margin-top: -10px;
+#turn-counter-container p {
+
 }
 
 .hidden {
