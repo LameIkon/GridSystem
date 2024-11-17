@@ -1,5 +1,5 @@
 :root {
-    --cell-size: 65px;
+    --cell-size: 58px;
     --gap: 2px;
 }
 
@@ -20,6 +20,7 @@
     grid-template-rows: repeat(var(--x), var(--cell-size));
     gap: var(--gap);
     background-color: #444;
+    outline: 5px solid #444;
 }
 
 #editor-container {

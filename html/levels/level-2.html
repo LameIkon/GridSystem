@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thee Robot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../css/global-style.css">
     <link rel="stylesheet" href="../../css/level-style.css">
     <link rel="stylesheet" href="../../css/control-panel.css">
@@ -16,27 +17,40 @@
 
 <!-- Main -->
 <main id="main" class="element hidden">
-    <div class="column left" id="main-heading">
-        <h1>Bane 2</h1>
-        <div id="skip-button-container">
-            <button class="skip-buttons previous" onclick="navigateToLevel(1)">
-                Forrige bane
-            </button>
-            <button class="skip-buttons next" onclick="navigateToLevel(3)">
-                Næste bane
-            </button>
+    <div id="container-1">
+        <div id="top">
+            <div id="mission-container">
+                <div id="mission-box">
+                </div>
+                <div id="skip-button-container">
+                    <button class="skip-buttons previous" onclick="navigateToLevel(1)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="skip-buttons next" onclick="navigateToLevel(3)">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <button id="return-button" onclick="navigateToPage('level-selector')">
+                    Gå tilbage
+                </button>
+            </div>
         </div>
-        <button id="return-button" onclick="navigateToPage('level-selector')">
-            Gå tilbage
-        </button>
-    </div>
-    <div class="column right" id="container">
-        <div id="mission-box">
+        <div id="game">
+            <div id="turn-counter-container">
+                <p>
+                    Turn:
+                    <span id="turn-counter"></span>
+                    /
+                    <span id="max-turn"></span>
+                </p>
+            </div>
+            <div id="game-container">
+                <div id="grid"></div>
+            </div>
+            <div id="control-panel-container"></div>
         </div>
-        <div id="game-container">
-            <div id="grid"></div>
-        </div>
-        <div id="control-panel-container"></div>
     </div>
 </main>
 <script src="../../js/navigate.js"></script>

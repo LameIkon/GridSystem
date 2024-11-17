@@ -9,14 +9,9 @@
     font-family: corbel, sans-serif;
     position: relative;
     display: flex;
-    /*
-    background-color: #eeeeee;
-    border: 6px solid #d9d9d9;
-     */
-    border-radius: 42px;
-    box-shadow:
-            0 0 35px rgba(175, 175, 175, 20%),
-            inset 0 0 15px rgba(175, 175, 175, 15%);
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
     margin-top: 35px;
     width: 1000px;
     height: calc(var(--part1-height) + 44px);
@@ -90,18 +85,31 @@
 
 .run-button {
     font-family: corbel-bold, sans-serif;
+    font-size: 17px;
     color: #ffffff;
     position: absolute;
     left: 50%;
     top: 100%;
-    transform: translate(-50%, 16px);
+    transform: translate(-50%, 12px);
     background-color: #58be6a;
-    width: 46px;
-    height: 32px;
+    width: 49px;
+    height: 34px;
     border: none;
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;
+    transition:
+            color 250ms ease,
+            background-color 225ms ease;
+}
+
+.run-button:hover {
+    color: #ffffff;
+    background-color: #7dd28c;
+}
+
+.run-button:active {
+    background-color: #c4803c;
 }
 
 /*

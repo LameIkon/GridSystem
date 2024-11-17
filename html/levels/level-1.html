@@ -19,19 +19,23 @@
 <main id="main" class="element hidden">
     <div id="container-1">
         <div id="top">
-            <div id="mission-box">
+            <div id="mission-container">
+                <div id="mission-box">
+                </div>
+                <div id="skip-button-container">
+                    <button class="skip-buttons previous" onclick="navigateToLevel(4)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button class="skip-buttons next" onclick="navigateToLevel(2)">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
-            <div id="skip-button-container">
-                <button class="skip-buttons previous" onclick="navigateToLevel(4)">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                <button class="skip-buttons next" onclick="navigateToLevel(2)">
-                    <i class="fa-solid fa-arrow-right"></i>
+            <div>
+                <button id="return-button" onclick="navigateToPage('level-selector')">
+                    Gå tilbage
                 </button>
             </div>
-            <button id="return-button" onclick="navigateToPage('level-selector')">
-                Gå tilbage
-            </button>
         </div>
         <div id="game">
             <div id="turn-counter-container">
@@ -41,7 +45,6 @@
                     /
                     <span id="max-turn"></span>
                 </p>
-                <!-- Directional buttons with input fields for steps -->
             </div>
             <div id="game-container">
                 <div id="grid"></div>

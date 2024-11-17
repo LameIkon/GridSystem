@@ -1,6 +1,6 @@
 :root {
     --transition-time-launch: 500ms;
-    --transition-time-skip-buttons: 350ms;
+    --transition-time-skip-buttons: 150ms;
 }
 
 #main {
@@ -28,10 +28,14 @@
     margin-bottom: 20px;
 }
 
-#mission-box {
+#mission-container {
+    display: flex;
     background-color: transparent;
-    border: 4px solid #d9d9d9;
+    /* border: 4px solid #d9d9d9; */
     border-radius: 20px;
+}
+
+#mission-box {
     width: 550px;
     padding: 0 0 0 20px;
 }
@@ -52,7 +56,7 @@
 
 
 #skip-button-container {
-
+    margin: 10px 10px 0 0;
 }
 
 .skip-buttons {
@@ -61,6 +65,7 @@
     color: #ffffff;
     border: none;
     border-radius: 100%;
+    margin: 0 5px;
     width: 35px;
     height: 35px;
     transition: all var(--transition-time-skip-buttons) ease;
@@ -98,10 +103,11 @@
 }
 
 #game {
-    background-color: #f2f2f3;
-    padding: 20px;
-    border: 10px solid #d9d9d9;
-    border-radius: 50px;
+    background-color: #f3f3f3;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    box-shadow: 8px 8px 0 rgba(00,00,00,100%);
+    padding: 0 16px 16px 16px;
 }
 
 #turn-counter-container {
@@ -109,7 +115,10 @@
 }
 
 #turn-counter-container p {
-
+    font-family: klavika-medium, sans-serif;
+    font-size: 28px;
+    color: #be3c3c;
+    margin-top: 2vh;
 }
 
 .hidden {
@@ -126,4 +135,3 @@
     filter: blur(0);
     transform: translateX(0);
 }
-
