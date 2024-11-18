@@ -63,24 +63,27 @@
     font-family: corbel-bold, sans-serif;
     font-size: 20px;
     color: #ffffff;
+    background-color: #c0c0c0;
     border: none;
     border-radius: 100%;
     margin: 0 5px;
     width: 35px;
     height: 35px;
+    cursor: pointer;
     transition: all var(--transition-time-skip-buttons) ease;
 }
 
 .skip-buttons:hover {
     transform: scale(1.1);
+    background-color: #a9a9a9;
 }
 
 .previous {
-    background-color: #c0c0c0;
+
 }
 
 .next {
-    background-color: #c0c0c0;
+
 }
 
 #return-button {
