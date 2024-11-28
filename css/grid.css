@@ -37,9 +37,6 @@
     position: relative;
 }
 
-.player {
-    background-color: blue;
-}
 
 .wall {
     background-color: grey;
@@ -57,3 +54,6 @@
     background-color: green;
 }
 
+.player {
+    background-color: blue;
+}
