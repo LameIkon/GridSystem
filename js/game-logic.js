@@ -3,12 +3,12 @@ const PLAYER = document.getElementsByClassName('player');
 const MAP_INDEX = 'map_index'; // the place where it will save maps.
 let keyPickup = false;
 
-let gridX; // columns
-let gridY; // rows
-let playerPosition = {x: 0, y: 0}; // Starting at top-left corner
-let turn = 1;
+let gridX; // columns. look into level-layout.js
+let gridY; // rows. look into level-layout.js
+let playerPosition; // LoadLevel controls this. look into level-layout.js
+let turn = 0;
 
-let maxTurn = 25;
+let maxTurn; // Load level controls this. look into level-layout.js
 let noMoreTurns = false;
 
 // #region Names for objects in the scene
@@ -49,6 +49,34 @@ function initializeGrid(x, y)
     createGrid();
 }
 
+function loadLevel(specifiedId)
+{
+    fetch('../../json/level-layout.json') // Find the location of the json file
+    //fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
+        .then(response => response.json())
+        .then(info =>
+        {
+            const FILTEREDITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
+
+            if (FILTEREDITEM) // Take the json and read/use the data
+            {
+                gridX = FILTEREDITEM.x;
+                gridY = FILTEREDITEM.y;
+                maxTurn = FILTEREDITEM.maxTurns;
+                playerPosition = FILTEREDITEM.playerPosition;
+
+                // Setting the Grid variables dynamically in CSS
+                document.documentElement.style.setProperty('--y', gridX);
+                document.documentElement.style.setProperty('--x', gridY);
+
+                GRID_ELEMENT.insertAdjacentHTML('beforeend', FILTEREDITEM.layout); // Print title text as a 'h2'
+                
+                // Run scripts
+                renderPlayer();
+                renderTurnCounter();
+            }
+        });
+}
 
 function createGrid()
 {
@@ -163,8 +191,8 @@ function move(direction, steps)
 
         renderPlayer();
         turn++;
-        renderTurnCounter();
         checkGameOver();
+        renderTurnCounter();
     }
 }
 
@@ -421,28 +449,6 @@ function deleteGrid()
     GRID_ELEMENT.innerHTML = '';
 }
 
-function loadLevel(specifiedId)
-{
-    fetch('../../json/level-layout.json') // Find the location of the json file
-    //fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
-        .then(response => response.json())
-        .then(info =>
-        {
-            const FILTEREDITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
 
-            if (FILTEREDITEM) // Take the json and read/use the data
-            {
-                gridX = FILTEREDITEM.x;
-                gridY = FILTEREDITEM.y;
-
-                // Setting the Grid variables dynamically in CSS
-                document.documentElement.style.setProperty('--y', gridX);
-                document.documentElement.style.setProperty('--x', gridY);
-
-                GRID_ELEMENT.insertAdjacentHTML('beforeend', FILTEREDITEM.layout); // Print title text as a 'h2'
-                renderPlayer();
-            }
-        });
-}
 
 
