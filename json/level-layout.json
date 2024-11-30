@@ -1,9 +1,11 @@
 [
     {
         "levelId": 1,
-        "y": 3,
-        "x": 5,
         "maxTurns": 5,
+        "gridSize":{
+            "y": 3,
+            "x": 5
+        },
         "playerPosition":
             {
                 "x": 0,
@@ -14,9 +16,11 @@
     },
     {
         "levelId": 2,
-        "y": 3,
-        "x": 5,
         "maxTurns": 3,
+        "gridSize":{
+            "y": 3,
+            "x": 5
+        },
         "playerPosition":
         {
             "x": 1,
@@ -26,9 +30,11 @@
     },
     {
         "levelId": 3,
-        "y": 5,
-        "x": 7,
         "maxTurns": 25,
+        "gridSize":{
+            "y": 5,
+            "x": 7
+        },
         "playerPosition":
         {
             "x": 0,
@@ -38,9 +44,11 @@
     },
     {
         "levelId": 4,
-        "y": 5,
-        "x": 7,
         "maxTurns": 25,
+        "gridSize":{
+            "y": 5,
+            "x": 7
+        },
         "playerPosition":
         {
             "x": 0,

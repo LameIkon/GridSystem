@@ -12,6 +12,8 @@
     display: flex;
     /* justify-content: center; */
     margin-top: 20px;
+    width: 100%;
+    align-items: flex-start; 
 }
 
 #grid {

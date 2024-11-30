@@ -2,17 +2,64 @@
     {
         "levelId": 1,
         "title": "Bane 1",
-        "body": "Nå målet ved at indsætte værdier ind i metodekaldene."
+        "body": "Nå målet ved at indsætte værdier ind i metodekaldene.",
+        "theoryTitle": "Overskrift",
+        "theoryBox": 
+        {
+            "sentenceOne": "test1",
+            "sentenceTwo": "test2",
+            "sentenceThree": "test3"
+        }
     },
     {
         "levelId": 2,
         "title": "Bane 2",
-        "body": "Description 2"
+        "body": "Description 2",
+        "theoryTitle": "Overskrift",
+        "theoryBox": 
+        {
+            "sentenceOne": "test1",
+            "sentenceTwo": "test2",
+            "sentenceThree": "test3"
+        }
     },
     {
         "levelId": 3,
         "title": "Bane 3",
-        "body": "Description 3"
+        "body": "Description 3",
+        "theoryTitle": "Overskrift",
+        "theoryBox": 
+        {
+            "sentenceOne": "test1",
+            "sentenceTwo": "test2",
+            "sentenceThree": "test3"
+        }
+    },
+    {
+        "levelId": 4,
+        "title": "Bane 4",
+        "body": "Description 4",
+        "theoryTitle": "Overskrift",
+        "theoryBox": 
+        {
+            "sentenceOne": "test1",
+            "sentenceTwo": "test2",
+            "sentenceThsree": "test3",
+            "sentenceThree1": "test3",
+            "sentenceThree12": "test3",
+            "sentenceThree121": "test3",
+            "sentenceThrasdee": "test3",
+            "sentencasdeThree": "test3",
+            "sentenceThree": "test3",
+            "sentencaseThrasdee": "test3",
+            "sentenasdceThrasdee": "test3",
+            "sentencedsThree": "test3",
+            "sentenceTasdasdhree": "test3",
+            "sentencaaeThree": "test3",
+            "sentenceasdThree": "test3",
+            "sentencesdThree": "test3",
+            "sentencddeThree": "Tester hvor langt en pararapgh kan være uden at det ødelægger noget. Har haft problemer med at game grid prøvede at resize sig til teori boksen, så jeg håber det virker nu. Gad vide om dette egentlig vil se pænt ud. Jeg burde nok stopp med at skrive nu, men jeg føler jeg skal fortsætter af en eller anden grund... faktisk har jeg ikke mere at skrive om så jeg tænker jeg vil stoppe nu. Håber i har en god dag :)"
+        }
     }
 ]
 
