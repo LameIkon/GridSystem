@@ -47,6 +47,7 @@ function buttonEffects()
 }
 */
 
+
 function buttonMove() {
     let buttons = document.querySelectorAll(".run-button");
     for (let i = 0; i < buttons.length; i++)
@@ -61,9 +62,9 @@ function buttonMovement(event) {
     move(dir, steps);
 }
 
-setTimeout(buttonsLoad, 50);
+setTimeout(buttonsLoad, 60);
 
-function buttonsLoad() {
+async function buttonsLoad() {
     /* createShadows();
     buttonEffects(); */
     renderTurnCounter();

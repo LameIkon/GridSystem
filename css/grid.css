@@ -12,8 +12,8 @@
     display: flex;
     /* justify-content: center; */
     margin-top: 20px;
-    width: 100%;
     align-items: flex-start; 
+    max-width: 1000px; /* Limit width of the game Might need to be changed since its not responsive*/
 }
 
 #grid {

@@ -58,7 +58,8 @@
             "sentencaaeThree": "test3",
             "sentenceasdThree": "test3",
             "sentencesdThree": "test3",
-            "sentencddeThree": "Tester hvor langt en pararapgh kan være uden at det ødelægger noget. Har haft problemer med at game grid prøvede at resize sig til teori boksen, så jeg håber det virker nu. Gad vide om dette egentlig vil se pænt ud. Jeg burde nok stopp med at skrive nu, men jeg føler jeg skal fortsætter af en eller anden grund... faktisk har jeg ikke mere at skrive om så jeg tænker jeg vil stoppe nu. Håber i har en god dag :)"
+            "sentencddeThree": "Tester hvor langt et pararapgh kan være uden at det ødelægger noget. Har haft problemer med at game grid prøvede at resize sig til teori boksen, så jeg håber det virker nu. Gad vide om dette egentlig vil se pænt ud. Jeg burde nok stopp med at skrive nu, men jeg føler jeg skal fortsætter af en eller anden grund... faktisk har jeg ikke mere at skrive om så jeg tænker jeg vil stoppe nu. Håber i har en god dag :)",
+            "sentencddeThrese": "Endnu en test hvor jeg bliver nødt til at se om max width af spillet ikke bliver for stort. Sidste test fandt jeg ud af at game container vil komme til at fylde hele skærmen da der ikke er limit på hvor stort den horizontalt skal være. kryder finger det virker nu"
         }
     }
 ]
