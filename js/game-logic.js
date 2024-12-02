@@ -162,7 +162,11 @@ function openModal(modalName) {
 
 // Function to close the modal
 document.addEventListener("DOMContentLoaded", () => {
-    const modals = [document.getElementById("win-modal"), document.getElementById("lose-modal")];
+    const modals = [
+        document.getElementById("win-modal"),
+        document.getElementById("lose-modal"),
+        document.getElementById("info-modal")
+    ];
     const spans = document.getElementsByClassName("close");
 
     for (let i = 0; i < spans.length; i++) {

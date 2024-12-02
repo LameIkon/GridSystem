@@ -108,17 +108,12 @@
 
 .hidden {
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-200px);
-    transition: opacity var(--transition-time-launch) ease,
-    filter var(--transition-time-launch) ease,
-    transform var(--transition-time-launch) ease;
+    transition: all 600ms ease;
 }
 
 .show {
     opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
 }
 
 #theory-container{

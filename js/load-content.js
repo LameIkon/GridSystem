@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             xhr.send();
         }
     }
+
     loadHTML('header-container', '../header.html');
     loadHTML('header-container', 'header.html');
     loadHTML('header-container', '../menus/header.html')
