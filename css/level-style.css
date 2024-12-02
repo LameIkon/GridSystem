@@ -9,18 +9,11 @@
     justify-content: center;
 }
 
-#container-1 {
+#container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 0;
-}
-
-#container-2 {
-    display: flex;
-    /* flex-direction: column;
-    align-items: center; */
-    margin-top: 40px;
 }
 
 #top {
@@ -33,11 +26,12 @@
     background-color: transparent;
     /* border: 4px solid #d9d9d9; */
     border-radius: 20px;
+    margin-bottom: -20px;
 }
 
 #mission-box {
     width: 550px;
-    padding: 0 0 0 20px;
+    padding: 0 0 -20px 20px;
 }
 
 #mission {
@@ -78,14 +72,6 @@
     background-color: #7dd28c;
 }
 
-.previous {
-
-}
-
-.next {
-
-}
-
 #return-button {
     font-family: klavika-bold, sans-serif;
     font-size: 24px;
@@ -100,27 +86,21 @@
 
 #return-button:hover {
     cursor: pointer;
-    background-color: #ad5050;
-    transform: scale(1.05);
-    box-shadow: 0 0 45px rgba(0, 0, 0, 0.1);
+    background-color: #d37676;
 }
 
 #game {
     background-color: #f3f3f3;
     border: 3px solid #000000;
     border-radius: 5px;
-    box-shadow: 8px 8px 0 rgba(00,00,00,100%);
+    box-shadow: 8px 8px 0 rgba(00, 00, 00, 100%);
     padding: 0 16px 16px 16px;
-}
-
-#turn-counter-container {
-
 }
 
 #turn-counter-container p {
     font-family: klavika-medium, sans-serif;
     font-size: 28px;
-    color: #be3c3c;
+    color: #b43a3a;
     margin-top: 2vh;
 }
 

@@ -1,7 +1,6 @@
 const GRID_ELEMENT = document.getElementById('grid');
 const PLAYER = document.getElementsByClassName('player');
-const MAP_INDEX = 'map_index'; // the place where it will save maps.
-let keyPickup = false;
+const MAP_INDEX = 'map_index'; // The place where maps will be saved
 
 let gridX; // columns. look into level-layout.js
 let gridY; // rows. look into level-layout.js
@@ -13,50 +12,44 @@ let noMoreTurns = false;
 
 // #region Names for objects in the scene
 // Error proofing the tiles
-const TILES =
-    {
-        CELL: 'cell',
-        PLAYER: 'player',
-        WALL: 'wall',
-        DOOR: 'door',
-        GOAL: 'goal',
-        KEY: 'key'
-    };
+const TILES = {
+    CELL: 'cell',
+    PLAYER: 'player',
+    WALL: 'wall',
+    KEY: 'key',
+    DOOR: 'door',
+    GOAL: 'goal',
+};
 // #endregion
-
 
 // #region Game Data
 // Collection of the data to save for each map, this will most likely be expanded in the future
-let gameData =
-    {
-        player: [],
-        walls: [],
-        keys: [],
-        doors: [],
-        goal: [],
-    };
+let gameData = {
+    player: [],
+    walls: [],
+    keys: [],
+    doors: [],
+    goal: [],
+};
 // #endregion
 
 // #region Grid
-function initializeGrid(x, y)
-{
-    gridX = x;
-    gridY = y;
+function initializeGrid(x, y) {
+    xAxis = x;
+    yAxis = y;
 
     // Setting the Grid variables dynamically in CSS
-    document.documentElement.style.setProperty('--y', gridX);
-    document.documentElement.style.setProperty('--x', gridY);
+    document.documentElement.style.setProperty('--y', xAxis);
+    document.documentElement.style.setProperty('--x', yAxis);
     createGrid();
 }
 
-
-function createGrid()
-{
-    for (let row = 0; row < gridY; row++) {
-        for (let col = 0; col < gridX; col++) {
+function createGrid() {
+    for (let row = 0; row < yAxis; row++) {
+        for (let col = 0; col < xAxis; col++) {
             const CELL = document.createElement('div');
             CELL.classList.add(TILES.CELL);
-            CELL.id = `${TILES.CELL}-${row * gridX + col}`; // Multiply the rows with the amount of columns then add the columns to each row
+            CELL.id = `${TILES.CELL}-${row * xAxis + col}`; // Multiply the rows with the amount of columns then add the columns to each row
             GRID_ELEMENT.appendChild(CELL);
         }
     }
@@ -65,9 +58,7 @@ function createGrid()
 
 // #endregion
 
-// Render the player on the grid
-function renderPlayer()
-{
+function renderPlayer() {
     // Clear previous player positions
     document.querySelectorAll(`.${TILES.PLAYER}`).forEach(player => player.classList.remove(TILES.PLAYER));
     
@@ -78,144 +69,158 @@ function renderPlayer()
     }
 }
 
-function renderTurnCounter()
-{
+function renderTurnCounter() {
     document.getElementById('turn-counter').innerText = turn;
     document.getElementById('max-turn').innerText = maxTurn.toString();
 }
 
-function checkTurnLimit()
-{
+function checkTurnLimit() {
     if (maxTurn <= turn) {
-        noMoreTurns = true;
+        areTurnsExhausted = true;
     }
 }
 
-function checkGameOver()
-{
+function gameOver() {
     checkTurnLimit();
-    if (noMoreTurns) {
-        console.log('Game over'); //make acutal endgame message or something.
+    if (areTurnsExhausted) {
+        openModal("lose-modal");
     }
 }
-
 
 // #region Handle Movement
-function handleMove(direction)
-{
+function handleMove(direction) {
     const stepsInput = document.getElementById(`${direction}-steps`);
     const steps = parseInt(stepsInput.value) || 1;  // Get the steps or default to 1
     move(direction, steps);  // Call move with the direction and custom steps
 }
 
-function move(direction, steps)
-{
-    if (!noMoreTurns) {
-        let newX = playerPosition.x;
-        let newY = playerPosition.y;
-        let step = 1;
-        
-        // This for loop makes sure that we only take one step at a time, to prevent 'jumping' over walls
-        for (let i = 0; i < steps; i++) {
-            switch (direction) {
-                case 'left':
-                    // playerPosition.x = Math.max(0, playerPosition.x - steps); // This just looks nice!! maybe it can be used again for floats
-                    newX -= step;
-                    break;
-                    case 'right':
-                        // playerPosition.x = Math.min(gridX - 1, playerPosition.x + steps); // Even better, good concise would do again
-                        newX += step;
-                        break;
-                        case 'up':
-                            // playerPosition.y = Math.max(0, playerPosition.y - steps); // OMG can it get any better!
-                            newY -= step;
-                            break;
-                            case 'down':
-                                // playerPosition.y = Math.min(gridY - 1, playerPosition.y + steps); // Horrid please remove in the future, who even made this!!
-                                newY += step;
-                                break;
-                                default:
-                                    console.error('Unknown direction:', direction);
-                                    return;
-                                }
-                                
-                                // Collision detection to not go out of bounds
-                                if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY) {
-                                    return;
-                                }
+function move(direction, steps) {
+    if (areTurnsExhausted) {
+        gameOver();
+        return;
+    }
 
-                                // Collision detection for the obstacles
-                                if (!canWalk(newY * gridX + newX)) {
-                                    return;
-            }
+    let newX = playerPosition.x;
+    let newY = playerPosition.y;
+    let step = 1;
 
-            if (pickedUpKey(newY * gridX + newX)) {
-                keyPickup = true;
-            }
-            
-            if (reachedGoal(newY * gridX + newX)) {
-                console.log('Level Completed');
-                ////////////////// Todo: Goal UI + Functionality
+    // This for loop makes sure that we only take one step at a time, to prevent 'jumping' over walls
+    for (let i = 0; i < steps; i++) {
+        switch (direction) {
+            case 'left':
+                // playerPosition.x = Math.max(0, playerPosition.x - steps);
+                newX -= step;
+                break;
+            case 'right':
+                // playerPosition.x = Math.min(xAxis - 1, playerPosition.x + steps);
+                newX += step;
+                break;
+            case 'up':
+                // playerPosition.y = Math.max(0, playerPosition.y - steps);
+                newY -= step;
+                break;
+            case 'down':
+                // playerPosition.y = Math.min(yAxis - 1, playerPosition.y + steps);
+                newY += step;
+                break;
+            default:
+                console.error('Unknown direction:', direction);
+                return;
+        }
+
+        // Collision detection to not go out of bounds
+        if (newX < 0 || newX >= xAxis || newY < 0 || newY >= yAxis) {
+            return;
+        }
+
+        // Collision detection for the obstacles
+        if (!canWalk(newY * xAxis + newX)) {
+            return;
+        }
+
+        if (pickedUpKey(newY * xAxis + newX)) {
+            isKeyObtained = true;
+        }
+
+        if (reachedGoal(newY * xAxis + newX)) {
+            console.log('Level Completed');
+            openModal("win-modal");
+        }
+    }
+    playerPosition.x = newX;
+    playerPosition.y = newY;
+
+    turn++;
+    renderPlayer();
+    renderTurnCounter();
+    gameOver();
+}
+
+function openModal(modalName) {
+    const modal = document.getElementById(modalName);
+    modal.style.display = "block";
+}
+
+// Function to close the modal
+document.addEventListener("DOMContentLoaded", () => {
+    const modals = [document.getElementById("win-modal"), document.getElementById("lose-modal")];
+    const spans = document.getElementsByClassName("close");
+
+    for (let i = 0; i < spans.length; i++) {
+        spans[i].onclick = function () {
+            for (let i = 0; i < modals.length; i++) {
+                modals[i].style.display = "none";
             }
         }
-        playerPosition.x = newX;
-        playerPosition.y = newY;
-        
-        renderPlayer();
-        turn++;
-        checkGameOver();
-        renderTurnCounter();
     }
-}
 
-// #endregion
-
+    window.onclick = function (event) {
+        for (let modal of modals) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+});
 
 // Check if the path is clear this will be extended in the future for other obstacles
-function canWalk(pathID)
-{
-    return !(isWall(pathID) || isDoor(pathID) && !keyPickup);
+function canWalk(pathID) {
+    return !(isWall(pathID) || isDoor(pathID) && !isKeyObtained);
 }
 
-function pickedUpKey(pathID)
-{
+function pickedUpKey(pathID) {
     return isKey(pathID);
 }
 
-function reachedGoal(pathID)
-{
+function reachedGoal(pathID) {
     return isGoal(pathID);
 }
 
-function isWall(id)
-{
+function isWall(id) {
     return hasTileClass(id, TILES.WALL)
 }
 
-function isDoor(id)
-{
+function isDoor(id) {
     return hasTileClass(id, TILES.DOOR)
 }
 
-function isKey(id)
-{
+function isKey(id) {
     return hasTileClass(id, TILES.KEY)
 }
 
-function isGoal(id)
-{
+function isGoal(id) {
     return hasTileClass(id, TILES.GOAL)
 }
 
-function hasTileClass(id, tileClass)
-{
+function hasTileClass(id, tileClass) {
     const cell = document.getElementById(`${TILES.CELL}-${id}`); // Find cell by id
     return cell ? cell.classList.contains(tileClass) : false; // Checks if cell id contains (placeholder) class.
 }
 
+// #endregion
+
 // Keyboard controls
-document.addEventListener('keydown', function (event)
-{
+document.addEventListener('keydown', function (event) {
     const step = 1; // Define step size or determine based on key
     switch (event.key) {
         case 'ArrowLeft':
@@ -233,6 +238,27 @@ document.addEventListener('keydown', function (event)
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    let distance = 0;
+
+    // Function to retrieve and store the distance from the input field
+    function setDistance() {
+        const distanceInput = document.getElementById("distance-input").value;
+
+        // Check if the input is not empty and is a valid number
+        if (distanceInput !== "" && !isNaN(distanceInput)) {
+            distance = parseFloat(distanceInput);
+            console.log("Distance set to:", distance);
+        }
+        else {
+            console.log("Invalid number");
+        }
+    }
+
+    // Event listener for the button to set distance
+    document.getElementById("submit-distance").addEventListener("click", setDistance);
+});
+
 /*
 *  save() saves all the different tiles into the gameData object.
 *  Right now it is quite hard coded, some refactoring is needed.
@@ -240,8 +266,7 @@ document.addEventListener('keydown', function (event)
 */
 
 // #region Save/Load
-function save(mapID)
-{
+function save(mapID) {
     if (!mapID) {
         console.error("Map name is required to save.");
         return;
@@ -253,8 +278,6 @@ function save(mapID)
     saveTiles(TILES.DOOR, gameData.doors);
     saveTiles(TILES.KEY, gameData.keys);
     saveTiles(TILES.GOAL, gameData.goal);
-    
-    // Save game data as JSON under a specific key
     const saveData = JSON.stringify(gameData);
     localStorage.setItem(`${MAP_INDEX}_${mapID}`, saveData);
     
@@ -272,8 +295,7 @@ function save(mapID)
 *  Right now it can only save into arrays.
 */
 
-function saveTiles(tileName, savePlaceArray)
-{
+function saveTiles(tileName, savePlaceArray) {
     let tile = document.querySelectorAll(`.${tileName}`); // Getting all the tiles with the class {tileName},
     if (tile != null) {
         for (let i = 0; i < tile.length; i++) {
@@ -282,10 +304,8 @@ function saveTiles(tileName, savePlaceArray)
     }
 }
 
-
 // As save() does most of the heavy lifting, load() is much more simple
-function load(mapID)
-{
+function load(mapID) {
     if (!mapID) {
         console.error("Map name is required to load.");
         return;
@@ -307,13 +327,11 @@ function load(mapID)
     
 }
 
-function getSavedMaps()
-{
+function getSavedMaps() {
     return JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
 }
 
-function displaySavedMaps()
-{
+function displaySavedMaps() {
     const savedMaps = getSavedMaps();
     savedMaps.forEach(mapName =>
         {
