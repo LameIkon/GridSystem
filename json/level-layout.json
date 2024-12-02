@@ -44,6 +44,34 @@
     },
     {
         "levelId": 4,
+        "maxTurns": 5,
+        "gridSize":{
+            "y": 3,
+            "x": 4
+        },
+        "playerPosition":
+        {
+            "x": 0,
+            "y": 0 
+        },
+        "layout": "<div id='grid'>\n    <div class='cell' id='cell-0'></div>\n    <div class='cell' id='cell-1'></div>\n    <div class='cell' id='cell-2'></div>\n    <div class='cell' id='cell-3'></div>\n    <div class='cell' id='cell-4'></div>\n    <div class='cell' id='cell-5'></div>\n    <div class='cell' id='cell-6'></div>\n    <div class='cell' id='cell-7'></div>\n    <div class='cell' id='cell-8'></div>\n    <div class='cell' id='cell-9'></div>\n    <div class='cell' id='cell-10'></div>\n    <div class='cell goal' id='cell-11'></div>\n</div>\n"
+    },
+    {
+        "levelId": 5,
+        "maxTurns": 5,
+        "gridSize":{
+            "y": 5,
+            "x": 7
+        },
+        "playerPosition":
+        {
+            "x": 0,
+            "y": 0
+        },
+        "layout": "<div id='grid'>\n    <div class='cell' id='cell-0'></div>\n    <div class='cell wall' id='cell-1'></div>\n    <div class='cell' id='cell-2'></div>\n    <div class='cell' id='cell-3'></div>\n    <div class='cell' id='cell-4'></div>\n    <div class='cell' id='cell-5'></div>\n    <div class='cell' id='cell-6'></div>\n    <div class='cell' id='cell-7'></div>\n    <div class='cell wall' id='cell-8'></div>\n    <div class='cell' id='cell-9'></div>\n    <div class='cell' id='cell-10'></div>\n    <div class='cell' id='cell-11'></div>\n    <div class='cell' id='cell-12'></div>\n    <div class='cell' id='cell-13'></div>\n    <div class='cell' id='cell-14'></div>\n    <div class='cell wall' id='cell-15'></div>\n    <div class='cell' id='cell-16'></div>\n    <div class='cell' id='cell-17'></div>\n    <div class='cell' id='cell-18'></div>\n    <div class='cell' id='cell-19'></div>\n    <div class='cell' id='cell-20'></div>\n    <div class='cell' id='cell-21'></div>\n    <div class='cell' id='cell-22'></div>\n    <div class='cell' id='cell-23'></div>\n    <div class='cell' id='cell-24'></div>\n    <div class='cell' id='cell-25'></div>\n    <div class='cell' id='cell-26'></div>\n    <div class='cell goal' id='cell-27'></div>\n    <div class='cell' id='cell-28'></div>\n    <div class='cell' id='cell-29'></div>\n    <div class='cell' id='cell-30'></div>\n    <div class='cell' id='cell-31'></div>\n    <div class='cell' id='cell-32'></div>\n    <div class='cell' id='cell-33'></div>\n    <div class='cell' id='cell-34'></div>\n</div>\n"
+    },
+    {
+        "levelId": 6,
         "maxTurns": 25,
         "gridSize":{
             "y": 5,
@@ -52,7 +80,7 @@
         "playerPosition":
         {
             "x": 0,
-            "y": 0 
+            "y": 0
         },
         "layout": ""
     }

@@ -49,11 +49,11 @@ function buttonMove() {
 
 function buttonMovement(event) {
     let dir = event.srcElement.id.split('-')[1]; // Take the id of the button element splitting it at take the second elemet, which is either 'left', 'right', 'up' or 'down'
-    let steps = distance;
+    let steps = 2 + distance;
     move(dir, steps);
 }
 
-setTimeout(buttonsLoad, 50);
+setTimeout(buttonsLoad, 100);
 
 function buttonsLoad() {
     renderTurnCounter();
@@ -61,5 +61,15 @@ function buttonsLoad() {
 }
 
 function updateVariableValue(value) {
-    document.getElementById("variable-value").innerText = value;
+    document.getElementById("variable-value").innerText = value
 }
+
+function oogaBooga() {
+    const functionFields = document.querySelectorAll(".function-var-field");
+    for (var i = 0; i < functionFields.length; i++) {
+        functionFields[i].innerText = "Distance + 2";
+    }
+    console.log("this WORKSKSSA");
+}
+
+setTimeout(oogaBooga, 100);

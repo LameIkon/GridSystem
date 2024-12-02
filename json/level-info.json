@@ -2,7 +2,7 @@
     {
         "levelId": 1,
         "title": "Level 1",
-        "body": "Insert numbers directly into the function to move the player",
+        "body": "Get to the goal by moving the player each turn. You can write a number into the boxes below.",
         "theoryTitle": "Functions & Variables",
         "theoryBox": 
         {
@@ -12,9 +12,9 @@
     },
     {
         "levelId": 2,
-        "title": "Bane 2",
-        "body": "Description 2",
-        "theoryTitle": "Overskrift",
+        "title": "Level 2",
+        "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+        "theoryTitle": "Functions & Variables",
         "theoryBox": 
         {
             "1": "test1",
@@ -24,9 +24,9 @@
     },
     {
         "levelId": 3,
-        "title": "Bane 3",
-        "body": "Description 3",
-        "theoryTitle": "Overskrift",
+        "title": "Level 3",
+        "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+        "theoryTitle": "Functions & Variables",
         "theoryBox": 
         {
             "1": "test1",
@@ -36,30 +36,32 @@
     },
     {
         "levelId": 4,
-        "title": "Bane 4",
-        "body": "Description 4",
-        "theoryTitle": "Overskrift",
+        "title": "Level 4",
+        "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+        "theoryTitle": "Variables",
         "theoryBox": 
         {
-            "1": "test1",
-            "2": "test2",
-            "3": "test3",
-            "4": "test3",
-            "5": "test3",
-            "6": "test3",
-            "7": "test3",
-            "8": "test3",
-            "9": "test3",
-            "10": "test3",
-            "11": "test3",
-            "12": "test3",
-            "13": "test3",
-            "14": "test3",
-            "15": "test3",
-            "16": "test3",
-            "17": "Tester hvor langt et pararapgh kan være uden at det ødelægger noget. Har haft problemer med at game grid prøvede at resize sig til teori boksen, så jeg håber det virker nu. Gad vide om dette egentlig vil se pænt ud. Jeg burde nok stopp med at skrive nu, men jeg føler jeg skal fortsætter af en eller anden grund... faktisk har jeg ikke mere at skrive om så jeg tænker jeg vil stoppe nu. Håber i har en god dag :)",
-            "18": "Endnu en test hvor jeg bliver nødt til at se om max width af spillet ikke bliver for stort. Sidste test fandt jeg ud af at game container vil komme til at fylde hele skærmen da der ikke er limit på hvor stort den horizontalt skal være. kryder finger det virker nu",
-            "19": "Last comment: Det ser ud til at virke :D"
+            "1": "In programming, we can declare variables."
+        }
+    },
+    {
+        "levelId": 5,
+        "title": "Level 5",
+        "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+        "theoryTitle": "Variables",
+        "theoryBox":
+        {
+            "1": "In programming, we can declare variables."
+        }
+    },
+    {
+        "levelId": 6,
+        "title": "Level 6",
+        "body": "0b 00 01 10 11 100 101.",
+        "theoryTitle": "Variables",
+        "theoryBox":
+        {
+            "1": "In programming, we can declare variables."
         }
     }
 ]

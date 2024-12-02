@@ -24,10 +24,10 @@
         <div id="modal-content">
             <div id="win-text">
                 <h1 id="win-heading">
-                    You win!
+                    Congratulations!
                 </h1>
                 <p id="win-subtext">
-                    Congratulations, you have beaten the level!
+                    You have completed the level!
                 </p>
             </div>
             <div>
@@ -52,10 +52,10 @@
         <div id="lose-content">
             <div id="lose-text">
                 <h1 id="lose-heading">
-                    You lose
+                    Try again
                 </h1>
                 <p id="lose-subtext">
-                    Try better next time, you got it!
+                    Better luck next time, you got it!
                 </p>
             </div>
             <div class="skip-button-modal-container">
@@ -78,7 +78,7 @@
                 <div id="mission-box">
                 </div>
                 <div id="skip-button-container">
-                    <button class="skip-buttons previous" onclick="navigateToLevel(4)">
+                    <button class="skip-buttons previous" onclick="navigateToLevel(6)">
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
                     <button class="skip-buttons next" onclick="navigateToLevel(2)">
@@ -88,7 +88,7 @@
             </div>
             <div>
                 <button id="return-button" onclick="navigateToPage('level-selector')">
-                    Gå tilbage
+                    Go back
                 </button>
             </div>
         </div>
@@ -104,9 +104,8 @@
             <div>
                 <div id="game-container">
                     <div id="grid"></div>
-                    <div id="theory-container"></div> <!-- Theory will be printed here by level-info.js. Also look to level-info.json for data-->
+                    <!-- <div id="theory-container"></div> // Theory will be printed here by level-info.js. Also look to level-info.json for data-->
                 </div>
-
             </div>
             <div id="control-panel-container"></div>
         </div>

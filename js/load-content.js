@@ -13,13 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
             xhr.send();
         }
     }
-
-   // loadHTML('header-container', '../header.html');
-   // loadHTML('header-container', 'header.html');
+    loadHTML('header-container', '../header.html');
+    loadHTML('header-container', 'header.html');
     loadHTML('header-container', '../menus/header.html')
     loadHTML('control-panel-container', '../control-panel.html')
     loadHTML('control-panel-level-2-container', '../control-panel-level-2.html')
-    
+    loadHTML('control-panel-level-3-container', '../control-panel-level-3.html')
 });
 
 // CSS Class Load

@@ -6,7 +6,6 @@ let gridX; // columns. look into level-layout.js
 let gridY; // rows. look into level-layout.js
 let playerPosition; // LoadLevel controls this. look into level-layout.js
 let turn = 0;
-
 let maxTurn; // Load level controls this. look into level-layout.js
 let noMoreTurns = false;
 
@@ -35,21 +34,21 @@ let gameData = {
 
 // #region Grid
 function initializeGrid(x, y) {
-    xAxis = x;
-    yAxis = y;
+    gridX = x;
+    gridY = y;
 
     // Setting the Grid variables dynamically in CSS
-    document.documentElement.style.setProperty('--y', xAxis);
-    document.documentElement.style.setProperty('--x', yAxis);
+    document.documentElement.style.setProperty('--y', gridX);
+    document.documentElement.style.setProperty('--x', gridY);
     createGrid();
 }
 
 function createGrid() {
-    for (let row = 0; row < yAxis; row++) {
-        for (let col = 0; col < xAxis; col++) {
+    for (let row = 0; row < gridY; row++) {
+        for (let col = 0; col < gridX; col++) {
             const CELL = document.createElement('div');
             CELL.classList.add(TILES.CELL);
-            CELL.id = `${TILES.CELL}-${row * xAxis + col}`; // Multiply the rows with the amount of columns then add the columns to each row
+            CELL.id = `${TILES.CELL}-${row * gridX + col}`; // Multiply the rows with the amount of columns then add the columns to each row
             GRID_ELEMENT.appendChild(CELL);
         }
     }
@@ -61,7 +60,7 @@ function createGrid() {
 function renderPlayer() {
     // Clear previous player positions
     document.querySelectorAll(`.${TILES.PLAYER}`).forEach(player => player.classList.remove(TILES.PLAYER));
-    
+
     let index = playerPosition.y * gridX + playerPosition.x;
     let player_cell = document.getElementById(`${TILES.CELL}-${index}`);
     if (player_cell) {
@@ -76,13 +75,13 @@ function renderTurnCounter() {
 
 function checkTurnLimit() {
     if (maxTurn <= turn) {
-        areTurnsExhausted = true;
+        noMoreTurns = true;
     }
 }
 
 function gameOver() {
     checkTurnLimit();
-    if (areTurnsExhausted) {
+    if (noMoreTurns) {
         openModal("lose-modal");
     }
 }
@@ -95,7 +94,7 @@ function handleMove(direction) {
 }
 
 function move(direction, steps) {
-    if (areTurnsExhausted) {
+    if (noMoreTurns) {
         gameOver();
         return;
     }
@@ -112,7 +111,7 @@ function move(direction, steps) {
                 newX -= step;
                 break;
             case 'right':
-                // playerPosition.x = Math.min(xAxis - 1, playerPosition.x + steps);
+                // playerPosition.x = Math.min(gridX - 1, playerPosition.x + steps);
                 newX += step;
                 break;
             case 'up':
@@ -120,7 +119,7 @@ function move(direction, steps) {
                 newY -= step;
                 break;
             case 'down':
-                // playerPosition.y = Math.min(yAxis - 1, playerPosition.y + steps);
+                // playerPosition.y = Math.min(gridY - 1, playerPosition.y + steps);
                 newY += step;
                 break;
             default:
@@ -129,20 +128,20 @@ function move(direction, steps) {
         }
 
         // Collision detection to not go out of bounds
-        if (newX < 0 || newX >= xAxis || newY < 0 || newY >= yAxis) {
+        if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY) {
             return;
         }
 
         // Collision detection for the obstacles
-        if (!canWalk(newY * xAxis + newX)) {
+        if (!canWalk(newY * gridX + newX)) {
             return;
         }
 
-        if (pickedUpKey(newY * xAxis + newX)) {
+        if (pickedUpKey(newY * gridX + newX)) {
             isKeyObtained = true;
         }
 
-        if (reachedGoal(newY * xAxis + newX)) {
+        if (reachedGoal(newY * gridX + newX)) {
             console.log('Level Completed');
             openModal("win-modal");
         }
@@ -260,10 +259,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /*
-*  save() saves all the different tiles into the gameData object.
-*  Right now it is quite hard coded, some refactoring is needed.
-*  It also needs to be into a
-*/
+ *  save() saves all the different tiles into the gameData object.
+ *  Right now it is quite hard coded, some refactoring is needed.
+ *  It also needs to be into a
+ */
 
 // #region Save/Load
 function save(mapID) {
@@ -271,7 +270,7 @@ function save(mapID) {
         console.error("Map name is required to save.");
         return;
     }
-    
+
     // Update the gameData object with the current state
     gameData.player = [PLAYER.item(0).id.split('-')[1], playerPosition];
     saveTiles(TILES.WALL, gameData.walls);
@@ -280,7 +279,7 @@ function save(mapID) {
     saveTiles(TILES.GOAL, gameData.goal);
     const saveData = JSON.stringify(gameData);
     localStorage.setItem(`${MAP_INDEX}_${mapID}`, saveData);
-    
+
     // Update the map index list
     let mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
     if (!mapIndex.includes(mapID)) {
@@ -291,9 +290,9 @@ function save(mapID) {
 }
 
 /*
-*  saveTiles() is responsible for saving the different tiles.
-*  Right now it can only save into arrays.
-*/
+ *  saveTiles() is responsible for saving the different tiles.
+ *  Right now it can only save into arrays.
+ */
 
 function saveTiles(tileName, savePlaceArray) {
     let tile = document.querySelectorAll(`.${tileName}`); // Getting all the tiles with the class {tileName},
@@ -310,21 +309,21 @@ function load(mapID) {
         console.error("Map name is required to load.");
         return;
     }
-    
+
     const loadData = localStorage.getItem(`${MAP_INDEX}_${mapID}`);
     if (!loadData) {
         console.error(`No saved data found for map: "${mapID}"`);
         return;
     }
-    
+
     // Parse and load the game data
     gameData = JSON.parse(loadData);
     playerPosition = gameData.player[1];
-    
+
     renderGame();
     renderPlayer();
     console.log(`Map "${mapID}" loaded.`);
-    
+
 }
 
 function getSavedMaps() {
@@ -333,117 +332,102 @@ function getSavedMaps() {
 
 function displaySavedMaps() {
     const savedMaps = getSavedMaps();
-    savedMaps.forEach(mapName =>
-        {
-            console.log(`Saved Map: ${mapName}`);
-        });
+    savedMaps.forEach(mapName => {
+        console.log(`Saved Map: ${mapName}`);
+    });
+}
+
+function deleteMap(mapID) {
+    if (!mapID) {
+        console.error("Map name is required to delete.");
+        return;
     }
-    
-    function deleteMap(mapID)
-    {
-        if (!mapID) {
-            console.error("Map name is required to delete.");
-            return;
-        }
-        
-        localStorage.removeItem(`${MAP_INDEX}_${mapID}`);
-        let mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
-        mapIndex = mapIndex.filter(name => name !== mapID);
-        localStorage.setItem(MAP_INDEX, JSON.stringify(mapIndex));
-        
-        console.log(`Map "${mapName}" deleted.`);
-    }
-    
-    // #endregion
-    
-    function renderGame()
-    {
-        removeTile(TILES.PLAYER);
-        removeTile(TILES.WALL);
-        removeTile(TILES.KEY);
-        removeTile(TILES.DOOR);
-        removeTile(TILES.GOAL);
-        
-        addTile(TILES.WALL, gameData.walls);
-        addTile(TILES.KEY, gameData.keys);
-        addTile(TILES.DOOR, gameData.doors);
-        addTile(TILES.GOAL, gameData.goal);
-    }
-    
-    
-    function removeTile(tileName)
-    {
-        document.querySelectorAll(`.${tileName}`).forEach(tile => tile.classList.remove(tileName)); // Takes all the tiles and removes the name from the class
-    }
-    
-    
-    // This needs an array to iterate over
-    function addTile(tileName, array)
-    {
-        for (let i = 0; i < array.length; i++) {
-            let cell = document.getElementById(`${TILES.CELL}-${array[i]}`);
-            if (cell) {
-                cell.classList.add(tileName);
-            }
+
+    localStorage.removeItem(`${MAP_INDEX}_${mapID}`);
+    let mapIndex = JSON.parse(localStorage.getItem(MAP_INDEX)) || [];
+    mapIndex = mapIndex.filter(name => name !== mapID);
+    localStorage.setItem(MAP_INDEX, JSON.stringify(mapIndex));
+
+    console.log(`Map "${mapName}" deleted.`);
+}
+
+// #endregion
+
+function renderGame() {
+    removeTile(TILES.PLAYER);
+    removeTile(TILES.WALL);
+    removeTile(TILES.KEY);
+    removeTile(TILES.DOOR);
+    removeTile(TILES.GOAL);
+
+    addTile(TILES.WALL, gameData.walls);
+    addTile(TILES.KEY, gameData.keys);
+    addTile(TILES.DOOR, gameData.doors);
+    addTile(TILES.GOAL, gameData.goal);
+}
+
+function removeTile(tileName) {
+    document.querySelectorAll(`.${tileName}`).forEach(tile => tile.classList.remove(tileName)); // Takes all the tiles and removes the name from the class
+}
+
+// This needs an array to iterate over
+function addTile(tileName, array) {
+    for (let i = 0; i < array.length; i++) {
+        let cell = document.getElementById(`${TILES.CELL}-${array[i]}`);
+        if (cell) {
+            cell.classList.add(tileName);
         }
     }
-    
-    function resetAllSavedMaps()
-    {
-        localStorage.removeItem(MAP_INDEX);
-        playerPosition = {x: 0, y: 0};
-        keyPickup = false;
-        gameData = {player: [], walls: [], keys: [], doors: [], goal: []};
-        renderGame();
-        renderPlayer();
-        turn = 1;
-        renderTurnCounter();
-    }
-    
-    
-    function levelSelecting(mapID)
-    {
-        document.getElementById('controls').style.display = 'block';
-        load(mapID)
-        deleteGrid()
-        loadLevel(mapID);
-        //initializeGrid(10, 5);
-    }
-    
-    function deleteGrid()
-    {
-        GRID_ELEMENT.innerHTML = '';
-    }
-    
-    
-    function loadLevel(specifiedId)
-    {
-        fetch('../../json/level-layout.json') // Find the location of the json file
+}
+
+function resetAllSavedMaps() {
+    localStorage.removeItem(MAP_INDEX);
+    playerPosition = {x: 0, y: 0};
+    keyPickup = false;
+    gameData = {player: [], walls: [], keys: [], doors: [], goal: []};
+    renderGame();
+    renderPlayer();
+    turn = 1;
+    renderTurnCounter();
+}
+
+function levelSelecting(mapID) {
+    document.getElementById('controls').style.display = 'block';
+    load(mapID)
+    deleteGrid()
+    loadLevel(mapID);
+    //initializeGrid(10, 5);
+}
+
+function deleteGrid() {
+    GRID_ELEMENT.innerHTML = '';
+}
+
+function loadLevel(specifiedId) {
+    fetch('../../json/level-layout.json') // Find the location of the json file
         //fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
-            .then(response => response.json())
-            .then(info =>
-            {
-                const FILTEREDITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
-    
-                if (FILTEREDITEM) // Take the json and read/use the data
-                {
-                    gridX = FILTEREDITEM.gridSize.x;
-                    gridY = FILTEREDITEM.gridSize.y;
-                    maxTurn = FILTEREDITEM.maxTurns;
-                    playerPosition = FILTEREDITEM.playerPosition;
-    
-                    // Setting the Grid variables dynamically in CSS
-                    document.documentElement.style.setProperty('--y', gridX);
-                    document.documentElement.style.setProperty('--x', gridY);
-    
-                    GRID_ELEMENT.insertAdjacentHTML('beforeend', FILTEREDITEM.layout); // Print title text as a 'h2'
-                    
-                    // Run scripts
-                    renderPlayer();
-                    renderTurnCounter();
-                }
-            });
-    }
+        .then(response => response.json()).then(info => {
+        const FILTEREDITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
+
+        if (FILTEREDITEM) // Take the json and read/use the data
+        {
+            gridX = FILTEREDITEM.gridSize.x;
+            gridY = FILTEREDITEM.gridSize.y;
+            maxTurn = FILTEREDITEM.maxTurns;
+            playerPosition = FILTEREDITEM.playerPosition;
+
+            // Setting the Grid variables dynamically in CSS
+            document.documentElement.style.setProperty('--y', gridX);
+            document.documentElement.style.setProperty('--x', gridY);
+
+            GRID_ELEMENT.insertAdjacentHTML('beforeend', FILTEREDITEM.layout); // Print title text as a 'h2'
+
+            // Run scripts
+            renderPlayer();
+            renderTurnCounter();
+        }
+    });
+}
     
     
     

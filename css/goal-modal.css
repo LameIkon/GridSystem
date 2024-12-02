@@ -1,9 +1,9 @@
 :root {
     --heading-font-family: klavika-bold, sans-serif;
-    --heading-font-size: 80px;
+    --heading-font-size: 72px;
     --subtext-font-family: corbel, sans-serif;
     --subtext-font-size: 28px;
-    --text-margin: 5px;
+    --text-margin: 10px;
 }
 
 .modal {
@@ -59,7 +59,7 @@
 #lose-heading {
     font-family: var(--heading-font-family);
     font-size: var(--heading-font-size);
-    color: #b43a3a;
+    color: #1f70f2;
     margin: var(--text-margin);
 }
 
