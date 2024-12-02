@@ -77,10 +77,10 @@ function checkTurnLimit() {
     }
 }
 
-function checkGameOver() {
+function gameOver() {
     checkTurnLimit();
     if (areTurnsExhausted) {
-        console.log('Game over'); //make acutal endgame message or something.
+        openModal("lose-modal");
     }
 }
 
@@ -93,7 +93,7 @@ function handleMove(direction) {
 
 function move(direction, steps) {
     if (areTurnsExhausted) {
-        openModal("lose-modal");
+        gameOver();
         return;
     }
 
@@ -150,8 +150,7 @@ function move(direction, steps) {
     turn++;
     renderPlayer();
     renderTurnCounter();
-    checkGameOver();
-
+    gameOver();
 }
 
 function openModal(modalName) {
