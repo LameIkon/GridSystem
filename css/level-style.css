@@ -24,7 +24,6 @@
 #mission-container {
     display: flex;
     background-color: transparent;
-    /* border: 4px solid #d9d9d9; */
     border-radius: 20px;
     margin-bottom: -20px;
 }
@@ -90,6 +89,9 @@
 }
 
 #game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #f3f3f3;
     border: 3px solid #000000;
     border-radius: 5px;

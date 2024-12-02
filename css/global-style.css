@@ -35,8 +35,13 @@
     src: url('../assets/fonts/klavika-bold.otf') format('woff');
 }
 
+@font-face {
+    font-family: selectric-century;
+    src: url('../assets/fonts/selectric-century.ttf') format('woff');
+}
+
 h1 {
-    font-family: klavika-bold, sans-serif;
+    font-family: klavika-bold, serif;
     color: var(--signature-color);
     font-size: 42px;
 }
@@ -61,6 +66,7 @@ h1 {
     font-family: dDicapslock, sans-serif;
     font-size: 40px;
     color: rgb(0, 0, 0);
+    margin: 0;
 }
 
 .buttons {
@@ -68,8 +74,7 @@ h1 {
     border: 3px solid transparent;
     border-radius: 40px;
     box-sizing: border-box;
-    padding: 0 15px;
-    margin: 0 15px;
+    padding: 3px 15px;
     transition: border var(--transition-time-header-buttons) ease;
 }
 

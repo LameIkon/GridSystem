@@ -17,6 +17,7 @@
 <body onload="displayLevelInfo(1), loadLevel(1)">
 <button onclick="openModal('win-modal')">TEST WIN MODAL HERE</button>
 <button onclick="openModal('lose-modal')">TEST LOSE MODAL HERE</button>
+<button onclick="openModal('info-modal')">TEST INFO MODAL HERE</button>
 <!-- Win Modal -->
 <div id="win-modal" class="modal">
     <div class="modal-container">
@@ -52,10 +53,35 @@
         <div id="lose-content">
             <div id="lose-text">
                 <h1 id="lose-heading">
-                    Try again
+                    Game over
                 </h1>
                 <p id="lose-subtext">
-                    Better luck next time, you got it!
+                    You have run out of turns. Try again!
+                </p>
+            </div>
+            <div class="skip-button-modal-container">
+                <button class="skip-button-modal" onclick="navigateToLevel(1)">
+                    Retry
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Info Modal -->
+<div id="info-modal" class="modal">
+    <div class="modal-container">
+        <span class="close">&times;</span>
+        <div id="info-content">
+            <div id="info-text">
+                <h1 id="info-heading">
+                    Mission description
+                </h1>
+                <p id="info-subtext">
+                    Theory bla bla bla
+                </p>
+                <p>
+                    Wall of colour.
                 </p>
             </div>
             <div class="skip-button-modal-container">

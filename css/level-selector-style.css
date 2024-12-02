@@ -41,20 +41,16 @@
     background-color: #ffffff;
     border: 5px solid #d9d9d9;
     border-radius: 30px;
-    box-shadow:
-            0 0 20px rgba(0, 0, 0, 0%),
-            inset 0 0 15px rgba(175, 175, 175, 0%);
     margin: 20px 30px;
-    width: 300px;
-    height: 200px;
-    transform: scale(1);
+    width: 250px;
+    height: 210px;
     transition: all 260ms ease;
 }
 
 .level-button:hover {
     cursor: pointer;
     transform: scale(1.08);
-    border: 7px solid #1f70f2ca;
+    border: 7px solid #1f70f2ba;
     box-shadow:
             0 0 200px rgba(31, 112, 242, 40%),
             inset 0 0 20px rgba(31, 112, 242, 10%);
