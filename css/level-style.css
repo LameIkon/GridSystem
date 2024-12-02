@@ -123,7 +123,7 @@
     background-color: white;
     flex: 1 1 auto;
     border-radius: 5px;
-    padding: 0 16px 0px 16px;
+    padding: 0 16px 0 16px;
     margin: -10px 0 -10px 30px;
     align-self: stretch;
 }
