@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../../css/grid.css">
     <script src="../../js/load-content.js" defer></script>
 </head>
-<body onload="displayLevelInfo(2), loadLevel(2)">
+<body onload="displayLevelInfo(6), loadLevel(6)">
 <!-- Header -->
 <div id="header-container"></div>
 
@@ -23,10 +23,10 @@
                 <div id="mission-box">
                 </div>
                 <div id="skip-button-container">
-                    <button class="skip-buttons previous" onclick="navigateToLevel(1)">
+                    <button class="skip-buttons previous" onclick="navigateToLevel(5)">
                         <i class="fa-solid fa-arrow-left"></i>
                     </button>
-                    <button class="skip-buttons next" onclick="navigateToLevel(3)">
+                    <button class="skip-buttons next" onclick="navigateToLevel(1)">
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
@@ -46,18 +46,18 @@
                     <span id="max-turn"></span>
                 </p>
             </div>
-            <div>
-                <div id="game-container">
-                    <div id="grid"></div>
-                    <div id="theory-container"></div> <!-- Theory will be printed here by level-info.js. Also look to level-info.json for data-->
-                </div>
-                <div id="control-panel-container"></div>
+            <div id="game-container">
+                <div id="grid"></div>
+                <div id="theory-container"></div> <!-- Theory will be printed here by level-info.js. Also look to level-info.json for data-->
+            </div>
+            <div id="control-panel-level-2-container"></div>
         </div>
     </div>
 </main>
+<script src="../../js/distance-variable-2.js"></script>
 <script src="../../js/navigate.js"></script>
 <script src="../../js/level-info.js"></script>
 <script src="../../js/game-logic.js"></script>
-<script src="../../js/control-buttons.js"></script>
 </body>
 </html>
+

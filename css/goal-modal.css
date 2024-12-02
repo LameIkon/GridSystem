@@ -1,0 +1,114 @@
+:root {
+    --heading-font-family: klavika-bold, sans-serif;
+    --heading-font-size: 72px;
+    --subtext-font-family: corbel, sans-serif;
+    --subtext-font-size: 28px;
+    --text-margin: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 200%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-container {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 8px solid #000000;
+    border-radius: 20px;
+    box-shadow: 0 0 120px rgba(0, 0, 0, 0.4);
+    width: 45vw;
+    height: 60vh;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%
+}
+
+#win-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lose-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#win-heading {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-font-size);
+    color: #46a959;
+    margin: var(--text-margin);
+}
+
+#lose-heading {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-font-size);
+    color: #1f70f2;
+    margin: var(--text-margin);
+}
+
+#win-subtext {
+    font-family: var(--subtext-font-family);
+    font-size: var(--subtext-font-size);
+    margin: var(--text-margin);
+}
+
+#lose-subtext {
+    font-family: var(--subtext-font-family);
+    font-size: var(--subtext-font-size);
+    margin: var(--text-margin);
+}
+
+.skip-button-modal-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.skip-button-modal {
+    font-family: klavika-medium, sans-serif;
+    font-size: 25px;
+    color: #000000;
+    background-color: #f3f3f3;
+    border: 3px solid #000000;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 rgba(00, 00, 00, 100%);
+    padding: 5px 11px;
+    cursor: pointer;
+    transition: all 240ms ease;
+    margin: 5px;
+}
+
+.skip-button-modal:hover {
+    background-color: #e2e2e2;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

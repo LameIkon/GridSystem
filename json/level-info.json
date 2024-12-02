@@ -1,18 +1,68 @@
 [
     {
         "levelId": 1,
-        "title": "Bane 1",
-        "body": "Nå målet ved at indsætte værdier ind i metodekaldene."
+        "title": "Level 1",
+        "body": "Get to the goal by moving the player each turn. You can write a number into the boxes below.",
+        "theoryTitle": "Functions & Variables",
+        "theoryBox": 
+        {
+            "1": "A function...",
+            "2": "Variables are..."
+        }
     },
     {
         "levelId": 2,
-        "title": "Bane 2",
-        "body": "Description 2"
+        "title": "Level 2",
+        "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+        "theoryTitle": "Functions & Variables",
+        "theoryBox": 
+        {
+            "1": "test1",
+            "2": "test2",
+            "3": "test3"
+        }
     },
     {
         "levelId": 3,
-        "title": "Bane 3",
-        "body": "Description 3"
+        "title": "Level 3",
+        "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+        "theoryTitle": "Functions & Variables",
+        "theoryBox": 
+        {
+            "1": "test1",
+            "2": "test2",
+            "3": "test3"
+        }
+    },
+    {
+        "levelId": 4,
+        "title": "Level 4",
+        "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+        "theoryTitle": "Variables",
+        "theoryBox": 
+        {
+            "1": "In programming, we can declare variables."
+        }
+    },
+    {
+        "levelId": 5,
+        "title": "Level 5",
+        "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+        "theoryTitle": "Variables",
+        "theoryBox":
+        {
+            "1": "In programming, we can declare variables."
+        }
+    },
+    {
+        "levelId": 6,
+        "title": "Level 6",
+        "body": "0b 00 01 10 11 100 101.",
+        "theoryTitle": "Variables",
+        "theoryBox":
+        {
+            "1": "In programming, we can declare variables."
+        }
     }
 ]
 
