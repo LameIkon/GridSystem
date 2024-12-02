@@ -155,6 +155,7 @@ function move(direction, steps)
 
             if (reachedGoal(newY * gridX + newX)) {
                 console.log('Level Completed');
+                ////////////////// Todo: Goal UI + Functionality
             }
         }
         playerPosition.x = newX;
@@ -422,8 +423,8 @@ function deleteGrid()
 
 function loadLevel(specifiedId)
 {
-    //fetch('../../json/level-layout.json') // Find the location of the json file
-    fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
+    fetch('../../json/level-layout.json') // Find the location of the json file
+    //fetch('https://johanpedersen11.github.io/jsonData/level-layout.json') // Find the location of the json file
         .then(response => response.json())
         .then(info =>
         {
