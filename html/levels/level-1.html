@@ -4,20 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thee Robot</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../../css/global-style.css">
     <link rel="stylesheet" href="../../css/level-style.css">
     <link rel="stylesheet" href="../../css/control-panel.css">
     <link rel="stylesheet" href="../../css/grid.css">
+    <link rel="stylesheet" href="../../css/goal-modal.css">
     <script src="../../js/load-content.js" defer></script>
 </head>
 <body onload="displayLevelInfo(1), loadLevel(1)">
+<button onclick="openModal('win-modal')">TEST WIN MODAL HERE</button>
+<button onclick="openModal('lose-modal')">TEST LOSE MODAL HERE</button>
+<!-- Win Modal -->
+<div id="win-modal" class="modal">
+    <div class="modal-container">
+        <span class="close">&times;</span>
+        <div id="modal-content">
+            <div id="win-text">
+                <h1 id="win-heading">
+                    You win!
+                </h1>
+                <p id="win-subtext">
+                    Congratulations, you have beaten the level!
+                </p>
+            </div>
+            <div>
+                <!-- Add 3 start system here -->
+            </div>
+            <div class="skip-button-modal-container">
+                <button class="skip-button-modal" onclick="navigateToLevel(1)">
+                    Retry
+                </button>
+                <button class="skip-button-modal" onclick="navigateToLevel(2)">
+                    Next level
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loser Modal -->
+<div id="lose-modal" class="modal">
+    <div class="modal-container">
+        <span class="close">&times;</span>
+        <div id="lose-content">
+            <div id="lose-text">
+                <h1 id="lose-heading">
+                    You lose
+                </h1>
+                <p id="lose-subtext">
+                    Try better next time, you got it!
+                </p>
+            </div>
+            <div class="skip-button-modal-container">
+                <button class="skip-button-modal" onclick="navigateToLevel(1)">
+                    Retry
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Header -->
 <div id="header-container"></div>
 
 <!-- Main -->
 <main id="main" class="element hidden">
-    <div id="container-1">
+    <div id="container">
         <div id="top">
             <div id="mission-container">
                 <div id="mission-box">
