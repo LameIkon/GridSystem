@@ -138,3 +138,27 @@
     filter: blur(0);
     transform: translateX(0);
 }
+
+#theory-container{
+    background-color: white;
+    flex: 1 1 auto;
+    border-radius: 5px;
+    padding: 0 16px 0px 16px;
+    margin: -10px 0 -10px 30px;
+    align-self: stretch;
+}
+
+
+#theory-header{
+    font-family: klavika-bold, sans-serif;
+    color: var(--signature-color);
+    font-size: 28px;
+    margin-top: 15px;
+}
+
+#theory-body{
+    font-family: corbel, sans-serif;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    margin-top: -15px;
+}
