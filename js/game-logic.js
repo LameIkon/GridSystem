@@ -221,41 +221,17 @@ document.addEventListener('keydown', function (event)
         case 'ArrowLeft':
             move('left', step);
             break;
-            case 'ArrowRight':
-                move('right', step);
-                break;
-                case 'ArrowUp':
-                    move('up', step);
-                    break;
-                    case 'ArrowDown':
-                        move('down', step);
-                        break;
-                    }
-                });
-                
-                
-                
-                document.addEventListener('DOMContentLoaded', function() {
-                    let distance = 0;
-                    
-                    // Function to retrieve and store the distance from the input field
-                    function setDistance() {
-                        const distanceInput = document.getElementById("distance-input").value;
-                        
-                        // Check if the input is not empty and is a valid number
-                        if (distanceInput !== "" && !isNaN(distanceInput)) {
-                            distance = parseFloat(distanceInput); 
-            console.log("Distance set to:", distance); 
-        } else {
-            console.log("Invalid number"); 
-        }
+        case 'ArrowRight':
+            move('right', step);
+            break;
+        case 'ArrowUp':
+            move('up', step);
+            break;
+        case 'ArrowDown':
+            move('down', step);
+            break;
     }
-    
-    // Event listener for the button to set distance
-    document.getElementById("submit-distance").addEventListener("click", setDistance);
 });
-
-
 
 /*
 *  save() saves all the different tiles into the gameData object.
