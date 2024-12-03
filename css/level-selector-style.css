@@ -10,9 +10,10 @@
 }
 
 #main-heading h1 {
+    font-family: besley, serif;
     font-size: 70px;
     color: #000000;
-    margin: 0 1000px 0 0;
+    margin: 0 700px 0 0;
 }
 
 #levels {
@@ -51,9 +52,9 @@
 .level-button:hover {
     cursor: pointer;
     transform: scale(1.08);
-    border: 7px solid #1f70f2ba;
+    border: 5px solid #1f70f2ba;
     box-shadow:
-            0 0 100px rgba(31, 112, 242, 60%),
+            0 0 100px rgba(31, 112, 242, 30%),
             inset 0 0 20px rgba(31, 112, 242, 10%);
 }
 

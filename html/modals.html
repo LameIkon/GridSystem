@@ -32,7 +32,7 @@
         <div id="lose-content">
             <div id="lose-text">
                 <h1 id="lose-heading">
-                    Game over
+                    Game Over
                 </h1>
                 <p id="lose-subtext">
                     You have run out of turns. Try again!
@@ -54,48 +54,59 @@
         <div id="info-content">
             <div id="tile-description-div">
                 <div id="tile-description-box">
-                    <p>
-                        <table>
-                            <tr>
-                                <td><div class="cell player"></div></td>
-                                <td>Player</td>
-                            </tr>
-                            <tr>
-                                <td><div class="cell goal"></div></td>
-                                <td>Goal</td>
-                            </tr>
-                            <tr>
-                                <td><div class="cell wall"></div></td>
-                                <td>Wall</td>
-                            </tr>
-                            <tr>
-                                <td><div class="cell door"></div></td>
-                                <td>Door</td>
-                            </tr>
-                            <tr>
-                                <td><div class="cell key"></div></td>
-                                <td>Key</td>
-                            </tr>
-                            
-                        </table>
-
-                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="background-color: #0000ff" class="cell player cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Player</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell goal cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Goal</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell player cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Floor</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell wall cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Wall</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell door cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Door</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell key cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Key</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div id="info-text-container">
                 <div id="info-mission-description" class="info-text">
                     <p class="info-header">
-                        Objective:
+                        Objective<span class="dot">.</span>
                     </p>
                     <p id="mission-objective" class="info-subtext">
                     </p>
                 </div>
                 <div id="info-theory-container" class="info-text">
                     <p class="info-header">
-                        Theory:
+                        Theory<span class="dot">.</span>
                     </p>
                     <p class="info-subtext">
-                        In programming, we can declare variables.
                     </p>
                 </div>
             </div>

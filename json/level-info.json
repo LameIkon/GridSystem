@@ -1,69 +1,59 @@
 [
-    {
-        "levelId": 1,
-        "title": "Level 1",
-        "body": "eerg",
-        "theoryTitle": "Functions & Variables",
-        "theoryBox": 
-        {
-            "1": "A function...",
-            "2": "Variables are..."
-        }
-    },
-    {
-        "levelId": 2,
-        "title": "Level 2",
-        "body": "",
-        "theoryTitle": "Functions & Variables",
-        "theoryBox": 
-        {
-            "1": "test1",
-            "2": "test2",
-            "3": "test3"
-        }
-    },
-    {
-        "levelId": 3,
-        "title": "Level 3",
-        "body": "",
-        "theoryTitle": "Functions & Variables",
-        "theoryBox": 
-        {
-            "1": "test1",
-            "2": "test2",
-            "3": "test3"
-        }
-    },
-    {
-        "levelId": 4,
-        "title": "Level 4",
-        "body": "",
-        "theoryTitle": "Variables",
-        "theoryBox": 
-        {
-            "1": "In programming, we can declare variables."
-        }
-    },
-    {
-        "levelId": 5,
-        "title": "Level 5",
-        "body": "",
-        "theoryTitle": "Variables",
-        "theoryBox":
-        {
-            "1": "In programming, we can declare variables."
-        }
-    },
-    {
-        "levelId": 6,
-        "title": "Level 6",
-        "body": "",
-        "theoryTitle": "Variables",
-        "theoryBox":
-        {
-            "1": "In programming, we can declare variables."
-        }
+  {
+    "levelId": 1,
+    "title": "Level 1",
+    "body": "eerg",
+    "theoryTitle": "Functions & Variables",
+    "theoryBox": {
+      "1": "A function...",
+      "2": "Variables are..."
     }
+  },
+  {
+    "levelId": 2,
+    "title": "Level 2",
+    "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+    "theoryTitle": "Functions & Variables",
+    "theoryBox": {
+        "1": "In programming, we can declare variables."
+    }
+  },
+  {
+    "levelId": 3,
+    "title": "Level 3",
+    "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+    "theoryTitle": "Functions & Variables",
+    "theoryBox": {
+      "1": "In programming, we can declare variables."
+    }
+  },
+  {
+    "levelId": 4,
+    "title": "Level 4",
+    "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+    "theoryTitle": "Variables",
+    "theoryBox": {
+      "1": "In programming, we can declare variables."
+    }
+  },
+  {
+    "levelId": 5,
+    "title": "Level 5",
+    "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+    "theoryTitle": "Variables",
+    "theoryBox": {
+      "1": "In programming, we can declare variables."
+    }
+  },
+  {
+    "levelId": 6,
+    "title": "Level 6",
+    "body": "Just do something bro.",
+    "theoryTitle": "Variables",
+    "theoryBox": {
+      "1": "In programming, we can declare variables."
+    }
+  }
 ]
 
 

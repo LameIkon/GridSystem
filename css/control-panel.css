@@ -162,7 +162,8 @@
 
 
 #variable-value-container p {
-    font-family: klavika-medium, sans-serif;
+    font-family: besley, serif;
+    font-weight: bold;
     font-size: 28px;
     color: #000000;
     margin-top: 10px;

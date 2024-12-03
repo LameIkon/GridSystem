@@ -60,6 +60,15 @@
     src: url('../assets/fonts/opensans-bold.ttf') format('woff');
 }
 
+@font-face {
+    font-family: besley;
+    src: url('../assets/fonts/besley.ttf') format('woff');
+}
+
+.dot {
+    color: #1f70f2;
+}
+
 h1 {
     font-family: klavika-bold, serif;
     color: var(--signature-color);
@@ -70,7 +79,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100px;
+    height: 120px;
 }
 
 #header > div {
@@ -95,28 +104,28 @@ h1 {
 
 #logo p {
     font-family: dDicapslock, sans-serif;
-    font-size: 40px;
+    font-size: 38px;
     color: rgb(0, 0, 0);
     margin: 0;
 }
 
 .right-nav-buttons {
     font-family: corbel-bold, sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     border-radius: 40px;
     box-sizing: border-box;
     padding: 3px 15px;
 }
 
 #go-back {
-    background-color: #b43a3a;
-    border: 3px solid #b43a3a;
+    background-color: #cb5555;
+    border: 3px solid #cb5555;
     transition: all var(--transition-time-header-buttons) ease;
 }
 
 #go-back:hover {
-    background-color: #c96767;
-    border: 3px solid #c96767;
+    background-color: #b43a3a;
+    border: 3px solid #b43a3a;
 }
 
 #go-back p {

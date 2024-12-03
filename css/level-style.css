@@ -34,7 +34,8 @@
 }
 
 #mission {
-    font-family: klavika-bold, sans-serif;
+    font-family: besley, serif;
+    font-weight: bold;
     color: #000000;
     font-size: 48px;
     margin: 10px;
@@ -70,7 +71,7 @@
     align-items: center;
     background-color: #f3f3f3;
     border: 3px solid #000000;
-    border-radius: 5px;
+    border-radius: 12px;
     box-shadow: 8px 8px 0 rgba(00, 00, 00, 100%);
     padding: 0 16px 16px 16px;
 }
