@@ -88,15 +88,53 @@
 #info-content {
     display: flex;
     justify-content: space-between;
+    margin: 32px;
+    height: 100%;
 }
 
-#tile-description-container {
+#tile-description-div {
     width: 33%;
 }
 
-#info-mission-container {
-    width: 67%;
+#tile-description-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d5d5d5;
+    border: 6px solid #000000;
+    border-radius: 10px;
+    width: 250px;
+    height: 90%;
+}
 
+#info-text-container {
+    margin: 0 -20px 0 0;
+    width: 67%;
+}
+
+#info-mission-description {
+    margin: 0 0 90px 0;
+}
+
+#info-theory-container {
+
+}
+
+.info-text {
+
+}
+
+.info-header {
+    font-family: corbel-bold, sans-serif;
+    font-size: 44px;
+    color: #1f70f2;
+    margin: 8px 0;
+}
+
+.info-subtext {
+    font-family: corbel, sans-serif;
+    font-size: 26px;
+    margin: 8px 0;
 }
 
 .skip-button-modal-container {
