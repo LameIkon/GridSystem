@@ -21,23 +21,21 @@
 <!-- Main -->
 <main id="main" class="element hidden">
     <div id="container">
-        <div id="top">
-            <div id="mission-container">
-                <div id="mission-box">
-                </div>
-                <div id="skip-button-container">
-                    <button class="skip-buttons previous" onclick="navigateToLevel(6)">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button class="skip-buttons next" onclick="navigateToLevel(2)">
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
         <div id="game">
-            <div id="info-modal-button">
-                <button onclick="openModal('info-modal')">
+            <div id="info-modal-button-div">
+                <div id="mission-container">
+                    <div id="mission-box">
+                    </div>
+                    <div id="skip-button-container">
+                        <button class="skip-buttons previous" onclick="navigateToLevel(6)">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button class="skip-buttons next" onclick="navigateToLevel(2)">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <button id="info-modal-button" onclick="openModal('info-modal')">
                     Info
                 </button>
             </div>

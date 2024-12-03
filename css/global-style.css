@@ -1,7 +1,7 @@
 :root {
     font-family: klavika, sans-serif;
     background-color: #ffffff;
-    --signature-color: #1f70f2;
+    --signature-color: #000000;
     --transition-time-header-buttons: 200ms;
 }
 
