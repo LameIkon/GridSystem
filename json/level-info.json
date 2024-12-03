@@ -13,7 +13,7 @@
     {
         "levelId": 2,
         "title": "Level 2",
-        "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+        "body": "",
         "theoryTitle": "Functions & Variables",
         "theoryBox": 
         {
@@ -25,7 +25,7 @@
     {
         "levelId": 3,
         "title": "Level 3",
-        "body": "Get to the goal by navigating the player around the walls each turn. You can write a number into the boxes below.",
+        "body": "",
         "theoryTitle": "Functions & Variables",
         "theoryBox": 
         {
@@ -37,7 +37,7 @@
     {
         "levelId": 4,
         "title": "Level 4",
-        "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+        "body": "",
         "theoryTitle": "Variables",
         "theoryBox": 
         {
@@ -47,7 +47,7 @@
     {
         "levelId": 5,
         "title": "Level 5",
-        "body": "Get to the goal by moving the player each turn. You can write a number into the variable in the bottom right.",
+        "body": "",
         "theoryTitle": "Variables",
         "theoryBox":
         {
@@ -57,7 +57,7 @@
     {
         "levelId": 6,
         "title": "Level 6",
-        "body": "0b 00 01 10 11 100 101.",
+        "body": "",
         "theoryTitle": "Variables",
         "theoryBox":
         {

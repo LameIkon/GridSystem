@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thee Robot</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../../css/global-style.css">
     <link rel="stylesheet" href="../../css/level-style.css">
     <link rel="stylesheet" href="../../css/control-panel.css">
     <link rel="stylesheet" href="../../css/grid.css">
+    <link rel="stylesheet" href="../../css/goal-modal.css">
     <script src="../../js/load-content.js" defer></script>
 </head>
 <body onload="displayLevelInfo(5), loadLevel(5)">
@@ -18,22 +21,20 @@
 <!-- Main -->
 <main id="main" class="element hidden">
     <div id="container">
-        <div id="top">
-            <div id="mission-container">
-                <div id="mission-box">
-                </div>
-                <div id="skip-button-container">
-                    <button class="skip-buttons previous" onclick="navigateToLevel(4)">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </button>
-                    <button class="skip-buttons next" onclick="navigateToLevel(6)">
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
         <div id="game">
             <div id="info-modal-button-div">
+                <div id="mission-container">
+                    <div id="mission-box">
+                    </div>
+                    <div id="skip-button-container">
+                        <button class="skip-buttons previous" onclick="navigateToLevel(4)">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button class="skip-buttons next" onclick="navigateToLevel(6)">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
                 <button id="info-modal-button" onclick="openModal('info-modal')">
                     Info
                 </button>
@@ -46,18 +47,22 @@
                     <span id="max-turn"></span>
                 </p>
             </div>
-            <div id="game-container">
-                <div id="grid"></div>
-                <div id="theory-container"></div> <!-- Theory will be printed here by level-info.js. Also look to level-info.json for data-->
+            <div>
+                <div id="game-container">
+                    <div id="grid"></div>
+                </div>
             </div>
             <div id="control-panel-level-2-container"></div>
         </div>
     </div>
 </main>
-<script src="../../js/distance-variable-2.js"></script>
+
+<!-- Modal Container -->
+<div id='modal-container'></div>
+
 <script src="../../js/navigate.js"></script>
 <script src="../../js/level-info.js"></script>
 <script src="../../js/game-logic.js"></script>
+<script src="../../js/control-buttons.js"></script>
 </body>
 </html>
-

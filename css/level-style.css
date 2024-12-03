@@ -25,7 +25,8 @@
     display: flex;
     background-color: transparent;
     border-radius: 20px;
-    margin-bottom: -20px;
+    margin-top: 10px;
+    margin-bottom: -30px;
 }
 
 #mission-box {
@@ -40,7 +41,7 @@
 }
 
 #skip-button-container {
-    margin: 20px 0 0 20px;
+    margin: 21px 0 0 20px;
 }
 
 .skip-buttons {
@@ -50,9 +51,9 @@
     background-color: #1f70f2;
     border: none;
     border-radius: 100%;
-    margin: 0 7px;
-    width: 35px;
-    height: 35px;
+    margin: 0 6px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
     transition: all var(--transition-time-skip-buttons) ease;
 }
@@ -101,12 +102,12 @@
 }
 
 #turn-counter-container {
-    margin-top: -160px;
+    margin-top: -142px;
 }
 
 #turn-counter-container p {
     font-family: klavika-medium, sans-serif;
-    font-size: 28px;
+    font-size: 32px;
     color: #b43a3a;
     margin-top: 2vh;
 }
