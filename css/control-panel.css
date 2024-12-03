@@ -122,10 +122,11 @@
     left: 50%;
     top: 100%;
     transform: translate(-50%, 12px);
-    background-color: #58be6a;
+    background-color: #52b764;
     width: 49px;
     height: 34px;
-    border: none;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
     border-radius: 10px;
     display: inline-block;
     cursor: pointer;

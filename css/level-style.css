@@ -49,11 +49,12 @@
     font-size: 20px;
     color: #ffffff;
     background-color: #1f70f2;
-    border: none;
+    border: 2px solid #000000;
     border-radius: 100%;
     margin: 0 6px;
     width: 32px;
     height: 32px;
+    box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
     cursor: pointer;
     transition: all var(--transition-time-skip-buttons) ease;
 }
