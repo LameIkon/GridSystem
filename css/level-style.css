@@ -104,19 +104,25 @@
 }
 
 #turn-counter-container {
-    margin-top: -142px;
+    margin-top: -170px;
 }
 
 #turn-counter-container p {
-    font-family: klavika-medium, sans-serif;
-    font-size: 32px;
+    font-family: besley, serif;
+    font-weight: bold;
+    font-size: 38px;
     color: #b43a3a;
     margin-top: 2vh;
 }
 
+.minimize {
+    font-size: 27px !important;
+    opacity: 85%;
+}
+
 .hidden {
     opacity: 0;
-    transition: all 600ms ease;
+    transition: all 700ms ease;
 }
 
 .show {

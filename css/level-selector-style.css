@@ -45,7 +45,7 @@
     border-radius: 32px;
     margin: 20px 30px;
     width: 21em;
-    height: 16em;
+    height: 15em;
     transition: all 260ms ease;
 }
 
@@ -54,7 +54,7 @@
     transform: scale(1.08);
     border: 5px solid #1f70f2ba;
     box-shadow:
-            0 0 100px rgba(31, 112, 242, 30%),
+            0 0 110px rgba(31, 112, 242, 40%),
             inset 0 0 20px rgba(31, 112, 242, 10%);
 }
 

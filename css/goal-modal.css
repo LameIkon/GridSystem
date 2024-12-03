@@ -1,8 +1,8 @@
 :root {
-    --heading-font-family: klavika-bold, sans-serif;
+    --heading-font-family: besley, sans-serif;
     --heading-font-size: 72px;
     --subtext-font-family: corbel, sans-serif;
-    --subtext-font-size: 28px;
+    --subtext-font-size: 36px;
     --text-margin: 10px;
 }
 

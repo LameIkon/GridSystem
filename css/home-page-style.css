@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 100px 0 0 0;
+    margin: 80px 0 0 0;
 }
 
 #introduction-text {
@@ -44,7 +44,7 @@
 #description {
     display: flex;
     justify-content: center;
-    margin: -180px 0;
+    margin: -210px 0;
 }
 
 #description-text {
@@ -76,7 +76,7 @@
     box-shadow: 5px 5px 0 rgba(00, 00, 00, 100%);
     padding: 10px 35px;
     position: relative;
-    margin: 130px 0;
+    margin: 180px 0;
     overflow: hidden;
     transform: scale(1.1);
     transition: all var(--transition-time-play-button) ease;
