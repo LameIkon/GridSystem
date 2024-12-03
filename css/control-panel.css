@@ -162,13 +162,50 @@
 
 #variable-value-container p {
     font-family: klavika-medium, sans-serif;
-    font-size: 20px;
+    font-size: 28px;
     color: #000000;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 25px;
 }
 
+#variable-value-assign-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#distance-input-case {
+    display: flex;
+    align-items: center;
+}
+
+#distance-text {
+    font-family: opensans-semibold, sans-serif;
+    font-size: 22px;
+    margin: 0;
+}
 
 #distance-input {
-    width: 50px;
+    font-family: opensans-regular, sans-serif;
+    font-size: 18px;
+    border: 2px solid #000000;
+    border-radius: 13px;
+    width: 65px;
+    margin: 0 6px;
+}
+
+#submit-distance {
+    font-family: corbel, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #1f70f2;
+    border: transparent;
+    border-radius: 13px;
+    width: 6.5em;
+    height: 2em;
+    transition: all 150ms ease;
+}
+
+#submit-distance:hover {
+    background-color: #5498ff;
 }
