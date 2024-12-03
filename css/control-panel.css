@@ -155,6 +155,10 @@
     padding: 8px;
 }
 
+#variable-value {
+    color: #1f70f2;
+}
+
 #variable-value-container {
     display: flex;
     justify-content: center;

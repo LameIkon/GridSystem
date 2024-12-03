@@ -1,4 +1,4 @@
-<!-- modals.html -->
+<!-- modal-1.html -->
 <!-- Win Modal -->
 <div id="win-modal" class="modal">
     <div class="modal-container">
@@ -8,18 +8,18 @@
                     Congratulations!
                 </h1>
                 <p id="win-subtext">
-                    You have completed the level!
+                    You have completed all the levels!
                 </p>
             </div>
             <div>
                 <!-- Add 3 start system here -->
             </div>
             <div class="skip-button-modal-container">
-                <button class="skip-button-modal" onclick="navigateToLevel(1)">
+                <button class="skip-button-modal" onclick="navigateToLevel(6)">
                     Retry
                 </button>
-                <button class="skip-button-modal" onclick="navigateToLevel(2)">
-                    Next level
+                <button class="skip-button-modal" onclick="navigateToPage('level-selector')">
+                    Return
                 </button>
             </div>
         </div>
@@ -97,16 +97,18 @@
             <div id="info-text-container">
                 <div id="info-mission-description" class="info-text">
                     <p class="info-header">
-                        Objective<span class="dot">:</span>
+                        Objective<span class="dot">.</span>
                     </p>
                     <p id="mission-objective" class="info-subtext">
+                        ?
                     </p>
                 </div>
                 <div id="info-theory-container" class="info-text">
                     <p class="info-header">
-                        Theory<span class="dot">:</span>
+                        Theory<span class="dot">.</span>
                     </p>
                     <p class="info-subtext">
+                        ?
                     </p>
                 </div>
             </div>

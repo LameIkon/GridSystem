@@ -1,0 +1,117 @@
+<!-- modal-1.html -->
+<!-- Win Modal -->
+<div id="win-modal" class="modal">
+    <div class="modal-container">
+        <div id="win-content">
+            <div id="win-text">
+                <h1 id="win-heading">
+                    Congratulations!
+                </h1>
+                <p id="win-subtext">
+                    You have completed the level!
+                </p>
+            </div>
+            <div>
+                <!-- Add 3 start system here -->
+            </div>
+            <div class="skip-button-modal-container">
+                <button class="skip-button-modal" onclick="navigateToLevel(1)">
+                    Retry
+                </button>
+                <button class="skip-button-modal" onclick="navigateToLevel(2)">
+                    Next level
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lose Modal -->
+<div id="lose-modal" class="modal">
+    <div class="modal-container">
+        <div id="lose-content">
+            <div id="lose-text">
+                <h1 id="lose-heading">
+                    Game Over
+                </h1>
+                <p id="lose-subtext">
+                    You have run out of turns. Try again!
+                </p>
+            </div>
+            <div class="skip-button-modal-container">
+                <button class="skip-button-modal" onclick="navigateToLevel(1)">
+                    Retry
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Info Modal -->
+<div id="info-modal" class="modal">
+    <div class="modal-container">
+        <button class="close-button" onclick="closeModal()">&times;</button>
+        <div id="info-content">
+            <div id="tile-description-div">
+                <div id="tile-description-box">
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="background-color: #0000ff" class="cell player cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Player</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell goal cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Goal</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell player cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Floor</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell wall cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Wall</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell door cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Door</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cell key cell-modal cell-tile"></div>
+                            </td>
+                            <td class="cell-name">= Key</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="info-text-container">
+                <div id="info-mission-description" class="info-text">
+                    <p class="info-header">
+                        Objective<span class="dot">.</span>
+                    </p>
+                    <p id="mission-objective" class="info-subtext">
+                        Get to the goal by moving the player each turn. You can write a number into the boxes below
+                    </p>
+                </div>
+                <div id="info-theory-container" class="info-text">
+                    <p class="info-header">
+                        Theory<span class="dot">.</span>
+                    </p>
+                    <p class="info-subtext">
+                        When programming, we can declare variables which we can use to...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

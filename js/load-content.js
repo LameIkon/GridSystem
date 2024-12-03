@@ -22,7 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
     loadHTML('control-panel-container', '../../html/control-panel.html');
     loadHTML('control-panel-level-2-container', '../../html/control-panel-level-2.html');
     loadHTML('control-panel-level-3-container', '../../html/control-panel-level-3.html');
-    loadHTML('modal-container', '../../html/modals.html');
+    loadHTML('modal-container-1', '../../html/modals/modal-1.html');
+    loadHTML('modal-container-2', '../../html/modals/modal-2.html');
+    loadHTML('modal-container-3', '../../html/modals/modal-3.html');
+    loadHTML('modal-container-4', '../../html/modals/modal-4.html');
+    loadHTML('modal-container-5', '../../html/modals/modal-5.html');
+    loadHTML('modal-container-6', '../../html/modals/modal-6.html');
+
 });
 
 // CSS Class Load
