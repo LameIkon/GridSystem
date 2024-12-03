@@ -15,13 +15,10 @@
     <script src="../../js/load-content.js" defer></script>
 </head>
 <body onload="displayLevelInfo(1), loadLevel(1)">
-<button onclick="openModal('win-modal')">TEST WIN MODAL HERE</button>
-<button onclick="openModal('lose-modal')">TEST LOSE MODAL HERE</button>
-<button onclick="openModal('info-modal')">TEST INFO MODAL HERE</button>
+<button onclick="openModal('info-modal')">Mission Description</button>
 <!-- Win Modal -->
 <div id="win-modal" class="modal">
     <div class="modal-container">
-        <span class="close">&times;</span>
         <div id="win-content">
             <div id="win-text">
                 <h1 id="win-heading">
@@ -49,7 +46,6 @@
 <!-- Loser Modal -->
 <div id="lose-modal" class="modal">
     <div class="modal-container">
-        <span class="close">&times;</span>
         <div id="lose-content">
             <div id="lose-text">
                 <h1 id="lose-heading">
@@ -123,11 +119,6 @@
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
-            </div>
-            <div>
-                <button id="return-button" onclick="navigateToPage('level-selector')">
-                    Go back
-                </button>
             </div>
         </div>
         <div id="game">

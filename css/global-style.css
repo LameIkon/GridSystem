@@ -53,6 +53,17 @@ h1 {
     height: 100px;
 }
 
+#header > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+}
+
+#header > div > button {
+    margin-right: 10px;
+}
+
 #header button {
     cursor: pointer;
 }
@@ -95,3 +106,10 @@ h1 {
     opacity: 100%;
 }
 
+#go-back {
+    visibility: hidden;
+}
+
+#go-back.show-go-back {
+    visibility: visible !important;
+}
