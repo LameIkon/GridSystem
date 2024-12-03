@@ -1,8 +1,8 @@
 :root {
     font-family: klavika, sans-serif;
     background-color: #ffffff;
-    --transition-time-header-buttons: 300ms;
     --signature-color: #1f70f2;
+    --transition-time-header-buttons: 200ms;
 }
 
 @font-face {
@@ -80,29 +80,53 @@ h1 {
     margin: 0;
 }
 
-.buttons {
-    background-color: transparent;
-    border: 3px solid transparent;
+.right-nav-buttons {
+    font-family: corbel-bold, sans-serif;
+    font-size: 25px;
     border-radius: 40px;
     box-sizing: border-box;
     padding: 3px 15px;
+}
+
+#go-back {
+    background-color: #b43a3a;
+    border: 3px solid #b43a3a;
+    transition: all var(--transition-time-header-buttons) ease;
+}
+
+#go-back:hover {
+    background-color: #c96767;
+    border: 3px solid #c96767;
+}
+
+#go-back p {
+    color: #ffffff;
+    transition: opacity var(--transition-time-header-buttons) ease;
+    margin: 7px;
+}
+
+#go-back:hover p {
+
+}
+
+#home-button {
+    background-color: transparent;
+    border: 3px solid #cecece;
     transition: border var(--transition-time-header-buttons) ease;
 }
 
-.buttons:hover {
+#home-button:hover {
     border-color: black;
 }
 
-.buttons p {
-    font-family: corbel-bold, sans-serif;
-    font-size: 25px;
+#home-button p {
     color: #000000;
     opacity: 60%;
     transition: opacity var(--transition-time-header-buttons) ease;
     margin: 7px;
 }
 
-.buttons:hover p {
+#home-button:hover p {
     opacity: 100%;
 }
 

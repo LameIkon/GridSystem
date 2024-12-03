@@ -2,7 +2,7 @@
     {
         "levelId": 1,
         "title": "Level 1",
-        "body": "Get to the goal by moving the player each turn. You can write a number into the boxes below.",
+        "body": "",
         "theoryTitle": "Functions & Variables",
         "theoryBox": 
         {

@@ -15,7 +15,6 @@
     <script src="../../js/load-content.js" defer></script>
 </head>
 <body onload="displayLevelInfo(1), loadLevel(1)">
-<button onclick="openModal('info-modal')">Mission Description</button>
 <!-- Win Modal -->
 <div id="win-modal" class="modal">
     <div class="modal-container">
@@ -122,6 +121,7 @@
             </div>
         </div>
         <div id="game">
+            <button onclick="openModal('info-modal')">Mission Description</button>
             <div id="turn-counter-container">
                 <p>
                     Turn:
