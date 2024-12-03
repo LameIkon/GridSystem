@@ -40,6 +40,26 @@
     src: url('../assets/fonts/selectric-century.ttf') format('woff');
 }
 
+@font-face {
+    font-family: opensans-regular;
+    src: url('../assets/fonts/opensans-regular.ttf') format('woff');
+}
+
+@font-face {
+    font-family: opensans-medium;
+    src: url('../assets/fonts/opensans-medium.ttf') format('woff');
+}
+
+@font-face {
+    font-family: opensans-semibold;
+    src: url('../assets/fonts/opensans-semibold.ttf') format('woff');
+}
+
+@font-face {
+    font-family: opensans-bold;
+    src: url('../assets/fonts/opensans-bold.ttf') format('woff');
+}
+
 h1 {
     font-family: klavika-bold, serif;
     color: var(--signature-color);

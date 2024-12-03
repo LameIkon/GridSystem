@@ -82,6 +82,17 @@
     padding: 0 16px 16px 16px;
 }
 
+#info-modal-button {
+    width: 100%;
+}
+
+#info-modal-button button {
+    font-family: klavika, sans-serif;
+    font-size: 20px;
+    color: #000000;
+    float: left;
+}
+
 #turn-counter-container p {
     font-family: klavika-medium, sans-serif;
     font-size: 28px;

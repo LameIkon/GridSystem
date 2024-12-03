@@ -15,91 +15,6 @@
     <script src="../../js/load-content.js" defer></script>
 </head>
 <body onload="displayLevelInfo(1), loadLevel(1)">
-<!-- Win Modal -->
-<div id="win-modal" class="modal">
-    <div class="modal-container">
-        <div id="win-content">
-            <div id="win-text">
-                <h1 id="win-heading">
-                    Congratulations!
-                </h1>
-                <p id="win-subtext">
-                    You have completed the level!
-                </p>
-            </div>
-            <div>
-                <!-- Add 3 start system here -->
-            </div>
-            <div class="skip-button-modal-container">
-                <button class="skip-button-modal" onclick="navigateToLevel(1)">
-                    Retry
-                </button>
-                <button class="skip-button-modal" onclick="navigateToLevel(2)">
-                    Next level
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Loser Modal -->
-<div id="lose-modal" class="modal">
-    <div class="modal-container">
-        <div id="lose-content">
-            <div id="lose-text">
-                <h1 id="lose-heading">
-                    Game over
-                </h1>
-                <p id="lose-subtext">
-                    You have run out of turns. Try again!
-                </p>
-            </div>
-            <div class="skip-button-modal-container">
-                <button class="skip-button-modal" onclick="navigateToLevel(1)">
-                    Retry
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Info Modal -->
-<div id="info-modal" class="modal">
-    <div class="modal-container">
-        <span class="close">&times;</span>
-        <div id="info-content">
-            <div id="tile-description-div">
-                <div id="tile-description-box">
-                    <p>
-                        PLACE COLOUR LIST HERE
-                    </p>
-                    <p>
-                        HELLO 2
-                    </p>
-                </div>
-            </div>
-            <div id="info-text-container">
-                <div id="info-mission-description" class="info-text">
-                    <p class="info-header">
-                        Objective:
-                    </p>
-                    <p class="info-subtext">
-                        Get to the goal by moving the player each turn. You can write a number into the boxes below.
-                    </p>
-                </div>
-                <div id="info-theory-container" class="info-text">
-                    <p class="info-header">
-                        Theory:
-                    </p>
-                    <p class="info-subtext">
-                        In programming, we can declare variables.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Header -->
 <div id="header-container"></div>
 
@@ -121,7 +36,11 @@
             </div>
         </div>
         <div id="game">
-            <button onclick="openModal('info-modal')">Mission Description</button>
+            <div id="info-modal-button">
+                <button onclick="openModal('info-modal')">
+                    Info
+                </button>
+            </div>
             <div id="turn-counter-container">
                 <p>
                     Turn:
@@ -140,6 +59,10 @@
         </div>
     </div>
 </main>
+
+<!-- Modal Container -->
+<div id='modal-container'></div>
+
 <script src="../../js/navigate.js"></script>
 <script src="../../js/level-info.js"></script>
 <script src="../../js/game-logic.js"></script>

@@ -160,29 +160,14 @@ function openModal(modalName) {
     modal.style.display = "block";
 }
 
-// Function to close the modal
-document.addEventListener("DOMContentLoaded", () => {
+function closeModal() {
     const modals = [
         document.getElementById("info-modal")
     ];
-    const spans = document.getElementsByClassName("close");
-
-    for (let i = 0; i < spans.length; i++) {
-        spans[i].onclick = function () {
-            for (let i = 0; i < modals.length; i++) {
-                modals[i].style.display = "none";
-            }
-        }
+    for (let i = 0; i < modals.length; i++) {
+        modals[i].style.display = "none";
     }
-
-    window.onclick = function (event) {
-        for (let modal of modals) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        }
-    }
-});
+}
 
 // Check if the path is clear this will be extended in the future for other obstacles
 function canWalk(pathID) {

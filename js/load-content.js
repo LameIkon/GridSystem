@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadHTML('control-panel-container', '../../html/control-panel.html');
     loadHTML('control-panel-level-2-container', '../../html/control-panel-level-2.html');
     loadHTML('control-panel-level-3-container', '../../html/control-panel-level-3.html');
+    loadHTML('modal-container', '../../html/modals.html');
 });
 
 // CSS Class Load
@@ -45,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Initialize the "Go Back" button visibility
 function initGoBackButton() {
     const goBackButton = document.getElementById('go-back');
     if (!goBackButton) {
@@ -63,16 +63,11 @@ function initGoBackButton() {
         'level-6.html',
     ];
 
-    // Check if the current page is in the list of pages where the button should be visible
     if (pagesToShowButton.includes(currentPage)) {
-        console.log('Showing Go Back button'); // Debug
         goBackButton.classList.add('show-go-back');
     } else {
-        console.log('Hiding Go Back button'); // Debug
-        goBackButton.classList.remove('show-go-back'); // Ensure the button is hidden on other pages
+        goBackButton.classList.remove('show-go-back');
     }
 }
 
-function goBack() {
-    window.history.back(); // Go back to the previous page
-}
+
