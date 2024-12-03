@@ -136,11 +136,11 @@
 
 .run-button:hover {
     color: #ffffff;
-    background-color: #7dd28c;
+    background-color: #75cc84;
 }
 
 .run-button:active {
-    background-color: #c96767;
+    background-color: #419651;
 }
 
 #variable-container {
@@ -193,7 +193,7 @@
     border-radius: 13px;
     width: 65px;
     box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
-    margin: 0 6px;
+    margin: 0 8px;
 }
 
 #submit-distance {
