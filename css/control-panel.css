@@ -181,28 +181,30 @@
 
 #distance-text {
     font-family: opensans-semibold, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     margin: 0;
 }
 
 #distance-input {
     font-family: opensans-regular, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     border: 2px solid #000000;
     border-radius: 13px;
     width: 65px;
+    box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
     margin: 0 6px;
 }
 
 #submit-distance {
     font-family: corbel, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #ffffff;
     background-color: #1f70f2;
-    border: transparent;
+    border: 2px solid #000000;
     border-radius: 13px;
     width: 6.5em;
-    height: 2em;
+    height: 1.9em;
+    box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
     transition: all 150ms ease;
 }
 
