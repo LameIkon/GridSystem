@@ -24,8 +24,8 @@
     margin: 10% auto;
     padding: 20px;
     border: 5px solid #000000;
-    border-radius: 10px;
-    box-shadow: 0 0 120px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 0 520px rgba(0, 0, 0, 0.6);
     width: 45vw;
     height: 60vh;
 }
@@ -101,8 +101,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #eeeeee;
-    border: 6px solid #a6a6a6;
+    background-color: #e3e3e3;
+    border: 6px solid #9a9a9a;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
     border-radius: 10px;
     width: 250px;
