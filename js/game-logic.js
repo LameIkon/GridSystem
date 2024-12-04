@@ -8,6 +8,7 @@ let playerPosition; // LoadLevel controls this. look into level-layout.js
 let turn = 0;
 let maxTurn; // Load level controls this. look into level-layout.js
 let noMoreTurns = false;
+let modalDelayInMiliseconds = 350; //equal to 1 second
 
 // #region Names for objects in the scene
 // Error proofing the tiles
@@ -82,7 +83,7 @@ function checkTurnLimit() {
 function gameOver() {
     checkTurnLimit();
     if (noMoreTurns) {
-        openModal("lose-modal");
+        setTimeout(openLoseModal, modalDelayInMiliseconds);
     }
 }
 
@@ -94,10 +95,9 @@ function handleMove(direction) {
 }
 
 function move(direction, steps) {
-    if (noMoreTurns) {
-        gameOver();
-        return;
-    }
+   if(noMoreTurns){
+    return;
+   }
 
     let newX = playerPosition.x;
     let newY = playerPosition.y;
@@ -129,11 +129,13 @@ function move(direction, steps) {
 
         // Collision detection to not go out of bounds
         if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY) {
+            alert("You can't move outside the grid, please enter another value");
             return;
         }
 
         // Collision detection for the obstacles
         if (!canWalk(newY * gridX + newX)) {
+            alert("You are not a ghost, you can't move through walls, please enter another value");
             return;
         }
 
@@ -143,7 +145,7 @@ function move(direction, steps) {
 
         if (reachedGoal(newY * gridX + newX)) {
             console.log('Level Completed');
-            openModal("win-modal");
+            setTimeout(openWinModal, modalDelayInMiliseconds);
         }
     }
     playerPosition.x = newX;
@@ -153,6 +155,14 @@ function move(direction, steps) {
     renderPlayer();
     renderTurnCounter();
     gameOver();
+}
+
+function openLoseModal(){
+    openModal("lose-modal");
+}
+
+function openWinModal(){
+    openModal("win-modal");
 }
 
 function openModal(modalName) {
