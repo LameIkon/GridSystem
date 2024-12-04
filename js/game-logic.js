@@ -144,8 +144,8 @@ function move(direction, steps) {
         }
 
         if (reachedGoal(newY * gridX + newX)) {
-            console.log('Level Completed');
-            setTimeout(openWinModal, modalDelayInMiliseconds);
+            console.log('Level Completed'); 
+            setTimeout(openWinModal, modalDelayInMiliseconds);         
         }
     }
     playerPosition.x = newX;
@@ -154,7 +154,10 @@ function move(direction, steps) {
     turn++;
     renderPlayer();
     renderTurnCounter();
-    gameOver();
+
+    if (!reachedGoal(newY * gridX + newX)) {
+          gameOver();
+    }
 }
 
 function openLoseModal(){
