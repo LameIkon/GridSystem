@@ -178,6 +178,8 @@ function openModalAtStart() {
     modalOpenAndClose = false
 }
 
+
+
 function openModal(modalName) {
     const modal = document.getElementById(modalName);
     modal.style.display = "block";
