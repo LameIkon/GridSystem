@@ -67,7 +67,7 @@ function updateVariableValue(value) {
 function oogaBooga() {
     const functionFields = document.querySelectorAll(".function-var-field");
     for (var i = 0; i < functionFields.length; i++) {
-        functionFields[i].innerText = "Distance + 2";
+        functionFields[i].innerText = "Steps + 2";
     }
     console.log("this WORKSKSSA");
 }
