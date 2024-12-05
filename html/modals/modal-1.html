@@ -57,7 +57,7 @@
                     <table>
                         <tr>
                             <td>
-                                <div style="background-color: #0000ff" class="cell player cell-modal cell-tile"></div>
+                                <div style="background-color: #1f70f2" class="cell player cell-modal cell-tile"></div>
                             </td>
                             <td class="cell-name">= Player</td>
                         </tr>
@@ -72,7 +72,7 @@
                                 <div class="cell player cell-modal cell-tile"></div>
                             </td>
                             <td class="cell-name">= Floor</td>
-                        </tr>                     
+                        </tr>
                     </table>
                 </div>
             </div>
@@ -82,7 +82,10 @@
                         Objective<span class="dot">.</span>
                     </p>
                     <p id="mission-objective" class="info-subtext">
-                        Reach the goal by moving the player each turn. You can write a number into the boxes below and press run.
+                        Reach the <span class="green">Goal</span> by moving the <span class="blue">Player</span> each
+                        turn. Enter a number in the boxes below and press
+                        <span class="run"><span class="white-space">ㅤ</span>Run<span class="white-space">ㅤ</span></span>
+                        to execute the movement.
                     </p>
                 </div>
                 <div id="info-theory-container" class="info-text">
@@ -90,9 +93,15 @@
                         Theory<span class="dot">.</span>
                     </p>
                     <p class="info-subtext">
-                        This game has 4 functions: MoveUp, MoveDown, MoveLeft and MoveRight. 
-                        Each of them holds code that moves the player, 
-                        but the functions must know how many steps to move, by inserting a number in the parameter. 
+                        This game features four core functions:
+                        <span class="bold">MoveUp</span>,
+                        <span class="bold">MoveDown</span>,
+                        <span class="bold">MoveRight</span>, and
+                        <span class="bold">MoveLeft</span>.
+                        <br>
+                        Each function contains the logic needed to move the player in the respective direction.
+                        To determine the number of steps the player moves, simply input a value into the function's
+                        parameter.
                     </p>
                 </div>
             </div>

@@ -34,13 +34,13 @@
 .cell {
     width: var(--cell-size);
     height: var(--cell-size);
-    background-color: #000;
+    background-color: #171717;
     position: relative;
 }
 
 
 .wall {
-    background-color: grey;
+    background-color: #a6a6a6;
 }
 
 .door {
@@ -52,9 +52,9 @@
 }
 
 .goal {
-    background-color: green;
+    background-color: #58be6a;
 }
 
 .player {
-    background-color: blue;
+    background-color: #1f70f2;
 }

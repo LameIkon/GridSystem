@@ -71,6 +71,7 @@
 }
 
 
+
 #lose-heading {
     font-family: var(--heading-font-family);
     font-size: var(--heading-font-size);
@@ -192,4 +193,46 @@
 .close-button:hover {
     background-color: #c96767;
     cursor: pointer;
+}
+
+.run {
+    font-family: corbel-bold, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #58be6a;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0 rgba(00,00,00,100%);
+}
+
+.white-space {
+    font-size: 7px;
+}
+
+.green {
+    font-family: opensans-semibold, sans-serif;
+    font-size: 22px;
+    color: #208834;
+}
+
+.blue {
+    font-family: opensans-semibold, sans-serif;
+    font-size: 22px;
+    color: #1f70f2;
+}
+
+.grey {
+    font-family: opensans-semibold, sans-serif;
+    font-size: 22px;
+    color: #6b6b6b;
+}
+
+.black {
+    font-family: opensans-semibold, sans-serif;
+    font-size: 22px;
+    color: #000000;
+}
+
+.bold {
+    font-weight: bold;
 }
