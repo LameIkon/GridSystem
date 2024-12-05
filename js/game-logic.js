@@ -95,9 +95,9 @@ function handleMove(direction) {
 }
 
 function move(direction, steps) {
-   if(noMoreTurns){
-    return;
-   }
+    if (noMoreTurns) {
+        return;
+    }
 
     let newX = playerPosition.x;
     let newY = playerPosition.y;
@@ -144,8 +144,8 @@ function move(direction, steps) {
         }
 
         if (reachedGoal(newY * gridX + newX)) {
-            console.log('Level Completed'); 
-            setTimeout(openWinModal, modalDelayInMiliseconds);         
+            console.log('Level Completed');
+            setTimeout(openWinModal, modalDelayInMiliseconds);
         }
     }
     playerPosition.x = newX;
@@ -156,16 +156,26 @@ function move(direction, steps) {
     renderTurnCounter();
 
     if (!reachedGoal(newY * gridX + newX)) {
-          gameOver();
+        gameOver();
     }
 }
 
-function openLoseModal(){
+let modalOpenAndClose = true
+
+function openLoseModal() {
     openModal("lose-modal");
 }
 
-function openWinModal(){
+function openWinModal() {
     openModal("win-modal");
+}
+
+function openModalAtStart() {
+    if (!modalOpenAndClose) {
+        return
+    }
+    openModal('info-modal')
+    modalOpenAndClose = false
 }
 
 function openModal(modalName) {
@@ -173,11 +183,11 @@ function openModal(modalName) {
     modal.style.display = "block";
 }
 
-function closeModal(){
+function closeModal() {
     const modals = [
         document.getElementById("info-modal")
     ];
-    for (let i = 0; i < modals.length; i++){
+    for (let i = 0; i < modals.length; i++) {
         modals[i].style.display = "none";
     }
 }
