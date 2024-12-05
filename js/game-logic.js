@@ -129,13 +129,13 @@ function move(direction, steps) {
 
         // Collision detection to not go out of bounds
         if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY) {
-            alert("You can't move outside the grid, please enter another value");
+            alert("You can't move outside the grid. Please enter another value.");
             return;
         }
 
         // Collision detection for the obstacles
         if (!canWalk(newY * gridX + newX)) {
-            alert("You are not a ghost, you can't move through walls, please enter another value");
+            alert("You are not a ghost, you can't move through walls. Please enter another value.");
             return;
         }
 
@@ -232,6 +232,7 @@ function hasTileClass(id, tileClass) {
 document.addEventListener('keydown', function (event) {
     const step = 1; // Define step size or determine based on key
     switch (event.key) {
+        /*
         case 'ArrowLeft':
             move('left', step);
             break;
@@ -243,7 +244,8 @@ document.addEventListener('keydown', function (event) {
             break;
         case 'ArrowDown':
             move('down', step);
-            break;
+            break
+         */
         case 'Escape':
             closeModal()
 
