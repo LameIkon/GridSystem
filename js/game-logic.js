@@ -234,6 +234,9 @@ document.addEventListener('keydown', function (event) {
         case 'ArrowDown':
             move('down', step);
             break;
+        case 'Escape':
+            closeModal()
+
     }
 });
 
