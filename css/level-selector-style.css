@@ -51,7 +51,7 @@
 
 .level-button:hover {
     cursor: pointer;
-    transform: scale(1.08);
+    transform: scale(1.04);
     border: 5px solid #1f70f2ba;
     box-shadow:
             0 0 110px rgba(31, 112, 242, 40%),
