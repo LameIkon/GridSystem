@@ -65,6 +65,16 @@
     src: url('../assets/fonts/besley.ttf') format('woff');
 }
 
+@font-face {
+    font-family: calibri;
+    src: url('../assets/fonts/calibri.ttf') format('woff');
+}
+
+@font-face {
+    font-family: calibri-bold;
+    src: url('../assets/fonts/calibri-bold.ttf') format('woff');
+}
+
 .dot {
     color: #1f70f2;
 }

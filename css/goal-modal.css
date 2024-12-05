@@ -138,7 +138,7 @@
 }
 
 .info-header {
-    font-family: besley, serif;
+    font-family: calibri, serif;
     font-weight: bold;
     font-size: 40px;
     color: #000000;
@@ -195,16 +195,6 @@
     cursor: pointer;
 }
 
-.run {
-    font-family: corbel-bold, sans-serif;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #58be6a;
-    border-radius: 8px;
-    border: 2px solid #000000;
-    box-shadow: 2px 2px 0 rgba(00,00,00,100%);
-}
-
 .white-space {
     font-size: 7px;
 }
@@ -235,4 +225,23 @@
 
 .bold {
     font-weight: bold;
+}
+
+.run {
+    font-family: corbel-bold, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #58be6a;
+    padding: 1px 8px;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0 rgba(00,00,00,100%);
+}
+
+.move-function {
+    font-family: opensans-semibold, sans-serif;
+    font-size: 17px;
+    padding: 1px 8px;
+    border: 2px solid #000000;
+    border-radius: 8px;
 }

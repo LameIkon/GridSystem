@@ -34,7 +34,7 @@
 }
 
 #mission {
-    font-family: besley, serif;
+    font-family: calibri, serif;
     font-weight: bold;
     color: #000000;
     font-size: 48px;
@@ -104,11 +104,11 @@
 }
 
 #turn-counter-container {
-    margin-top: -170px;
+    margin-top: -150px;
 }
 
 #turn-counter-container p {
-    font-family: opensans-semibold, serif;
+    font-family: calibri, serif;
     font-weight: bold;
     font-size: 38px;
     color: #b43a3a;
@@ -116,7 +116,7 @@
 }
 
 .minimize {
-    font-size: 27px !important;
+    font-size: 30px !important;
     opacity: 85%;
 }
 
