@@ -3,7 +3,7 @@
     --heading-font-size: 82px;
     --subtext-font-family: corbel, sans-serif;
     --subtext-font-size: 36px;
-    --text-margin: 10px;
+    --text-margin: 15px;
 }
 
 .modal {
@@ -184,8 +184,8 @@
     border: 2px solid #000000;
     box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
     border-radius: 100%;
-    width: 35px;
-    height: 35px;
+    width: 1.3em;
+    height: 1.3em;
     font-weight: bold;
     transition: all 150ms ease;
 }

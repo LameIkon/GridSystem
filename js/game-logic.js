@@ -8,7 +8,9 @@ let playerPosition; // LoadLevel controls this. look into level-layout.js
 let turn = 0;
 let maxTurn; // Load level controls this. look into level-layout.js
 let noMoreTurns = false;
+let modalOpenAndClose = true
 let modalDelayInMiliseconds = 350; //equal to 1 second
+let closeAlertPopupTimeInMilliseconds = 2500;
 
 // #region Names for objects in the scene
 // Error proofing the tiles
@@ -129,13 +131,13 @@ function move(direction, steps) {
 
         // Collision detection to not go out of bounds
         if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY) {
-            alert("You can't move outside the grid. Please enter another value.");
+            callAlert("You can't move outside the grid. Please enter another value or choose another direction.", 8000)
             return;
         }
 
         // Collision detection for the obstacles
         if (!canWalk(newY * gridX + newX)) {
-            alert("You are not a ghost, you can't move through walls. Please enter another value.");
+            callAlert("You are not a ghost, you can't move through walls. Please enter another value or choose another direction.", 8000)
             return;
         }
 
@@ -160,7 +162,33 @@ function move(direction, steps) {
     }
 }
 
-let modalOpenAndClose = true
+function callAlert(message, timeout) {
+    alert(message, timeout)
+}
+
+window.alert = function (message, timeout = null) {
+    const alert = document.createElement('div')
+    const alertButton = document.createElement('button')
+    alert.classList.add('alert')
+    alertButton.classList.add('alert-button')
+    alertButton.innerText = 'Understood';
+    alert.innerHTML = `<span style="margin: 5px">${message}</span>`;
+    alert.appendChild(alertButton)
+    alertButton.addEventListener(
+        'click',
+        function () {
+            alert.remove()
+        }
+    )
+
+    if (timeout != null) {
+        setTimeout(
+            function () { alert.remove() },
+            Number(timeout)
+        )
+    }
+    document.body.appendChild(alert)
+}
 
 function openLoseModal() {
     openModal("lose-modal");
@@ -177,8 +205,6 @@ function openModalAtStart() {
     openModal('info-modal')
     modalOpenAndClose = false
 }
-
-
 
 function openModal(modalName) {
     const modal = document.getElementById(modalName);
@@ -235,18 +261,18 @@ document.addEventListener('keydown', function (event) {
     const step = 1; // Define step size or determine based on key
     switch (event.key) {
         /*
-        case 'ArrowLeft':
-            move('left', step);
-            break;
-        case 'ArrowRight':
-            move('right', step);
-            break;
-        case 'ArrowUp':
-            move('up', step);
-            break;
-        case 'ArrowDown':
-            move('down', step);
-            break
+         case 'ArrowLeft':
+         move('left', step);
+         break;
+         case 'ArrowRight':
+         move('right', step);
+         break;
+         case 'ArrowUp':
+         move('up', step);
+         break;
+         case 'ArrowDown':
+         move('down', step);
+         break
          */
         case 'Escape':
             closeModal()
