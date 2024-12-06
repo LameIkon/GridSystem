@@ -176,11 +176,8 @@ window.alert = function (message, timeout = null) {
     alert.appendChild(alertButton)
     alertButton.addEventListener(
         'click',
-        function () {
-            alert.remove()
-        }
+        function () { alert.remove() }
     )
-
     if (timeout != null) {
         setTimeout(
             function () { alert.remove() },

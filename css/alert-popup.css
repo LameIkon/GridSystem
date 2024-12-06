@@ -18,11 +18,11 @@
 
 .alert-button {
     font-family: corbel-bold, sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     color: #ffffff;
-    background-color: #1f70f2;
+    background-color: #cb5555;
     border: 2px solid #000000;
-    border-radius: 17px;
+    border-radius: 18px;
     box-shadow: 4px 4px 0 rgba(00, 00, 00, 100);
     width: auto;
     height: 1.9em;
@@ -33,7 +33,7 @@
 }
 
 .alert-button:hover {
-    background-color: #5498ff;
+    background-color: #b43a3a;
     cursor: pointer;
 }
 
