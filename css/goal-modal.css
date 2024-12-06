@@ -180,7 +180,7 @@
     float: right;
     font-size: 28px;
     color: #ffffff;
-    background-color: #b43a3a;
+    background-color: #cb5555;
     border: 2px solid #000000;
     box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
     border-radius: 100%;
@@ -191,7 +191,7 @@
 }
 
 .close-button:hover {
-    background-color: #c96767;
+    background-color: #b43a3a;
     cursor: pointer;
 }
 

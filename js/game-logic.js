@@ -131,13 +131,13 @@ function move(direction, steps) {
 
         // Collision detection to not go out of bounds
         if (newX < 0 || newX >= gridX || newY < 0 || newY >= gridY) {
-            callAlert("You can't move outside the grid. Please enter another value or choose another direction.", 8000)
+            openPopup("You can't move outside the grid. Please enter another value or choose another direction.", 8000)
             return;
         }
 
         // Collision detection for the obstacles
         if (!canWalk(newY * gridX + newX)) {
-            callAlert("You are not a ghost, you can't move through walls. Please enter another value or choose another direction.", 8000)
+            openPopup("You are not a ghost, you can't move through walls. Please enter another value or choose another direction.", 8000)
             return;
         }
 
@@ -162,29 +162,42 @@ function move(direction, steps) {
     }
 }
 
-function callAlert(message, timeout) {
+function openPopup(message, timeout) {
     alert(message, timeout)
 }
 
 window.alert = function (message, timeout = null) {
-    const alert = document.createElement('div')
-    const alertButton = document.createElement('button')
-    alert.classList.add('alert')
-    alertButton.classList.add('alert-button')
-    alertButton.innerText = 'Understood';
-    alert.innerHTML = `<span style="margin: 5px">${message}</span>`;
-    alert.appendChild(alertButton)
-    alertButton.addEventListener(
+    const popup = document.createElement('div')
+    const popupConfirmButton = document.createElement('button')
+    popup.classList.add('popup')
+    popupConfirmButton.classList.add('popup-confirm-button')
+    popupConfirmButton.innerText = 'Understood';
+    popup.innerHTML = `<span style="margin: 5px">${message}</span>`;
+    popup.appendChild(popupConfirmButton)
+    popupConfirmButton.addEventListener(
         'click',
-        function () { alert.remove() }
+        function () {
+            closePopup()
+        }
     )
     if (timeout != null) {
         setTimeout(
-            function () { alert.remove() },
+            function () {
+                closePopup()
+            },
             Number(timeout)
         )
     }
-    document.body.appendChild(alert)
+    document.body.appendChild(popup)
+
+    function closePopup() {
+        popup.classList.add('fade-out')
+        setTimeout(deletePopup, 390)
+    }
+
+    function deletePopup() {
+        popup.remove()
+    }
 }
 
 function openLoseModal() {
