@@ -1,4 +1,5 @@
 :root {
+    --animation-fade-time: 700ms;
     --transition-time-launch: 500ms;
     --transition-time-skip-buttons: 150ms;
 }
@@ -123,7 +124,7 @@
 
 .hidden {
     opacity: 0;
-    transition: all 700ms ease;
+    transition: all var(--animation-fade-time) ease;
 }
 
 .show {
@@ -153,4 +154,18 @@
     font-size: 18px;
     color: rgb(0, 0, 0);
     margin-top: -15px;
+}
+
+
+@keyframes game-fade-out-animation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.game-fade-out {
+    animation: game-fade-out-animation var(--animation-fade-time) ease;
 }
