@@ -110,9 +110,9 @@
 }
 
 #turn-counter-container p {
-    font-family: calibri, serif;
+    font-family: calibri-bold, serif;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 32px;
     color: #b43a3a;
     margin-top: 2vh;
 }
