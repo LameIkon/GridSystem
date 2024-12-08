@@ -99,6 +99,7 @@
     border-left-style: solid;
     border-right-style: solid;
     border-color: black;
+    box-shadow: 0 0 10px rgba(31, 112, 242, 100%);
 }
 
 .function-var-field {
@@ -151,17 +152,13 @@
 
 #variable-container {
     right: 26px;
-    top: 22px;
+    top: 40px;
     width: 33%;
-    height: 224px;
+    height: 180px;
     background-color: #f4f4f4;
     border: 4px solid #a6a6a6;
     border-radius: 26px;
     padding: 8px;
-}
-
-#variable-value {
-    color: #1f70f2;
 }
 
 #variable-value-container {
@@ -171,12 +168,18 @@
 
 
 #variable-value-container p {
-    font-family: calibri, serif;
+    font-family: opensans-regular, serif;
     font-weight: bold;
     font-size: 26px;
     color: #000000;
     margin-top: 10px;
     margin-bottom: 25px;
+}
+
+
+#variable-value {
+    font-family: opensans-medium, serif;
+    color: #1f70f2;
 }
 
 #variable-value-assign-box {
