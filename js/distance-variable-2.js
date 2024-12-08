@@ -66,10 +66,13 @@ function updateVariableValue(value) {
 
 function oogaBooga() {
     const functionFields = document.querySelectorAll(".function-var-field");
-    for (var i = 0; i < functionFields.length; i++) {
-        functionFields[i].innerText = "Steps + 2";
+    for (let i = 0; i < functionFields.length; i++) {
+        const paragraph = functionFields[i].querySelector("p");
+        if (paragraph) {
+            paragraph.innerText = "Steps + 2";
+        }
     }
-    console.log("this WORKSKSSA");
 }
+
 
 setTimeout(oogaBooga, 100);

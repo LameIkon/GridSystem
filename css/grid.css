@@ -11,6 +11,7 @@
 #game-container {
     display: flex;
     margin-top: 10px;
+    margin-bottom: -20px;
     align-items: flex-start; 
     max-width: 1000px; /* Limit width of the game Might need to be changed since its not responsive*/
 }
@@ -52,7 +53,7 @@
 }
 
 .goal {
-    background-color: #58be6a;
+    background-color: #3fab53;
 }
 
 .player {
