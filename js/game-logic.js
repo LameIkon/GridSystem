@@ -99,6 +99,7 @@ function move(direction, steps) {
         return;
     }
 
+    let reachedGoalBool = false;
     let newX = playerPosition.x;
     let newY = playerPosition.y;
     let step = 1;
@@ -144,9 +145,13 @@ function move(direction, steps) {
         }
 
         if (reachedGoal(newY * gridX + newX)) {
-            console.log('Level Completed');
-            setTimeout(openWinModal, modalDelayInMiliseconds);
+            reachedGoalBool = true
         }
+    }
+    
+    if (reachedGoalBool){
+        console.log('Level Completed');
+        setTimeout(openWinModal, modalDelayInMiliseconds);
     }
     playerPosition.x = newX;
     playerPosition.y = newY;
