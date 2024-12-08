@@ -36,7 +36,7 @@
 }
 
 #control-buttons {
-    top: 22px;
+    top: 18px;
     width: var(--part1-width);
     height: var(--part1-height);
 }
@@ -71,7 +71,7 @@
 
 .functions {
     position: absolute;
-    width: 150px;
+    width: 160px;
     height: 50px;
     left: 50%;
     top: 30%;
@@ -92,14 +92,18 @@
 
 .function-input-field {
     font-family: corbel, sans-serif;
-    width: 24px;
+    width: 60px;
     text-align: center;
     border-radius: 8px;
-    border-style: none;
+    border: 2px none #000000;
     border-left-style: solid;
     border-right-style: solid;
-    border-color: black;
-    box-shadow: 0 0 10px rgba(31, 112, 242, 100%);
+    transition: all 200ms ease;
+}
+
+.function-input-field:hover {
+    box-shadow: 0 0 30px rgba(31, 112, 242, 100%);
+    border-color: #ffffff;
 }
 
 .function-var-field {
@@ -151,7 +155,7 @@
 }
 
 #variable-container {
-    right: 26px;
+    right: 640px;
     top: 40px;
     width: 33%;
     height: 180px;
@@ -168,7 +172,7 @@
 
 
 #variable-value-container p {
-    font-family: opensans-regular, serif;
+    font-family: opensans-medium, serif;
     font-weight: bold;
     font-size: 26px;
     color: #000000;
@@ -178,7 +182,7 @@
 
 
 #variable-value {
-    font-family: opensans-medium, serif;
+    font-family: opensans-bold, serif;
     color: #1f70f2;
 }
 
