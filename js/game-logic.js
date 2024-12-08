@@ -272,7 +272,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Event listener for the button to set distance
-    document.getElementById("submit-distance").addEventListener("click", setDistance);
+    const submitButton = document.getElementById("submit-distance")
+    if (submitButton){
+        submitButton.addEventListener("click", setDistance);
+    }
 });
 
 /*

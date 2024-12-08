@@ -14,14 +14,18 @@ function displayLevelInfo(specifiedId) {
             // Mission description
             INFOLIST.insertAdjacentHTML('beforeend', `<p id="mission">${FILTERED_ITEM.title}</p>`); // Print title text as a 'p'
             // Info Modal: Mission Objective
-            INFO_MODAL.insertAdjacentHTML('beforeend', `<p id="mission-objective-text">${FILTERED_ITEM.body}</p>`);
+            if (INFO_MODAL && FILTERED_ITEM.body){
+                INFO_MODAL.insertAdjacentHTML('beforeend', `<p id="mission-objective-text">${FILTERED_ITEM.body}</p>`);
+            }
             // Theory description
-            THEORYLIST.insertAdjacentHTML('beforeend', `<p id="theory-header">${FILTERED_ITEM.theoryTitle}</p>`); // Print title text as a 'p'
-            if (FILTERED_ITEM.theoryBox) // if there is an object. loop through and print it
-            {
-                Object.entries(FILTERED_ITEM.theoryBox).forEach(([key, value]) => {
-                    THEORYLIST.insertAdjacentHTML('beforeend', `<p id="theory-body">${value}</p>`);
-                });
+            if (THEORYLIST && FILTERED_ITEM.theoryBox){
+                THEORYLIST.insertAdjacentHTML('beforeend', `<p id="theory-header">${FILTERED_ITEM.theoryTitle}</p>`); // Print title text as a 'p'
+                if (FILTERED_ITEM.theoryBox) // if there is an object. loop through and print it
+                {
+                    Object.entries(FILTERED_ITEM.theoryBox).forEach(([key, value]) => {
+                        THEORYLIST.insertAdjacentHTML('beforeend', `<p id="theory-body">${value}</p>`);
+                    });
+                }
             }
         }
         else // Error message
