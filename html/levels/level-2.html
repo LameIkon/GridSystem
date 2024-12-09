@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress CommaExpressionJS -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,42 +25,46 @@
 <main id="main" class="element hidden">
     <div id="container">
         <div id="game">
-            <div id="info-modal-button-div">
-                <div id="mission-container">
-                    <div id="mission-box">
-                    </div>
-                    <div id="skip-button-container">
-                        <button class="skip-buttons previous" onclick="navigateToLevel(1)">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                        <button class="skip-buttons next" onclick="navigateToLevel(3)">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
+
+            <div id="level-name-and-skip-button-container">
+                <button class="skip-buttons previous" onclick="navigateToLevel(1)">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div id="level-name-container">
                 </div>
-                <button id="info-modal-button" onclick="openModal('info-modal')">
-                    Info
+                <button class="skip-buttons next" onclick="navigateToLevel(3)">
+                    <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
-            <div id="turn-counter-container">
-                <p>
-                    Turn:
-                    <span id="turn-counter"></span><span class="minimize">/</span><span id="max-turn" class="minimize"></span>
-                </p>
-            </div>
-            <div>
-                <div id="game-container">
-                    <div id="grid"></div>
+
+            <div id="action-buttons-and-turn-counter">
+                <div>
+                    <p id="turn-counter-container">
+                        Turn:
+                        <span id="turn-counter"></span><span class="minimize-turn-counter">/</span><span id="max-turn"
+                                                                                                         class="minimize-turn-counter"></span>
+                    </p>
                 </div>
+                <button class="action-buttons" onclick="openModal('info-modal')">
+                    Info
+                </button>
+                <button class="action-buttons" onclick="navigateToLevel(2)">
+                    Retry
+                </button>
             </div>
+
+            <div id="game-container">
+                <div id="grid"></div>
+            </div>
+
             <div id="control-panel-container"></div>
+
         </div>
     </div>
 </main>
 
 <!-- Modal Container -->
 <div id='modal-container-2'></div>
-
 <script src="../../js/navigate.js"></script>
 <script src="../../js/level-info.js"></script>
 <script src="../../js/game-logic.js"></script>

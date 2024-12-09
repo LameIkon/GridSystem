@@ -153,8 +153,8 @@ function move(direction, steps) {
             reachedGoalBool = true
         }
     }
-    
-    if (reachedGoalBool){
+
+    if (reachedGoalBool) {
         console.log('Level Completed');
         setTimeout(openWinModal, modalDelayInMiliseconds);
     }
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener for the button to set distance
     const submitButton = document.getElementById("submit-distance")
-    if (submitButton){
+    if (submitButton) {
         submitButton.addEventListener("click", setDistance);
     }
 });
@@ -524,6 +524,6 @@ function loadLevel(specifiedId) {
         }
     });
 }
-    
+
     
     

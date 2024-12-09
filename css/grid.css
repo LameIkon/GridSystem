@@ -10,8 +10,6 @@
 
 #game-container {
     display: flex;
-    margin-top: 10px;
-    margin-bottom: -10px;
     align-items: flex-start; 
     max-width: 1000px; /* Limit width of the game Might need to be changed since its not responsive*/
 }

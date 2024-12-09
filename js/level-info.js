@@ -1,4 +1,4 @@
-const INFOLIST = document.getElementById('mission-box'); // The location the json file will print its text
+const INFOLIST = document.getElementById('level-name-container'); // The location the json file will print its text
 const INFO_MODAL = document.getElementById('info-mission-description');
 const THEORYLIST = document.getElementById('info-theory-container'); // The location the json file will print its text
 
@@ -12,7 +12,7 @@ function displayLevelInfo(specifiedId) {
         const FILTERED_ITEM = info.find(element => element.levelId === specifiedId) // Find the json file with the specific id 'levelId'
         if (FILTERED_ITEM) { // Take the json and read/use the data
             // Mission description
-            INFOLIST.insertAdjacentHTML('beforeend', `<p id="mission">${FILTERED_ITEM.title}</p>`); // Print title text as a 'p'
+            INFOLIST.insertAdjacentHTML('beforeend', `<p id="level-name">${FILTERED_ITEM.title}</p>`); // Print title text as a 'p'
             // Info Modal: Mission Objective
             if (INFO_MODAL && FILTERED_ITEM.body){
                 INFO_MODAL.insertAdjacentHTML('beforeend', `<p id="mission-objective-text">${FILTERED_ITEM.body}</p>`);
