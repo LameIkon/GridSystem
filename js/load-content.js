@@ -61,9 +61,12 @@ hiddenElements.forEach((el) => observer.observe(el));
 // CSS Class Load
 document.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById('play-now-button');
-    button.addEventListener('animationend', function () {
-        button.classList.add('show-button');
-    });
+
+    if (button){
+        button.addEventListener('animationend', function () {
+            button.classList.add('show-button');
+        });
+    }
 });
 
 function initGoBackButton() {

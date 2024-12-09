@@ -104,6 +104,7 @@ function move(direction, steps) {
         return;
     }
 
+    let reachedGoalBool = false;
     let newX = playerPosition.x;
     let newY = playerPosition.y;
     let step = 1;
@@ -149,9 +150,13 @@ function move(direction, steps) {
         }
 
         if (reachedGoal(newY * gridX + newX)) {
-            console.log('Level Completed');
-            setTimeout(openWinModal, modalDelayInMiliseconds);
+            reachedGoalBool = true
         }
+    }
+    
+    if (reachedGoalBool){
+        console.log('Level Completed');
+        setTimeout(openWinModal, modalDelayInMiliseconds);
     }
     playerPosition.x = newX;
     playerPosition.y = newY;
@@ -343,7 +348,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Event listener for the button to set distance
-    document.getElementById("submit-distance").addEventListener("click", setDistance);
+    const submitButton = document.getElementById("submit-distance")
+    if (submitButton){
+        submitButton.addEventListener("click", setDistance);
+    }
 });
 
 /*

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
         // Attempt to find the submit button
         const submitButton = document.getElementById("submit-distance");
+        const inputsubmit = document.getElementById("distance-input")
 
         if (submitButton) {
             // Add the event listener to the button
@@ -22,6 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
         else {
             console.error("Submit button not found");
         }
+
+        if (inputsubmit){
+            inputsubmit.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") { // Check if the Enter key was pressed
+                    updateDistance();
+                }
+            });
+        }
+        else {
+            console.error("input-Submit not found");
+        } 
     }, 1000); // Delay of 1 second to ensure the DOM has fully loaded
 });
 
