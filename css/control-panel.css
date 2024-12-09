@@ -19,7 +19,7 @@
     height: calc(var(--part1-height) + 44px);
 }
 
-#control-panel-level-2-container {
+#control-panel-container-2 {
     font-family: corbel, sans-serif;
     position: relative;
     display: flex;
