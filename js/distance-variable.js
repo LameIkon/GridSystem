@@ -50,10 +50,6 @@ function buttonMove() {
 function buttonMovement(event) {
     let dir = event.srcElement.id.split('-')[1]; // Take the id of the button element splitting it at take the second elemet, which is either 'left', 'right', 'up' or 'down'
     let steps = distance;
-    if (!steps) {
-        alert('Please set a value to "Steps".', 5000);
-        return;
-    }
     move(dir, steps);
 }
 
