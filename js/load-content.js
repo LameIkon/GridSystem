@@ -1,4 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
+    window.hasPressedOnInputFields = false;
+
+    function handlePressOnInput() {
+        hasPressedOnInputFields = true;
+        console.log('Input field clicked:', hasPressedOnInputFields);
+    }
+
+    function addEventListeners() {
+        const functionFields = document.querySelectorAll('.function-input-field');
+        functionFields.forEach(field => {
+            field.addEventListener('click', handlePressOnInput);
+        });
+    }
+
     function loadHTML(elementID, filePath, callback) {
         const element = document.getElementById(elementID);
         if (element) {
@@ -19,17 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Load header and initialize the Go Back button
     loadHTML('header-container', '../../html/header.html', initGoBackButton);
-    loadHTML('control-panel-container', '../../html/control-panel.html');
-    loadHTML('control-panel-level-2-container', '../../html/control-panel-level-2.html');
-    loadHTML('control-panel-level-3-container', '../../html/control-panel-level-3.html');
-    loadHTML('modal-container-1', '../../html/modals/modal-1.html');
-    loadHTML('modal-container-2', '../../html/modals/modal-2.html');
-    loadHTML('modal-container-3', '../../html/modals/modal-3.html');
-    loadHTML('modal-container-4', '../../html/modals/modal-4.html');
-    loadHTML('modal-container-5', '../../html/modals/modal-5.html');
-    loadHTML('modal-container-6', '../../html/modals/modal-6.html');
-
+    loadHTML('control-panel-container', '../../html/control-panel.html', addEventListeners);
+    loadHTML('control-panel-level-2-container', '../../html/control-panel-level-2.html', addEventListeners);
+    loadHTML('control-panel-level-3-container', '../../html/control-panel-level-3.html', addEventListeners);
+    loadHTML('modal-container-1', '../../html/modals/modal-1.html', addEventListeners);
+    loadHTML('modal-container-2', '../../html/modals/modal-2.html', addEventListeners);
+    loadHTML('modal-container-3', '../../html/modals/modal-3.html', addEventListeners);
+    loadHTML('modal-container-4', '../../html/modals/modal-4.html', addEventListeners);
+    loadHTML('modal-container-5', '../../html/modals/modal-5.html', addEventListeners);
+    loadHTML('modal-container-6', '../../html/modals/modal-6.html', addEventListeners);
 });
+
 
 // CSS Class Load
 const observer = new IntersectionObserver((entries) => {
@@ -71,9 +85,9 @@ function initGoBackButton() {
 
     if (pagesToShowButton.includes(currentPage)) {
         goBackButton.classList.add('show-go-back');
-    } else {
+    }
+    else {
         goBackButton.classList.remove('show-go-back');
     }
 }
-
 

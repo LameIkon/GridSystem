@@ -11,6 +11,9 @@ let noMoreTurns = false;
 let modalOpenAndClose = true
 let modalDelayInMiliseconds = 350; //equal to 1 second
 let closeAlertPopupTimeInMilliseconds = 2500;
+let inputAnimationTimeInMilliseconds = 15000;
+let hasClosedModalFirstTime = false;
+let functionFields
 
 // #region Names for objects in the scene
 // Error proofing the tiles
@@ -227,6 +230,38 @@ function closeModal() {
     ];
     for (let i = 0; i < modals.length; i++) {
         modals[i].style.display = "none";
+        hasClosedModalFirstTime = true;
+        loadInputAnimationLogic()
+    }
+}
+
+function loadInputAnimationLogic() {
+    if (!hasClosedModalFirstTime) {
+        return;
+    }
+
+    functionFields = document.querySelectorAll(".function-input-field");
+
+    if (hasPressedOnInputFields) {
+        return;
+    }
+    if (!hasPressedOnInputFields) {
+        setTimeout(secondConfirmIfHasPressed, inputAnimationTimeInMilliseconds);
+    }
+}
+
+function secondConfirmIfHasPressed() {
+    if (hasPressedOnInputFields) {
+        return;
+    }
+    if (!hasPressedOnInputFields) {
+        applyInputAnimation()
+    }
+}
+
+function applyInputAnimation() {
+    for (let i = 0; i < functionFields.length; i++) {
+        functionFields[i].classList.add("animate");
     }
 }
 

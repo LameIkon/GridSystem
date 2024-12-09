@@ -3,6 +3,9 @@
     --card-height: 100px;
     --part1-width: calc(3 * var(--card-width) + 40px);
     --part1-height: calc(2 * var(--card-height) + 20px);
+
+    --input-box-shadow: 0 0 60px rgba(31, 112, 242, 100%);
+    --input-box-border : #ffffff;
 }
 
 #control-panel-container {
@@ -101,10 +104,45 @@
     transition: all 200ms ease;
 }
 
-.function-input-field:hover {
-    box-shadow: 0 0 30px rgba(31, 112, 242, 100%);
-    border-color: #ffffff;
+.function-input-field.animate {
+    animation: input-animation 6000ms ease;
 }
+
+@keyframes input-animation {
+    from {
+        box-shadow: 0 0 0 rgba(31, 112, 242, 0);
+        border-color: #000000;
+    }
+    16% {
+        box-shadow: var(--input-box-shadow);
+        border-color: var(--input-box-border);
+    }
+    33% {
+        box-shadow: 0 0 0 rgba(31, 112, 242, 0);
+        border-color: #000000;
+    }
+
+    50% {
+        box-shadow: var(--input-box-shadow);
+        border-color: var(--input-box-border);
+    }
+
+    67% {
+        box-shadow: 0 0 0 rgba(31, 112, 242, 0);
+        border-color: #000000;
+    }
+
+    83% {
+        box-shadow: var(--input-box-shadow);
+        border-color: var(--input-box-border);
+    }
+
+    to {
+        box-shadow: 0 0 0 rgba(31, 112, 242, 0);
+        border-color: #000000;
+    }
+}
+
 
 .function-var-field {
     display: flex;
