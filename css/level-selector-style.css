@@ -26,12 +26,12 @@
 .level-groups {
     display: flex;
     flex-direction: row;
-    margin: 0 0 0 0;
+    margin: 0;
 }
 
 .level-button p {
-    font-family: opensans-semibold, sans-serif;
-    font-size: 28px;
+    font-family: calibri, sans-serif;
+    font-size: 24px;
     color: #000000;
     margin: 15px;
 }
@@ -39,13 +39,14 @@
 .level-button {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     background-color: #ffffff;
     border: 5px solid #d9d9d9;
     border-radius: 32px;
     margin: 20px 30px;
     width: 21em;
     height: 15em;
+    position: relative;
     transition: all 260ms ease;
 }
 
@@ -54,9 +55,50 @@
     transform: scale(1.04);
     border: 5px solid #1f70f2ba;
     box-shadow:
-            0 0 110px rgba(31, 112, 242, 40%),
-            inset 0 0 20px rgba(31, 112, 242, 10%);
+            0 0 110px rgba(31, 112, 242, 0.4),
+            inset 0 0 20px rgba(31, 112, 242, 0.1);
 }
+
+.level-button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -14px;
+    left: -14px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.level-button span::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: 'Start here';
+    font-family: opensans-bold, sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    position: absolute;
+    width: 150%;
+    height: 40px;
+    background-color: #1f70f2;
+    transform: rotate(-45deg) translateY(-20px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.level-button span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: #1a57b9;
+    z-index: -1;
+    box-shadow: 140px -140px #1a57b9;
+}
+
 
 .hidden {
     opacity: 0;
@@ -101,3 +143,4 @@
 #bottom-levels .element:nth-child(3) {
     transition-delay: 250ms;
 }
+

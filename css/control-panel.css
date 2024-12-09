@@ -105,7 +105,7 @@
 }
 
 .function-input-field.animate {
-    animation: input-animation 6000ms ease;
+    animation: input-animation 20000ms ease;
 }
 
 @keyframes input-animation {
@@ -113,16 +113,38 @@
         box-shadow: 0 0 0 rgba(31, 112, 242, 0);
         border-color: #000000;
     }
-    16% {
+
+    8% {
         box-shadow: var(--input-box-shadow);
         border-color: var(--input-box-border);
     }
+
+    16% {
+        box-shadow: 0 0 0 rgba(31, 112, 242, 0);
+        border-color: #000000;
+    }
+
+    25% {
+        box-shadow: var(--input-box-shadow);
+        border-color: var(--input-box-border);
+    }
+
     33% {
         box-shadow: 0 0 0 rgba(31, 112, 242, 0);
         border-color: #000000;
     }
 
+    41% {
+        box-shadow: var(--input-box-shadow);
+        border-color: var(--input-box-border);
+    }
+
     50% {
+        box-shadow: 0 0 0 rgba(31, 112, 242, 0);
+        border-color: #000000;
+    }
+
+    56% {
         box-shadow: var(--input-box-shadow);
         border-color: var(--input-box-border);
     }
@@ -132,7 +154,17 @@
         border-color: #000000;
     }
 
+    74% {
+        box-shadow: var(--input-box-shadow);
+        border-color: var(--input-box-border);
+    }
+
     83% {
+        box-shadow: 0 0 0 rgba(31, 112, 242, 0);
+        border-color: #000000;
+    }
+
+    92% {
         box-shadow: var(--input-box-shadow);
         border-color: var(--input-box-border);
     }
