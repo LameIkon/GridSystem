@@ -243,8 +243,7 @@
 
 
 #variable-value-container p {
-    font-family: opensans-medium, serif;
-    font-weight: bold;
+    font-family: opensans-semibold, serif;
     font-size: 26px;
     color: #000000;
     margin-top: 10px;

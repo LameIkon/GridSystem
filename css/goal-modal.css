@@ -147,7 +147,6 @@
 .hint {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
@@ -170,7 +169,7 @@
 }
 
 #hint-image {
-    width: 300px;
+    width: 500px;
     height: auto;
 }
 
