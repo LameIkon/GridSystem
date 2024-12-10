@@ -78,5 +78,6 @@ function buttonsLoad() {
 }
 
 function updateVariableValue(value) {
+    document.getElementById('hey').innerText = 'Steps is set to: ';
     document.getElementById("variable-value").innerText = value;
 }
