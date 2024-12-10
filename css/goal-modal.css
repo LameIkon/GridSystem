@@ -27,7 +27,7 @@
     border-radius: 32px;
     box-shadow: 0 0 520px rgba(0, 0, 0, 0.6);
     width: 1050px;
-    height: 60vh;
+    height: 600px;
 }
 
 #win-content {
@@ -145,10 +145,11 @@
 }
 
 .hint {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 20px;
+    width: 550px;
+    margin-top: 40px;
+    background-color: #f4f4f4;
+    border: 4px solid #a6a6a6;
+    border-radius: 26px;
 }
 
 .hint p {

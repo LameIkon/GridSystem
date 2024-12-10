@@ -1,5 +1,5 @@
 // Declare the global variable on the `window` object
-let distance = 0; // Initial value
+let distance; // Initial value
 let levelId;
 
 // Function to set the distance
@@ -62,6 +62,11 @@ function buttonMove() {
 function buttonMovement(event) {
     let dir = event.srcElement.id.split('-')[1]; // Take the id of the button element splitting it at take the second elemet, which is either 'left', 'right', 'up' or 'down'
     let steps = distance;
+    if (distance === undefined || distance === null) {
+        alert('Please set a value to "Steps"', 5000)
+        return;
+    }
+    console.log(`False, distance = ${distance}`)
     move(dir, steps);
 }
 

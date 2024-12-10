@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     element.innerHTML = xhr.responseText;
                     if (callback) {
-                        console.log(`Callback called for ${elementID}`); // Debug
                         callback();
                     }
                 }
