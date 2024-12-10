@@ -4,8 +4,9 @@
     --part1-width: calc(3 * var(--card-width) + 40px);
     --part1-height: calc(2 * var(--card-height) + 20px);
 
-    --input-box-shadow: 0 0 60px rgba(31, 112, 242, 100%);
-    --input-box-border : #ffffff;
+    --input-box-glow: #d06801;
+    --input-box-shadow: 0 0 10px var(--input-box-glow);
+    --input-box-border : var(--input-box-glow);
 }
 
 #control-panel-container {

@@ -128,14 +128,14 @@ h1 {
 }
 
 #go-back {
-    background-color: #cb5555;
-    border: 3px solid #cb5555;
+    background-color: #c45151;
+    border: 3px solid #c45151;
     transition: all var(--transition-time-header-buttons) ease;
 }
 
 #go-back:hover {
-    background-color: #b43a3a;
-    border: 3px solid #b43a3a;
+    background-color: #d96060;
+    border: 3px solid #d96060;
 }
 
 #go-back p {

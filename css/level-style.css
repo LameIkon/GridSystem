@@ -23,8 +23,6 @@
 }
 
 
-
-
 #level-name-and-skip-button-container {
     display: flex;
     flex-direction: row;
@@ -44,11 +42,11 @@
     font-size: 20px;
     color: #ffffff;
     background-color: #1f70f2;
-    border: 2px solid #000000;
+    border: 3px solid #000000;
     border-radius: 100%;
     margin: 0 6px;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     box-shadow: 3px 3px 0 rgba(00, 00, 00, 100%);
     cursor: pointer;
     transition: all var(--transition-time-skip-buttons) ease;
@@ -61,44 +59,60 @@
 
 
 
-
-#action-buttons-and-turn-counter {
+#turn-counter-container {
+    position: absolute;
     float: left;
-    margin: -110px 0 0 -760px;
+    margin: -10px 0 0 -790px;
 }
 
-#turn-counter-container {
-    font-family: calibri-bold, serif;
+#turn-counter-container p {
+    font-family: opensans-medium, serif;
     font-weight: bold;
-    font-size: 34px;
+    font-size: 36px;
     color: #000000;
 }
 
 .minimize-turn-counter {
     font-size: 30px !important;
-    opacity: 85%;
+    opacity: 80%;
 }
 
-.action-buttons {
+
+
+#info-and-restart-button-container {
+    position: absolute;
+    float: right;
+    margin: 30px 0 0 810px;
+}
+
+.info-and-restart-buttons {
     font-family: corbel-bold, sans-serif;
-    font-size: 25px;
-    color: #000000;
-    background-color: #ffffff;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #9b59b6;
     border: 3px solid #000000;
-    border-radius: 5px;
-    box-shadow: 5px 5px 0 rgba(00, 00, 00, 100%);
-    width: 4em;
+    border-radius: 100%;
+    box-shadow: 4px 4px 0 rgba(00, 00, 00, 100%);
+    width: 2em;
     height: 2em;
     transition: all 200ms ease;
 }
 
-.action-buttons:hover {
-    background-color: #e7e7e7;
+.info-and-restart-buttons:hover {
+    background-color: #be76dc;
     cursor: pointer;
 }
 
+.info {
+    margin-right: 16px;
+}
+
+.restart {
+
+}
+
 #game-container {
-    margin: -40px 0 -10px 0;
+    margin: 0 0 -10px 0;
 }
 
 

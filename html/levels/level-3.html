@@ -37,19 +37,20 @@
                 </button>
             </div>
 
-            <div id="action-buttons-and-turn-counter">
-                <div>
-                    <p id="turn-counter-container">
-                        Turn:
-                        <span id="turn-counter"></span><span class="minimize-turn-counter">/</span><span id="max-turn"
-                                                                                                         class="minimize-turn-counter"></span>
-                    </p>
-                </div>
-                <button class="action-buttons" onclick="openModal('info-modal')">
-                    Info
+            <div id="turn-counter-container">
+                <p>
+                    Turn:
+                    <span id="turn-counter"></span><span class="minimize-turn-counter">/</span><span id="max-turn"
+                                                                                                     class="minimize-turn-counter"></span>
+                </p>
+            </div>
+
+            <div id="info-and-restart-button-container">
+                <button class="info-and-restart-buttons info" onclick="openModal('info-modal')">
+                    <i class="fa-solid fa-circle-info"></i>
                 </button>
-                <button class="action-buttons" onclick="navigateToLevel(3)">
-                    Retry
+                <button class="info-and-restart-buttons restart" onclick="navigateToLevel(3)">
+                    <i class="fa-solid fa-rotate"></i>
                 </button>
             </div>
 
@@ -57,7 +58,7 @@
                 <div id="grid"></div>
             </div>
 
-            <div id="control-panel-container"></div>
+            <div id="control-panel-container-2"></div>
 
         </div>
     </div>
