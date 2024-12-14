@@ -310,20 +310,6 @@ function hasTileClass(id, tileClass) {
 document.addEventListener('keydown', function (event) {
     const step = 1; // Define step size or determine based on key
     switch (event.key) {
-        /*
-         case 'ArrowLeft':
-         move('left', step);
-         break;
-         case 'ArrowRight':
-         move('right', step);
-         break;
-         case 'ArrowUp':
-         move('up', step);
-         break;
-         case 'ArrowDown':
-         move('down', step);
-         break
-         */
         case 'Escape':
             closeModal()
 
@@ -337,17 +323,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function setDistance() {
         const distanceInput = document.getElementById("distance-input").value;
 
-        // Check if the input is not empty and is a valid number
         if (distanceInput !== "" && !isNaN(distanceInput)) {
             distance = parseFloat(distanceInput);
             console.log("Distance set to:", distance);
         }
-        else {
-            console.log("Invalid number");
-        }
     }
 
-    // Event listener for the button to set distance
     const submitButton = document.getElementById("submit-distance")
     if (submitButton) {
         submitButton.addEventListener("click", setDistance);

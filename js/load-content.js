@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Load header and initialize the Go Back button
     loadHTML('header-container', '../../html/header.html', initGoBackButton);
     loadHTML('control-panel-container', '../../html/control-panel.html', addEventListeners);
     loadHTML('control-panel-container-2', '../../html/control-panel-2.html', addEventListeners);

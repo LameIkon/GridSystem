@@ -1,40 +1,35 @@
-// Declare the global variable on the `window` object
-let distance; // Initial value
+let distance;
 let levelId;
+const DOM_LOAD_TIME_DELAY = 1000
 
-// Function to set the distance
 function setDistance(value) {
     distance = value;
     console.log("Distance updated to:", distance);
 }
 
-// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-    // Set a timeout to ensure the DOM is fully loaded before running the code
     setTimeout(function () {
-        // Attempt to find the submit button
         const submitButton = document.getElementById("submit-distance");
         const inputsubmit = document.getElementById("distance-input")
 
         if (submitButton) {
-            // Add the event listener to the button
             submitButton.addEventListener("click", updateDistance);
         }
         else {
             console.error("Submit button not found");
         }
 
-        if (inputsubmit){
-            inputsubmit.addEventListener("keydown", function(event) {
-                if (event.key === "Enter") { // Check if the Enter key was pressed
+        if (inputsubmit) {
+            inputsubmit.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
                     updateDistance();
                 }
             });
         }
         else {
             console.error("input-Submit not found");
-        } 
-    }, 1000); // Delay of 1 second to ensure the DOM has fully loaded
+        }
+    }, DOM_LOAD_TIME_DELAY);
 });
 
 // Function to update the distance based on input

@@ -162,7 +162,7 @@
     font-family: corbel-bold, sans-serif;
     font-size: 24px;
     color: #ffffff;
-    background-color: #58be6a;
+    background-color: #3fab53;
     padding: 1px 8px;
     border-radius: 12px;
     border: 3px solid #000000;
@@ -258,13 +258,13 @@
 
 .run {
     font-family: corbel-bold, sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     color: #ffffff;
-    background-color: #58be6a;
-    padding: 1px 8px;
-    border-radius: 8px;
+    background-color: #3fab53;
+    padding: 3px 8px;
+    border-radius: 10px;
     border: 2px solid #000000;
-    box-shadow: 2px 2px 0 rgba(00,00,00,100%);
+    box-shadow: 3px 3px 0 rgba(00,00,00,100%);
 }
 
 .move-function {

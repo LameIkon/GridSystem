@@ -68,13 +68,14 @@
 #turn-counter-container p {
     font-family: opensans-medium, serif;
     font-weight: bold;
-    font-size: 36px;
+    font-size: 34px;
     color: #000000;
 }
 
 .minimize-turn-counter {
-    font-size: 30px !important;
-    opacity: 80%;
+    font-family: opensans-regular, serif;
+    font-size: 24px !important;
+    opacity: 65%;
 }
 
 
