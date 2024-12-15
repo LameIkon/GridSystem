@@ -45,18 +45,22 @@
         </div>
         <!-- Game Preview -->
         <div id='game-preview' class='element hidden'>
-            <div id='video-viewer'>
-                <p>
-                    Game preview
-                    <br>
-                    could not be loaded.
-                </p>
+            <div id='video-container'>
+                <video autoplay loop muted playsinline>
+                    <source src="/assets/videos/test-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
+
             <!--
             <img src='../../assets/images/game-preview.PNG' id='game-preview-image' alt='game-preview'>
             -->
         </div>
     </div>
+    <script> document.querySelector('video').addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+    </script>
 </main>
 <script src='../../js/navigate.js'></script>
 </body>

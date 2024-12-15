@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.hasPressedOnInputFields = false;
 
     function handlePressOnInput() {
-        hasPressedOnInputFields = true;
+        let hasPressedOnInputFields = true;
         console.log('Input field clicked:', hasPressedOnInputFields);
     }
 
